@@ -23,7 +23,7 @@ Auth::routes();
         Route::prefix('banner')->group(function () {
             Route::get('/', 'Backend\BannerController@index');
             Route::get('add', 'Backend\BannerController@add');
-            Route::post('store', 'Backend\BannerController@store');
+            Route::post('add', 'Backend\BannerController@store');
             Route::get('delete/{id}', 'Backend\BannerController@destroy');
         });
     });

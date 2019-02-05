@@ -9,24 +9,25 @@
 
 @section('content')
 <div class="pull-left col-xs-12" style="margin-top:15px;">
-    <div class="box box-primary">
+    <div class="box box-warning">
         <div class="box-header">
             <h3 class="box-title">Add Image Banner to Home Page</h3>
         </div><!-- /.box-header -->
         <!-- form start -->
-        {{ Form::open(array('url' => 'foo/bar')) }}
+        {{ Form::open(array('url' => 'backend/banner/add', 'method' => 'post','enctype' => 'multipart/form-data')) }}
+        {{csrf_field()}}
             <div class="box-body">
                 <div class="form-group">
                     <label for="title">Title</label>
-                    <input type="text" class="form-control" id="title" placeholder="Enter title of banner">
+                    <input name="title" type="text" class="form-control" id="title" placeholder="Enter title of banner" require>
                 </div>
                 <div class="form-group">
                     <label for="keywords">Keywords</label>
-                    <input type="text" class="form-control" id="keyword" placeholder="images,banner,tfrd,มปอ,...">
+                    <input name="keywords" type="text" class="form-control" id="keyword" placeholder="images,banner,tfrd,มปอ,...">
                 </div>
                 <div class="form-group">
                     <label for="image">Image</label>
-                    <input type="file" id="image">
+                    <input name="image" type="file" id="image" require>
                     <p class="help-block">Image type of png,jpg and max size is 2MB.</p>
                 </div>
             </div><!-- /.box-body -->
