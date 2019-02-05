@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\HomeBanner;
 use Illuminate\Support\Facades\Storage;
+use Image;
+use Carbon\Carbon;
 
 class BannerController extends Controller
 {
@@ -21,9 +23,36 @@ class BannerController extends Controller
         return view('backend.banner.add');
     }
 
+    public function edit($id)
     {
+        $banner = HomeBanner::find($id);
+        return view('backend.banner.edit')->withBanner($banner);
+    }
+
+    public function storeedit(request $request)
+    {
+        //dd($request->all());
+        $validatedData = $request->validate([
+            'title' => 'required|max:255',
+            'image' => 'image|mimes:jpeg,png,jpg|max:2048',
+        ]);
+        $tbl_banner = HomeBanner::find($request->id);
+
+        if($request->hasfile('image')) 
+        { 
+            $file = $request->file('image');
+            $img = Image::make($file->getRealPath());
+            $extension = $file->getClientOriginalExtension();
+            $filename =time().'.'.$extension;
+            Storage::disk('public')->put('images/banner',$img, $filename);
+            $tbl_banner->images = $filename;
+        }
         
-        return redirect('backend.banner');
+        $tbl_banner->title = $request->title;
+        $tbl_banner->keywords = $request->keywords;
+        $tbl_banner->save();
+        return redirect('backend/banner');
+    }
 
     public function store(request $request)
     {
@@ -49,6 +78,6 @@ class BannerController extends Controller
     public function destroy($id)
     {
         HomeBanner::find($id)->delete();
-        return redirect('backend.banner');
+        return redirect('backend/banner');
     }
 }

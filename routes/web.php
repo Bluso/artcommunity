@@ -24,6 +24,8 @@ Auth::routes();
             Route::get('/', 'Backend\BannerController@index');
             Route::get('add', 'Backend\BannerController@add');
             Route::post('add', 'Backend\BannerController@store');
+            Route::get('edit/{id}', 'Backend\BannerController@edit');
+            Route::post('edit', 'Backend\BannerController@storeedit');
             Route::get('delete/{id}', 'Backend\BannerController@destroy');
         });
     });
