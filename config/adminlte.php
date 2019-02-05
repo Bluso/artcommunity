@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'title' => 'AdminLTE 2',
+    'title' => 'Tfrd',
 
     'title_prefix' => '',
 
@@ -30,9 +30,9 @@ return [
     |
     */
 
-    'logo' => '<b>Admin</b>LTE',
+    'logo' => '<b>Admin </b>TFRD',
 
-    'logo_mini' => '<b>A</b>LT',
+    'logo_mini' => '<b>T</b>frd',
 
     /*
     |--------------------------------------------------------------------------
@@ -45,7 +45,7 @@ return [
     |
     */
 
-    'skin' => 'blue',
+    'skin' => 'yellow-light',
 
     /*
     |--------------------------------------------------------------------------
@@ -114,7 +114,7 @@ return [
             'url'         => 'backend/banner',
             'icon'        => 'image',
         ],
-        'ACCOUNT SETTINGS',
+        /*'ACCOUNT SETTINGS',
         [
             'text' => 'Profile',
             'url'  => 'admin/settings',
@@ -124,7 +124,7 @@ return [
             'text' => 'Change Password',
             'url'  => 'admin/settings',
             'icon' => 'lock',
-        ],
+        ],*/
         /*
         [
             'text'    => 'Multilevel',
