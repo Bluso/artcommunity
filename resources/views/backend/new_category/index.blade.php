@@ -3,8 +3,7 @@
 @section('title', 'TFRD')
 
 @section('content_header')
-    <h1 class="pull-left">News and activities</h1>
-    <div class="pull-right"><a class="d-block btn btn-info" href="{{url('backend/news/add')}}"><i class="fa fa-plus-square"></i> Add News</a></div>
+    <h1 class="pull-left">Categorires of News</h1>
     <div class="pull-right"><a class="d-block btn btn-info" href="{{url('backend/news/cate/add')}}"><i class="fa fa-plus-square"></i> Add Category</a></div>
 @stop
 
@@ -30,7 +29,7 @@
                     <small>Description: {{ $n->description }}<small><br>
                     <small>Keywords: {{ $n->keywords }}<small>
                 </td>
-                <td><img style="width:200px;" src="{{asset('storage/images/news')}}/{{$n->thumb}}" /></td>
+                <td><img style="width:200px;" src="{{asset('storage/images/cate_news')}}/{{$n->thumb}}" /></td>
                 <td>{{ $n->created_at }}</td>
                 <td>{{ $n->updated_at }}</td>
                 <td>

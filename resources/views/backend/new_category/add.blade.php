@@ -5,7 +5,7 @@
 <link rel="stylesheet" href="{{ asset('css/image_preview.css')}} ">
 @stop
 @section('content_header')
-<h1 class="pull-left">News and activities</h1>
+<h1 class="pull-left">Categorires of News</h1>
     <div class="pull-right"><a class="d-block btn btn-info" href="{{url('backend/news')}}"><i class="fa fa-undo"></i> Back</a></div>
 @stop
 
@@ -16,18 +16,9 @@
             <h3 class="box-title">Add Image Banner to Home Page</h3>
         </div><!-- /.box-header -->
         <!-- form start -->
-        {{ Form::open(array('url' => 'backend/news/add', 'method' => 'post','enctype' => 'multipart/form-data')) }}
+        {{ Form::open(array('url' => 'backend/news/cate/add', 'method' => 'post','enctype' => 'multipart/form-data')) }}
         {{csrf_field()}}
             <div class="box-body">
-                <div class="form-group">
-                    <label for="category">Category</label>
-                    <select class="form-control" name="cate_id" id="category">
-                    <option value="">Select news category</option>
-                    @foreach($category as $c)
-                        <option value="{{$c->id}}">{{$c->title}}</option>
-                    @endforeach
-                    </select>
-                </div>
                 <div class="form-group">
                     <label for="title">Title</label>
                     <input name="title" type="text" class="form-control" id="title" placeholder="Enter title of news" require>
@@ -47,14 +38,6 @@
                     </div>
                     <p class="help-block">Image type of png,jpg and max size is 2MB.</p>
                     <div class="preview" id="thumb-preview"></div>
-                </div>
-                <div class="form-group">
-                    <div class="custom-preview" style="width: 300px">
-                        <label class="custom-preview-label" for="">Image</label>
-                        <input class="custom-preview-input" type="file" name="image" id="image" preview="image-preview" require>
-                    </div>
-                    <p class="help-block">Image type of png,jpg and max size is 2MB.</p>
-                    <div class="preview" id="image-preview"></div>
                 </div>
                 <div class="form-group">
                     <label for="title">Detail</label>
