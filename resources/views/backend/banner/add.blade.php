@@ -2,6 +2,9 @@
 
 @section('title', 'TFRD')
 
+@section('css')
+<link rel="stylesheet" href="{{ asset('css/image_preview.css')}} ">
+@stop
 @section('content_header')
 <h1 class="pull-left">Banner</h1>
     <div class="pull-right"><a class="d-block btn btn-info" href="{{url('backend/banner')}}"><i class="fa fa-undo"></i> Back</a></div>
@@ -27,8 +30,12 @@
                 </div>
                 <div class="form-group">
                     <label for="image">Image</label>
-                    <input name="image" type="file" id="image" require>
+                    <div class="custom-preview" style="width: 300px">
+                        <label class="custom-preview-label" for="">Image</label>
+                        <input class="custom-preview-input" type="file" name="image" id="image" preview="image-preview" require>
+                    </div>
                     <p class="help-block">Image type of png,jpg and max size is 2MB.</p>
+                    <div class="preview" id="image-preview"></div>
                 </div>
             </div><!-- /.box-body -->
 
@@ -38,4 +45,7 @@
             {{ Form::close() }}
     </div>
 </div>
+@stop
+@section('js')
+<script src="{{ asset('js/image_preview.js') }}"></script>
 @stop
