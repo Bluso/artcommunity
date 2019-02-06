@@ -1,9 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Backend;
 
 use App\NewsActivitys;
+use App\CategoriesNewsActivitys;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Storage;
 
 class NewsActivityController extends Controller
 {
@@ -25,7 +28,8 @@ class NewsActivityController extends Controller
      */
     public function create()
     {
-        //
+        $cate = CategoriesNewsActivitys::all();
+        return view('backend.news.add')->withCategory($cate);
     }
 
     /**
@@ -36,7 +40,7 @@ class NewsActivityController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        dd($request->all());
     }
 
     /**
