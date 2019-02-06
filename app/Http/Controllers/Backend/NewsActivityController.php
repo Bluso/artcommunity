@@ -40,7 +40,30 @@ class NewsActivityController extends Controller
      */
     public function store(Request $request)
     {
-        dd($request->all());
+        $news = new NewsActivitys;
+        $news->cate_id = $request->cate_id;
+        $news->title = $request->title;
+        $news->description = $request->description;
+        $news->keywords = $request->keywords;
+        $news->detail = $request->detail;
+        if($request->hasfile('thumb')) 
+        { 
+            $file_thumb = $request->file('thumb');
+            $extension = $file_thumb->getClientOriginalExtension();
+            $filename_thumb =time().'.'.$extension;
+            Storage::disk('public')->putFileAs('images/news/thumb',$file_thumb, $filename_thumb);
+            $news->thumb = $filename_thumb;
+        }
+        if($request->hasfile('image')) 
+        { 
+            $file = $request->file('image');
+            $extension = $file->getClientOriginalExtension();
+            $filename =time().'.'.$extension;
+            Storage::disk('public')->putFileAs('images/news',$file, $filename);
+            $news->image = $filename;
+        }
+        $news->save();
+        return redirect('backend/news');
     }
 
     /**
