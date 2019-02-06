@@ -25,7 +25,7 @@
             <tr>
                 <th scope="row">{{$key+1}}</th>
                 <td>{{ $bn->title }}</td>
-                <td><img src="{{asset('storage/images/banner')}}/{{$bn->images}}" /></td>
+                <td><img style="width:200px;" src="{{asset('storage/images/banner')}}/{{$bn->images}}" /></td>
                 <td>{{ $bn->created_at }}</td>
                 <td>{{ $bn->updated_at }}</td>
                 <td>
