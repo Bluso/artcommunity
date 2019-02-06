@@ -114,6 +114,35 @@ return [
             'url'         => 'backend/banner',
             'icon'        => 'image',
         ],
+        [
+            'text'        => 'News and Activities',
+            'icon'        => 'newspaper-o',
+            'submenu' => [
+                [
+                    'text' => 'News and Activities',
+                    'url'  => 'backend/news',
+                ],
+                [
+                    'text' => 'Categories',
+                    'url'  => 'backend/news/cate',
+                ],
+            ]
+        ],
+        [
+            'text'        => 'Knowledge',
+            'url'         => 'backend/knowledge',
+            'icon'        => 'book',
+        ],
+        [
+            'text'        => 'Laws',
+            'url'         => 'backend/laws',
+            'icon'        => 'legal',
+        ],
+        [
+            'text'        => 'Contact',
+            'url'         => 'backend/contact',
+            'icon'        => 'envelope',
+        ],
         /*'ACCOUNT SETTINGS',
         [
             'text' => 'Profile',
