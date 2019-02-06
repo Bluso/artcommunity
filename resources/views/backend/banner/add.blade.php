@@ -6,7 +6,7 @@
 <link rel="stylesheet" href="{{ asset('css/image_preview.css')}} ">
 @stop
 @section('content_header')
-<h1 class="pull-left">Banner</h1>
+    <h1 class="pull-left">Banner</h1>
     <div class="pull-right"><a class="d-block btn btn-info" href="{{url('backend/banner')}}"><i class="fa fa-undo"></i> Back</a></div>
 @stop
 

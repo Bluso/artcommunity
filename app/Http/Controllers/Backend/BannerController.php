@@ -41,10 +41,9 @@ class BannerController extends Controller
         if($request->hasfile('image')) 
         { 
             $file = $request->file('image');
-            $img = Image::make($file->getRealPath());
             $extension = $file->getClientOriginalExtension();
             $filename =time().'.'.$extension;
-            Storage::disk('public')->put('images/banner',$img, $filename);
+            Storage::disk('public')->putFileAs('images/banner',$file, $filename);
             $tbl_banner->images = $filename;
         }
         
