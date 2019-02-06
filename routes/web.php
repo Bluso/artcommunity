@@ -30,6 +30,13 @@ Auth::routes();
         });
         Route::prefix('news')->group(function () {
             Route::get('/', 'Backend\NewsActivityController@index');
+            Route::prefix('cate')->group(function () {
+                Route::get('/', 'Backend\CateNewsActivityController@index');
+                Route::get('add', 'Backend\CateNewsActivityController@create');
+                Route::post('add', 'Backend\CateNewsActivityController@store');
+            });
+            Route::get('add', 'Backend\NewsActivityController@create');
+            Route::post('add', 'Backend\NewsActivityController@store');
         });
     });
 //});
