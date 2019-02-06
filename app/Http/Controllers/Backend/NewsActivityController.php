@@ -50,7 +50,7 @@ class NewsActivityController extends Controller
         { 
             $file_thumb = $request->file('thumb');
             $extension = $file_thumb->getClientOriginalExtension();
-            $filename_thumb =time().'.'.$extension;
+            $filename_thumb = time().'.'.$extension;
             Storage::disk('public')->putFileAs('images/news/thumb',$file_thumb, $filename_thumb);
             $news->thumb = $filename_thumb;
         }
@@ -106,8 +106,9 @@ class NewsActivityController extends Controller
      * @param  \App\NewsActivitys  $newsActivitys
      * @return \Illuminate\Http\Response
      */
-    public function destroy(NewsActivitys $newsActivitys)
+    public function destroy($id)
     {
-        //
+        NewsActivitys::find($id)->delete();
+        return redirect('backend/news');
     }
 }

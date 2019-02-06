@@ -33,8 +33,8 @@
                 <td>{{ $n->created_at }}</td>
                 <td>{{ $n->updated_at }}</td>
                 <td>
-                    <a type="button" class="btn btn-warning" href="{{url('backend/banner/edit/'.$n->id)}}" >Edit</a>
-                    <a type="button" class="btn btn-danger" href="{{url('backend/banner/delete/'.$n->id)}}">Delete</a>
+                    <a type="button" class="btn btn-warning" href="{{url('backend/news/cate/edit/'.$n->id)}}" >Edit</a>
+                    <a type="button" class="btn btn-danger" href="{{url('backend/news/cate/delete/'.$n->id)}}">Delete</a>
                 </td>
             </tr>
         @endforeach

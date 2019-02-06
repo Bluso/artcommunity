@@ -97,8 +97,9 @@ class CateNewsActivityController extends Controller
      * @param  \App\CategoriesNewsActivitys  $categoriesNewsActivitys
      * @return \Illuminate\Http\Response
      */
-    public function destroy(CategoriesNewsActivitys $categoriesNewsActivitys)
+    public function destroy($id)
     {
-        //
+        CategoriesNewsActivitys::find($id)->delete();
+        return redirect('backend/news/cate');
     }
 }
