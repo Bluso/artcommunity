@@ -28,5 +28,8 @@ Auth::routes();
             Route::post('edit', 'Backend\BannerController@storeedit');
             Route::get('delete/{id}', 'Backend\BannerController@destroy');
         });
+        Route::prefix('news')->group(function () {
+            Route::get('/', 'Backend\NewsActivityController@index');
+        });
     });
 //});
