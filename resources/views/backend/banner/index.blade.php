@@ -51,7 +51,29 @@
                             <td>{{ $n->updated_at }}</td>
                             <td>
                                 <a type="button" class="btn btn-warning" href="{{url('backend/banner/edit/'.$n->id)}}" >Edit</a>
-                                <a type="button" class="btn btn-danger" href="{{url('backend/banner/delete/'.$n->id)}}">Delete</a>
+                                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-delete-{{$n->id}}">
+                                    Delete
+                                </button>
+                                <div class="modal modal-danger fade" id="modal-delete-{{$n->id}}" style="display: none;">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">×</span></button>
+                                            <h4 class="modal-title">Delete Category News</h4>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p>ต้องการลบรูปนี้ใช่หรือไม่ ?</p>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-outline pull-left" data-dismiss="modal">Close</button>
+                                            <a type="button" class="btn btn-outline" href="{{url('backend/banner/delete/'.$n->id)}}">Confirm</a>
+                                        </div>
+                                        </div>
+                                        <!-- /.modal-content -->
+                                    </div>
+                                    <!-- /.modal-dialog -->
+                                </div>
                             </td>
                         </tr>
                         @endforeach
