@@ -83,9 +83,11 @@ class NewsActivityController extends Controller
      * @param  \App\NewsActivitys  $newsActivitys
      * @return \Illuminate\Http\Response
      */
-    public function edit(NewsActivitys $newsActivitys)
+    public function edit($id)
     {
-        //
+        $news = NewsActivitys::find($id);
+        $cate = CategoriesNewsActivitys::all();
+        return view('backend.news.edit')->withNews($news)->withCategory($cate);
     }
 
     /**
@@ -95,9 +97,39 @@ class NewsActivityController extends Controller
      * @param  \App\NewsActivitys  $newsActivitys
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, NewsActivitys $newsActivitys)
+    public function update(Request $request, $id)
     {
-        //
+        $validatedData = $request->validate([
+            'title' => 'required|max:255',
+            'description' => 'required|max:255',
+            'image' => 'image|mimes:jpeg,png,jpg|max:2048',
+        ]);
+        $tbl_news = NewsActivitys::find($id);
+        
+        if($request->hasfile('thumb')) 
+        { 
+            $file_thumb = $request->file('thumb');
+            $extension_thumb = $file_thumb->getClientOriginalExtension();
+            $filename_thumb =time().'.'.$extension_thumb;
+            Storage::disk('public')->putFileAs('images/news/thumb',$file_thumb, $filename_thumb);
+            $tbl_news->thumb = $filename_thumb;
+        }
+        if($request->hasfile('image')) 
+        { 
+            $file = $request->file('image');
+            $extension = $file->getClientOriginalExtension();
+            $filename =time().'.'.$extension;
+            Storage::disk('public')->putFileAs('images/news',$file, $filename);
+            $tbl_news->image = $filename;
+        }
+        
+        $tbl_news->title = $request->title;
+        $tbl_news->description = $request->description;
+        $tbl_news->cate_id = $request->cate_id;
+        $tbl_news->keywords = $request->keywords;
+        $tbl_news->detail = $request->detail;
+        $tbl_news->save();
+        return redirect('backend/news');
     }
 
     /**
@@ -110,5 +142,13 @@ class NewsActivityController extends Controller
     {
         NewsActivitys::find($id)->delete();
         return redirect('backend/news');
+    }
+
+    public function upload_image(Request $request)
+    {
+        $file = $request->file('file');
+        $file_name   = time() . '-' . $file->getClientOriginalName();
+        Storage::disk('public')->putFileAs('news/detail', $file , $file_name);
+        echo url('/storage/news/detail/'.$file_name);
     }
 }

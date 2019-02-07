@@ -74,9 +74,10 @@ class CateNewsActivityController extends Controller
      * @param  \App\CategoriesNewsActivitys  $categoriesNewsActivitys
      * @return \Illuminate\Http\Response
      */
-    public function edit(CategoriesNewsActivitys $categoriesNewsActivitys)
+    public function edit($id)
     {
-        //
+        $cate = CategoriesNewsActivitys::find($id);
+        return view('backend.new_category.edit')->withCategory($cate);
     }
 
     /**
@@ -86,9 +87,28 @@ class CateNewsActivityController extends Controller
      * @param  \App\CategoriesNewsActivitys  $categoriesNewsActivitys
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, CategoriesNewsActivitys $categoriesNewsActivitys)
+    public function update(Request $request, $id)
     {
-        //
+        $validatedData = $request->validate([
+            'title' => 'required|string|max:255',
+            'description' => 'required|string|max:255',
+            'image' => 'image|mimes:jpeg,png,jpg|max:2048',
+        ]);
+        $tbl_news_cate = CategoriesNewsActivitys::find($id);
+        if($request->hasfile('thumb')) 
+        { 
+            $file_thumb = $request->file('thumb');
+            $extension_thumb = $file_thumb->getClientOriginalExtension();
+            $filename_thumb =time().'.'.$extension_thumb;
+            Storage::disk('public')->putFileAs('images/cate_news',$file_thumb, $filename_thumb);
+            $tbl_news_cate->thumb = $filename_thumb;
+        }
+        $tbl_news_cate->title = $request->title;
+        $tbl_news_cate->description = $request->description;
+        $tbl_news_cate->keywords = $request->keywords;
+        $tbl_news_cate->detail = $request->detail;
+        $tbl_news_cate->save();
+        return redirect('backend/news/cate');
     }
 
     /**
@@ -101,5 +121,13 @@ class CateNewsActivityController extends Controller
     {
         CategoriesNewsActivitys::find($id)->delete();
         return redirect('backend/news/cate');
+    }
+
+    public function upload_image(Request $request)
+    {
+        $file = $request->file('file');
+        $file_name   = time() . '-' . $file->getClientOriginalName();
+        Storage::disk('public')->putFileAs('category/news/detail', $file , $file_name);
+        echo url('/storage/category/news/detail/'.$file_name);
     }
 }

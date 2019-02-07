@@ -31,7 +31,8 @@
                 <table id="news-table" class="table table-bordered table-striped dataTable" role="grid" aria-describedby="example1_info">
                     <thead>
                         <tr role="row">
-                            <th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-sort="ascending" style="width: 283px;">Title</th>
+                            <th class="sorting_desc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-sort="ascending">#</th>
+                            <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" style="width: 283px;">Title</th>
                             <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" style="width: 359px;">Thumb</th>
                             <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" style="width: 320px;">Created at</th>
                             <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" style="width: 243px;">Updated at</th>
@@ -42,6 +43,9 @@
                         @foreach($news as $key => $n)
                         <tr role="row" class="odd">
                             <td class="sorting_1">
+                            {{ $key+1 }}
+                            </td>
+                            <td>
                             <dl>
                                 <dt>Title</dt>
                                 <dd>{{ $n->title }}</dd>
@@ -51,12 +55,34 @@
                                 <dd>{{ $n->description }}</dd>
                             </dl>
                             </td>
-                            <td><img src="{{asset('storage/images/news')}}/{{$n->thumb}}" /></td>
+                            <td><img src="{{asset('storage/images/news/thumb')}}/{{$n->thumb}}" /></td>
                             <td>{{ $n->created_at }}</td>
                             <td>{{ $n->updated_at }}</td>
                             <td>
-                            <a type="button" class="btn btn-warning" href="{{url('backend/news/edit/'.$n->id)}}" >Edit</a>
-                            <a type="button" class="btn btn-danger" href="{{url('backend/news/delete/'.$n->id)}}">Delete</a>
+                                <a type="button" class="btn btn-warning" href="{{url('backend/news/edit/'.$n->id)}}" >Edit</a>
+                                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-delete-{{$n->id}}">
+                                    Delete
+                                </button>
+                                <div class="modal modal-danger fade" id="modal-delete-{{$n->id}}" style="display: none;">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">×</span></button>
+                                            <h4 class="modal-title">Delete News</h4>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p>ต้องการลบข่าวนี้ใช่หรือไม่ ?</p>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-outline pull-left" data-dismiss="modal">Close</button>
+                                            <a type="button" class="btn btn-outline" href="{{url('backend/news/delete/'.$n->id)}}">Confirm</a>
+                                        </div>
+                                        </div>
+                                        <!-- /.modal-content -->
+                                    </div>
+                                    <!-- /.modal-dialog -->
+                                </div>
                             </td>
                         </tr>
                         @endforeach
@@ -82,6 +108,7 @@
 <script>
   $(function () {
     $('#news-table').DataTable({
+      "order": [[ 0, 'desc' ]],
       "paging": true,
       "lengthChange": true,
       "searching": true,

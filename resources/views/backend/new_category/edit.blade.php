@@ -17,22 +17,23 @@
             <h3 class="box-title">Add Image Banner to Home Page</h3>
         </div><!-- /.box-header -->
         <!-- form start -->
-        {{ Form::open(array('url' => 'backend/news/cate/add', 'method' => 'post','enctype' => 'multipart/form-data')) }}
+        {{ Form::open(array('url' => 'backend/news/cate/edit/'.$category->id, 'method' => 'post','enctype' => 'multipart/form-data')) }}
         {{csrf_field()}}
             <div class="box-body">
                 <div class="form-group">
                     <label for="title">Title</label>
-                    <input name="title" type="text" class="form-control" id="title" placeholder="Enter title of news" require>
+                    <input name="title" type="text" class="form-control" id="title" value="{{$category->title}}" require>
                 </div>
                 <div class="form-group">
                     <label for="title">Description</label>
-                    <input name="description" type="text" class="form-control" id="description" placeholder="Enter title of description" require>
+                    <input name="description" type="text" class="form-control" id="description" value="{{$category->description}}" require>
                 </div>
                 <div class="form-group">
                     <label for="keywords">Keywords</label>
-                    <input name="keywords" type="text" class="form-control" id="keyword" placeholder="images,banner,tfrd,มปอ,...">
+                    <input name="keywords" type="text" class="form-control" id="keyword" value="{{$category->keywords}}">
                 </div>
                 <div class="form-group">
+                    <img style="margin-bottom:15px;" src="{{asset('storage/images/cate_news')}}/{{$category->thumb}}" />
                     <div class="custom-preview" style="width: 300px">
                         <label class="custom-preview-label" for="">Thumb</label>
                         <input class="custom-preview-input" type="file" name="thumb" id="thumb" preview="thumb-preview" require>
@@ -42,7 +43,9 @@
                 </div>
                 <div class="form-group">
                     <label for="title">Detail</label>
-                    <textarea id="detail" name="detail" placeholder="Enter text ..." style="styles to copy to the iframe"></textarea>
+                    <textarea id="detail" name="detail">
+                        {!!$category->detail ?? ''!!}
+                    </textarea>
                 </div>
             </div><!-- /.box-body -->
 
@@ -88,6 +91,5 @@
             }
         });
         };
-
 </script>
 @stop
