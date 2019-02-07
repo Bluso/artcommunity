@@ -30,15 +30,16 @@ Auth::routes();
         });
         Route::prefix('news')->group(function () {
             Route::get('/', 'Backend\NewsActivityController@index');
+            Route::get('add', 'Backend\NewsActivityController@create');
+            Route::post('add', 'Backend\NewsActivityController@store');
+            Route::get('delete/{id}', 'Backend\NewsActivityController@destroy');
             Route::prefix('cate')->group(function () {
                 Route::get('/', 'Backend\CateNewsActivityController@index');
                 Route::get('add', 'Backend\CateNewsActivityController@create');
                 Route::post('add', 'Backend\CateNewsActivityController@store');
                 Route::get('delete/{id}', 'Backend\CateNewsActivityController@destroy');
             });
-            Route::get('add', 'Backend\NewsActivityController@create');
-            Route::post('add', 'Backend\NewsActivityController@store');
-            Route::get('delete/{id}', 'Backend\NewsActivityController@destroy');
+            
         });
     });
 //});
