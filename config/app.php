@@ -177,6 +177,7 @@ return [
         App\Providers\RouteServiceProvider::class,
         JeroenNoten\LaravelAdminLte\ServiceProvider::class,
         'Intervention\Image\ImageServiceProvider',
+        Unisharp\Ckeditor\ServiceProvider::class,
 
     ],
 

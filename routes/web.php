@@ -28,5 +28,24 @@ Auth::routes();
             Route::post('edit', 'Backend\BannerController@storeedit');
             Route::get('delete/{id}', 'Backend\BannerController@destroy');
         });
+        Route::prefix('news')->group(function () {
+            Route::post('upload/image', 'Backend\NewsActivityController@upload_image');
+            Route::get('/', 'Backend\NewsActivityController@index');
+            Route::get('add', 'Backend\NewsActivityController@create');
+            Route::post('add', 'Backend\NewsActivityController@store');
+            Route::get('edit/{id}', 'Backend\NewsActivityController@edit');
+            Route::post('edit/{id}', 'Backend\NewsActivityController@update');
+            Route::get('delete/{id}', 'Backend\NewsActivityController@destroy');
+            Route::prefix('cate')->group(function () {
+                Route::post('upload/image', 'Backend\CateNewsActivityController@upload_image');
+                Route::get('/', 'Backend\CateNewsActivityController@index');
+                Route::get('add', 'Backend\CateNewsActivityController@create');
+                Route::post('add', 'Backend\CateNewsActivityController@store');
+                Route::get('edit/{id}', 'Backend\CateNewsActivityController@edit');
+                Route::post('edit/{id}', 'Backend\CateNewsActivityController@update');
+                Route::get('delete/{id}', 'Backend\CateNewsActivityController@destroy');
+            });
+            
+        });
     });
 //});
