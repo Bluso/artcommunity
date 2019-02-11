@@ -14,7 +14,7 @@
 <div class="pull-left col-xs-12" style="margin-top:15px;">
     <div class="box box-warning">
         <div class="box-header">
-            <h3 class="box-title">Add Image Banner to Home Page</h3>
+            <h3 class="box-title">Edit News</h3>
         </div><!-- /.box-header -->
         <!-- form start -->
         {{ Form::open(array('url' => 'backend/news/edit/'.$news->id, 'method' => 'post','enctype' => 'multipart/form-data')) }}
