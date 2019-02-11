@@ -47,6 +47,15 @@ Auth::routes();
             });
             
         });
+        Route::prefix('knowledge')->group(function () {
+            Route::post('upload/image', 'Backend\KnowledgeController@upload_image');
+            Route::get('/', 'Backend\KnowledgeController@index');
+            Route::get('add', 'Backend\KnowledgeController@create');
+            Route::post('add', 'Backend\KnowledgeController@store');
+            Route::get('edit/{id}', 'Backend\KnowledgeController@edit');
+            Route::post('edit/{id}', 'Backend\KnowledgeController@update');
+            Route::get('delete/{id}', 'Backend\KnowledgeController@destroy');
+        });
         Route::prefix('laws')->group(function () {
             Route::post('upload/image', 'Backend\NewsActivityController@upload_image');
             Route::get('/', 'Backend\LawsController@index');
