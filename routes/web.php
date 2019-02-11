@@ -47,5 +47,9 @@ Auth::routes();
             });
             
         });
+        Route::prefix('contact')->group(function () {
+            Route::get('/', 'Backend\ContactDataController@index');
+            Route::post('save', 'Backend\ContactDataController@store'); 
+        });
     });
 //});
