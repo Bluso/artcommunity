@@ -2,8 +2,8 @@
 
 @section('title', 'TFRD')
 @section('css')
-<link rel="stylesheet" href="{{ asset('css/image_preview.css')}} ">
 <link rel="stylesheet" href="{{ asset('vendor/summernote/summernote-bs4.css') }}">
+@include('backend.layouts.css_fileinput')
 @stop
 @section('content_header')
 <h1 class="pull-left">Categorires of News</h1>
@@ -33,12 +33,9 @@
                     <input name="keywords" type="text" class="form-control" id="keyword" placeholder="images,banner,tfrd,มปอ,...">
                 </div>
                 <div class="form-group">
-                    <div class="custom-preview" style="width: 300px">
-                        <label class="custom-preview-label" for="">Thumb</label>
-                        <input class="custom-preview-input" type="file" name="thumb" id="thumb" preview="thumb-preview" require>
-                    </div>
+                    <label style="width:100%" for="">Thumb</label>
+                    <input class="file" type="file" name="thumb" id="thumb" data-preview-file-type="text" required>
                     <p class="help-block">Image type of png,jpg and max size is 2MB.</p>
-                    <div class="preview" id="thumb-preview"></div>
                 </div>
                 <div class="form-group">
                     <label for="title">Detail</label>
@@ -54,7 +51,6 @@
 </div>
 @stop
 @section('js')
-<script src="{{ asset('js/image_preview.js') }}"></script>
 <script src="{{ asset('vendor/summernote/summernote-bs4.js') }}"></script>
 <script>
     $("#detail").summernote({
@@ -90,4 +86,5 @@
         };
 
 </script>
+@include('backend.layouts.js_fileinput')
 @stop
