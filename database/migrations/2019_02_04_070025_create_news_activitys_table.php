@@ -21,7 +21,8 @@ class CreateNewsActivitysTable extends Migration
             $table->text('detail');
             $table->string('thumb');
             $table->string('image')->nullable();
-            $table->string('keywords')->nullable();
+            $table->text('keywords')->nullable();
+            $table->text('seo')->nullable();
             $table->string('file')->nullable();
             $table->timestamps();
             $table->softDeletes();

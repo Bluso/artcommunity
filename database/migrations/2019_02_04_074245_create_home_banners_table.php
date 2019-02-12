@@ -16,8 +16,10 @@ class CreateHomeBannersTable extends Migration
         Schema::create('home_banners', function (Blueprint $table) {
             $table->increments('id');
             $table->string('title')->nullable();
-            $table->string('images');
-            $table->string('keywords')->nullable();
+            $table->string('image');
+            $table->text('keywords')->nullable();
+            $table->text('seo')->nullable();
+            $table->string('url')->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

@@ -18,7 +18,8 @@ class CreateCategoriesRelatedLawsTable extends Migration
             $table->string('title');
             $table->string('description')->nullable();
             $table->text('detail')->nullable();
-            $table->string('keywords')->nullable();
+            $table->text('keywords')->nullable();
+            $table->text('seo')->nullable();
             $table->string('thumb')->nullable();
             $table->string('file')->nullable();
             $table->timestamps();
