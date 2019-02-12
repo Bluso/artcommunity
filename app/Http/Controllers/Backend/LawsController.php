@@ -46,6 +46,7 @@ class LawsController extends Controller
         $laws->description = $request->description;
         $laws->keywords = $request->keywords;
         $laws->detail = $request->detail;
+        $laws->seo = $request->keywords.','.$request->title.','.$request->description; 
         if($request->hasfile('thumb')) 
         { 
             $file_thumb = $request->file('thumb');
@@ -128,6 +129,7 @@ class LawsController extends Controller
         $tbl_laws->law_cate_id = $request->law_cate_id;
         $tbl_laws->keywords = $request->keywords;
         $tbl_laws->detail = $request->detail;
+        $tbl_laws->seo = $request->keywords.','.$request->title.','.$request->description; 
         $tbl_laws->save();
         return redirect('backend/laws');
     }
