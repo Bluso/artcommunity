@@ -45,6 +45,7 @@ class CateNewsActivityController extends Controller
         $cate->description = $request->description;
         $cate->keywords = $request->keywords;
         $cate->detail = $request->detail;
+        $cate->seo = $request->title.','.$request->keywords.','.$request->description;
         if($request->hasfile('thumb')) 
         { 
             $file = $request->file('thumb');
@@ -107,6 +108,7 @@ class CateNewsActivityController extends Controller
         $tbl_news_cate->description = $request->description;
         $tbl_news_cate->keywords = $request->keywords;
         $tbl_news_cate->detail = $request->detail;
+        $tbl_news_cate->seo = $request->title.','.$request->keywords.','.$request->description;
         $tbl_news_cate->save();
         return redirect('backend/news/cate');
     }
