@@ -44,6 +44,7 @@ class KnowledgeController extends Controller
         $knowledge->description = $request->description;
         $knowledge->keywords = $request->keywords;
         $knowledge->detail = $request->detail;
+        $knowledge->seo = $request->keywords.','.$request->title.','.$request->description; 
         if($request->hasfile('thumb')) 
         { 
             $file_thumb = $request->file('thumb');
@@ -140,6 +141,7 @@ class KnowledgeController extends Controller
         $tbl_knowledge->description = $request->description;
         $tbl_knowledge->keywords = $request->keywords;
         $tbl_knowledge->detail = $request->detail;
+        $tbl_knowledge->seo = $request->keywords.','.$request->title.','.$request->description; 
         $tbl_knowledge->save();
         return redirect('backend/knowledge');
     }
