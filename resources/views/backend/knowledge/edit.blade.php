@@ -45,7 +45,7 @@
                 </div>
                 <div class="form-group">
                     <img style="margin-bottom:15px;max-width:200px;border: solid thin #ddd;" src="{{asset('storage/images/knowledge')}}/{{$knowledge->image}}" />
-                    <label style="width:100%" for="">Image</label>
+                    <label for="">Image</label>
                     <input class="file" type="file" name="image" id="image" data-preview-file-type="text" required>
                     <p class="help-block">Image type of png,jpg and max size is 2MB.</p>
                 </div>
