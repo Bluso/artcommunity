@@ -44,10 +44,11 @@ class BannerController extends Controller
             $extension = $file->getClientOriginalExtension();
             $filename =time().'.'.$extension;
             Storage::disk('public')->putFileAs('images/banner',$file, $filename);
-            $tbl_banner->images = $filename;
+            $tbl_banner->image = $filename;
         }
         
         $tbl_banner->title = $request->title;
+        $tbl_banner->url = $request->url;
         $tbl_banner->keywords = $request->keywords;
         $tbl_banner->save();
         return redirect('backend/banner');
@@ -67,8 +68,9 @@ class BannerController extends Controller
             Storage::disk('public')->putFileAs('images/banner/',$file,$filename);
         }
         $tbl_banner = new HomeBanner;
-        $tbl_banner->images = $filename;
+        $tbl_banner->image = $filename;
         $tbl_banner->title = $request->title;
+        $tbl_banner->url = $request->url;
         $tbl_banner->keywords = $request->keywords;
         $tbl_banner->save();
         return redirect('backend/banner');

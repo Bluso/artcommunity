@@ -24,12 +24,16 @@
                     <input name="title" type="text" class="form-control" id="title" value="{{$banner->title}}" require>
                 </div>
                 <div class="form-group">
+                    <label for="keywords">URL</label>
+                    <input name="url" type="text" class="form-control" id="url" value="{{$banner->url}}">
+                </div>
+                <div class="form-group">
                     <label for="keywords">Keywords</label>
                     <input name="keywords" type="text" class="form-control" id="keyword"  value="{{$banner->keywords}}" placeholder="images,banner,tfrd,มปอ,...">
                 </div>
                 <div class="form-group">
                     <label for="image">Image</label>
-                    <img style="margin-bottom:15px;" src="{{asset('storage/images/banner')}}/{{$banner->images}}" />
+                    <img style="margin-bottom:15px;" src="{{asset('storage/images/banner')}}/{{$banner->image}}" />
                     <div class="custom-preview" style="width: 300px">
                         <label class="custom-preview-label" for="">Image</label>
                         <input class="custom-preview-input" type="file" name="image" id="image" preview="image-preview" require>

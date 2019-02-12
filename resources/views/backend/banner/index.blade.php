@@ -44,9 +44,11 @@
                                 <dd>{{ $n->keywords }}</dd>
                                 <dt>Description</dt>
                                 <dd>{{ $n->description }}</dd>
+                                <dt>URL</dt>
+                                <dd>{{ $n->url }}</dd>
                             </dl>
                             </td>
-                            <td><img style="width:200px;" src="{{asset('storage/images/banner')}}/{{$n->images}}" /></td>
+                            <td><img style="width:200px;" src="{{asset('storage/images/banner')}}/{{$n->image}}" /></td>
                             <td>{{ $n->created_at }}</td>
                             <td>{{ $n->updated_at }}</td>
                             <td>

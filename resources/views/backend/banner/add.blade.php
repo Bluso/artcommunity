@@ -25,6 +25,10 @@
                     <input name="title" type="text" class="form-control" id="title" placeholder="Enter title of banner" require>
                 </div>
                 <div class="form-group">
+                    <label for="keywords">URL</label>
+                    <input name="url" type="text" class="form-control" id="url" placeholder="https://www.google.com">
+                </div>
+                <div class="form-group">
                     <label for="keywords">Keywords</label>
                     <input name="keywords" type="text" class="form-control" id="keyword" placeholder="images,banner,tfrd,มปอ,...">
                 </div>
