@@ -4,10 +4,7 @@
 @section('css')
 <link rel="stylesheet" href="{{ asset('css/image_preview.css')}}">
 <link rel="stylesheet" href="{{ asset('vendor/summernote/summernote-bs4.css') }}">
-<link  rel="stylesheet" src="{{ asset('vendor/bootstrap-fileinput/fileinput.min.css') }}">
-<style>
-.file-caption-name{border:none;width: 90%;}
-</style>
+@include('backend.layouts.css_fileinput')
 @stop
 @section('content_header')
 <h1 class="pull-left">Knowledge</h1>
@@ -67,13 +64,6 @@
 @section('js')
 <script src="{{ asset('js/image_preview.js') }}"></script>
 <script src="{{ asset('vendor/summernote/summernote-bs4.js') }}"></script>
-<script src="{{ asset('vendor/bootstrap-fileinput/js/plugins/piexif.min.js') }}"></script>
-<script src="{{ asset('vendor/bootstrap-fileinput/js/plugins/sortable.min.js') }}"></script>
-<script src="{{ asset('vendor/bootstrap-fileinput/js/plugins/purify.min.js') }}"></script>
-<script src="{{ asset('vendor/bootstrap-fileinput/js/plugins/purify.min.js') }}"></script>
-<script src="{{ asset('vendor/bootstrap-fileinput/js/fileinput.min.js') }}"></script>
-<script src="{{ asset('vendor/bootstrap-fileinput/themes/fa/theme.js') }}"></script>
-<script src="{{ asset('vendor/bootstrap-fileinput/js/locales/th.js') }}"></script>
 <script>
     $("#detail").summernote({
         placeholder: 'Detail...',
@@ -106,8 +96,6 @@
             }
         });
         };
-        $("#image").fileinput({'showUpload':false, 'previewFileType':'any'});
-        $("#thumb").fileinput({'showUpload':false, 'previewFileType':'any'});
-        $("#file").fileinput({'showUpload':false, 'previewFileType':'any'});
 </script>
+@include('backend.layouts.js_fileinput')
 @stop
