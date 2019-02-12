@@ -29,7 +29,7 @@
                 </div>
                 <div class="form-group">
                     <label for="image">Image</label>
-                    <img style="margin-bottom:15px;" src="{{asset('storage/images/banner')}}/{{$banner->images}}" />
+                    <img style="margin-bottom:15px;" src="{{asset('storage/images/banner')}}/{{$banner->image}}" />
                     <div class="custom-preview" style="width: 300px">
                         <label class="custom-preview-label" for="">Image</label>
                         <input class="custom-preview-input" type="file" name="image" id="image" preview="image-preview" require>
