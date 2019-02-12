@@ -39,6 +39,7 @@ class KnowledgeController extends Controller
      */
     public function store(Request $request)
     {
+        
         $knowledge = new KnowledgeResearch;
         $knowledge->title = $request->title;
         $knowledge->description = $request->description;
@@ -67,7 +68,7 @@ class KnowledgeController extends Controller
             $extension = $file_pdf->getClientOriginalExtension();
             $filename_pdf = time().'.'.$extension;
             Storage::disk('public')->putFileAs('images/knowledge/pdf',$file, $filename_pdf);
-            $tbl_knowledge->file = $filename_pdf;
+            $knowledge->file = $filename_pdf;
         }
         $knowledge->save();
         return redirect('backend/knowledge');

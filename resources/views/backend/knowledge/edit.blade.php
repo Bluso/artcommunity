@@ -5,6 +5,9 @@
 <link rel="stylesheet" href="{{ asset('css/image_preview.css')}}">
 <link rel="stylesheet" href="{{ asset('vendor/summernote/summernote-bs4.css') }}">
 <link  rel="stylesheet" src="{{ asset('vendor/bootstrap-fileinput/fileinput.min.css') }}">
+<style>
+.file-caption-name{border:none;width: 90%;}
+</style>
 @stop
 @section('content_header')
 <h1 class="pull-left">knowledge</h1>
@@ -35,26 +38,21 @@
                     <input name="keywords" type="text" class="form-control" id="keyword" value="{{ $knowledge->keywords }}">
                 </div>
                 <div class="form-group">
-                    <img style="margin-bottom:15px;max-width:200px;" src="{{asset('storage/images/knowledge/thumb')}}/{{$knowledge->thumb}}" />
-                    <div class="custom-preview" style="width: 300px">
-                        <label class="custom-preview-label" for="">PDF Cover</label>
-                        <input class="custom-preview-input" type="file" name="thumb" id="thumb" preview="thumb-preview" >
-                    </div>
+                    <img style="margin-bottom:15px;max-width:200px;border: solid thin #ddd;" src="{{asset('storage/images/knowledge/thumb')}}/{{$knowledge->thumb}}" />
+                    <label style="width:100%" for="">PDF Cover</label>
+                    <input class="file" type="file" name="thumb" id="thumb" data-preview-file-type="text" required>
                     <p class="help-block">Image type of png,jpg and max size is 2MB.</p>
-                    <div class="preview" id="thumb-preview"></div>
                 </div>
                 <div class="form-group">
-                    <img style="margin-bottom:15px;max-width:200px;" src="{{asset('storage/images/knowledge')}}/{{$knowledge->image}}" />
-                    <div class="custom-preview" style="width: 300px">
-                        <label class="custom-preview-label" for="">Image</label>
-                        <input class="custom-preview-input" type="file" name="image" id="image" preview="image-preview">
-                    </div>
+                    <img style="margin-bottom:15px;max-width:200px;border: solid thin #ddd;" src="{{asset('storage/images/knowledge')}}/{{$knowledge->image}}" />
+                    <label style="width:100%" for="">Image</label>
+                    <input class="file" type="file" name="image" id="image" data-preview-file-type="text" required>
                     <p class="help-block">Image type of png,jpg and max size is 2MB.</p>
-                    <div class="preview" id="image-preview"></div>
                 </div>
                 <div class="form-group">
-                    <label for="">File Pdf</label>
-                    <input class="file" type="file" name="file" id="file" data-preview-file-type="text" >
+                    <label for="">File Pdf : </label>
+                    <a href="{{asset('storage/images/knowledge/pdf')}}/{{$knowledge->file}}">{{asset('storage/images/knowledge/pdf')}}/{{$knowledge->file}}</a>
+                    <input class="file" type="file" name="file" id="file" data-preview-file-type="text" style="border:none;">
                     <p class="help-block">File type of pdf.</p>
                 </div>
                 <div class="form-group">

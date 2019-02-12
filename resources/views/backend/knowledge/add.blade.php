@@ -5,6 +5,9 @@
 <link rel="stylesheet" href="{{ asset('css/image_preview.css')}}">
 <link rel="stylesheet" href="{{ asset('vendor/summernote/summernote-bs4.css') }}">
 <link  rel="stylesheet" src="{{ asset('vendor/bootstrap-fileinput/fileinput.min.css') }}">
+<style>
+.file-caption-name{border:none;width: 90%;}
+</style>
 @stop
 @section('content_header')
 <h1 class="pull-left">Knowledge</h1>
@@ -34,28 +37,20 @@
                     <input name="keywords" type="text" class="form-control" id="keyword" placeholder="images,banner,tfrd,มปอ,...">
                 </div>
                 <div class="form-group">
-                    <div class="custom-preview" style="width: 300px">
-                        <label class="custom-preview-label" for="">PDF Cover</label>
-                        <input class="custom-preview-input" type="file" name="thumb" id="thumb" preview="thumb-preview" required>
-                    </div>
+                    <label for="">PDF Cover</label>
+                    <input class="file" type="file" name="thumb" id="thumb" data-preview-file-type="text" required>
                     <p class="help-block">Image type of png,jpg and max size is 2MB.</p>
-                    <div class="preview" id="thumb-preview"></div>
                 </div>
                 <div class="form-group">
-                    <div class="custom-preview" style="width: 300px">
-                        <label class="custom-preview-label" for="">Image</label>
-                        <input class="custom-preview-input" type="file" name="image" id="image" preview="image-preview" required>
-                    </div>
+                    <label for="">Image</label>
+                    <input class="file" type="file" name="image" id="image" data-preview-file-type="text" required>
                     <p class="help-block">Image type of png,jpg and max size is 2MB.</p>
-                    <div class="preview" id="image-preview"></div>
                 </div>
-                <!--
                 <div class="form-group">
                     <label for="">File Pdf</label>
-                    <input class="file" type="file" name="file" id="file" data-preview-file-type="text" >
+                    <input class="file" type="file" name="file" id="file" data-preview-file-type="text">
                     <p class="help-block">File type of pdf.</p>
                 </div>
--->
                 <div class="form-group">
                     <label for="title">Detail</label>
                     <textarea id="detail" name="detail" placeholder="Enter text ..." style="styles to copy to the iframe"></textarea>
@@ -111,6 +106,8 @@
             }
         });
         };
+        $("#image").fileinput({'showUpload':false, 'previewFileType':'any'});
+        $("#thumb").fileinput({'showUpload':false, 'previewFileType':'any'});
         $("#file").fileinput({'showUpload':false, 'previewFileType':'any'});
 </script>
 @stop
