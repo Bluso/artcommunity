@@ -2,7 +2,6 @@
 
 @section('title', 'TFRD')
 @section('css')
-<link rel="stylesheet" href="{{ asset('css/image_preview.css')}}">
 <link rel="stylesheet" href="{{ asset('vendor/summernote/summernote-bs4.css') }}">
 @include('backend.layouts.css_fileinput')
 @stop
@@ -67,7 +66,6 @@
 </div>
 @stop
 @section('js')
-<script src="{{ asset('js/image_preview.js') }}"></script>
 <script src="{{ asset('vendor/summernote/summernote-bs4.js') }}"></script>
 <script>
         $("#detail").summernote({
