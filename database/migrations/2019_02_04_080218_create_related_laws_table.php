@@ -21,7 +21,8 @@ class CreateRelatedLawsTable extends Migration
             $table->text('detail')->nullable();
             $table->string('thumb')->nullable();
             $table->string('image')->nullable();
-            $table->string('keywords')->nullable();
+            $table->text('keywords')->nullable();
+            $table->text('seo')->nullable();
             $table->string('file')->nullable();
             $table->timestamps();
             $table->softDeletes();
