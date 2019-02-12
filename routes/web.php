@@ -11,12 +11,9 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'HomeController@index');
 
 Auth::routes();
-
 //Route::middleware(['auth'])->group(function () {
     Route::prefix('backend')->group(function () {
         Route::get('/', 'Backend\HomeController@index');
