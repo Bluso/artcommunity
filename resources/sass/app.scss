@@ -1,6 +1,9 @@
 
+@import "mixins";
+
 // Fonts
 @import url('https://fonts.googleapis.com/css?family=Nunito');
+@import 'font';
 
 // Variables
 @import 'variables';
@@ -12,4 +15,8 @@
   background-color: #fff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
 }
+@import '~slick-carousel/slick/slick.scss';
+@import '~slick-carousel/slick/slick-theme.scss';
+
 @import 'main';
+@import 'home';
