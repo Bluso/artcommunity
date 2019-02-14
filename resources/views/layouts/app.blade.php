@@ -18,9 +18,9 @@
         <header class="menu">
             @include('layouts.menu')
         </header>
-        <section class="content">
+        <main class="content">
             @yield('content')
-        </section>
+        </main>
         <footer>
             @include('layouts.footer')
         </footer>

@@ -1,6 +1,26 @@
+body{
+    background:$white;
+    font-size: 10px;
+}
+nav{
+    ul{
+        top: calc(50% - 1.3rem);
+        li{
+            a{
+                font-family: 'prompt';
+                font-weight: 600;
+                color:$blackgrey !important;
+                font-size: 1.3rem;
+            }
+        }
+    }
+}
+main{
+    background:$white;
+}
 footer{
     background:#231f20;
-    border-top:solid 4px #f36f21;
+    border-top:solid 4px $orange;
     padding-top:70px;
     h2{
         color:$white;
@@ -8,7 +28,7 @@ footer{
     a{
         color:$mediumgrey;
     }
-    address{
-
-    }
+}
+.slick-slide{
+    height:auto !important;
 }

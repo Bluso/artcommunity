@@ -8,15 +8,37 @@ $font-size-base: 0.9rem;
 $line-height-base: 1.6;
 
 // Colors
+$blackgrey: #231f20;
 $white: #fff;
 $blue: #3490dc;
 $indigo: #6574cd;
 $purple: #9561e2;
 $pink: #f66D9b;
 $red: #e3342f;
-$orange: #f6993f;
+$orange: #f36f21;
 $yellow: #ffed4a;
 $green: #38c172;
 $teal: #4dc0b5;
 $cyan: #6cb2eb;
 $mediumgrey:#bdbdbd;
+$lightgrey:#fafafa;
+
+.dash{
+    border-bottom: solid 7px $orange;
+    width: 4%;
+    margin: 40px auto 45px auto;
+}
+.dash-banner{
+    border-bottom: solid 7px $orange;
+    width: 10%;
+    margin-bottom: 10px;
+}
+.btn.btn-outline-warning{
+    border-color:$orange !important;
+    color: $orange !important;
+    &:hover{
+        background-color: $orange !important;
+        color: $white !important;
+    }
+}
+
