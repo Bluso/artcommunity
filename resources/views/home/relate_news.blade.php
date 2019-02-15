@@ -18,7 +18,7 @@
                         <article class="pl-3 pb-3">
                             <p>โครงการ</p>
                             <div></div>
-                            <p>{{$val->title}}</p>
+                            <p class="des">{{$val->title}}</p>
                         </article>
                     </div>
                     @endforeach
