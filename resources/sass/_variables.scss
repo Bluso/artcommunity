@@ -23,6 +23,12 @@ $cyan: #6cb2eb;
 $mediumgrey:#bdbdbd;
 $lightgrey:#fafafa;
 
+%psl-mainset{
+    font-family:'PSL Text Pro'; 
+    font-weight:400;
+    font-size: 1.5rem;
+    line-height: 1.7rem;
+}
 .dash{
     border-bottom: solid 7px $orange;
     width: 4%;

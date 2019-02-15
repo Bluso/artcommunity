@@ -2,6 +2,7 @@ body{
     background:$white;
     font-size: 10px;
 }
+
 nav{
     ul{
         top: calc(50% - 1.3rem);
@@ -24,11 +25,77 @@ footer{
     padding-top:70px;
     h2{
         color:$white;
+        font-family: 'prompt';
+        font-weight: 600;
+        font-size: 1.3rem;
     }
     a{
         color:$mediumgrey;
+        font-family: 'prompt';
+        font-weight: 200;
+        font-size: 1rem;
+    }
+    ul{color:$mediumgrey;}
+    .dash{
+        margin: 20px 0 25px;
+        width: 20px;
+        border-bottom: solid 4px $orange;
+    }
+    .address{
+        a{
+            width:100%;
+            display: block;
+            &.email{
+                font-family: 'prompt';
+                font-weight: 200;
+                color: $orange;
+                font-size: 1.1rem; 
+                text-decoration: none; 
+                cursor: pointer;
+                &:hover{color: $orange;}
+            }
+        }
+        h3{color:$mediumgrey;font-family: 'prompt';font-weight: 500; font-size: 1.1rem;}
+        p{
+            color:$mediumgrey;font-family: 'prompt';font-weight: 200; font-size: 1rem;
+            &.tel{font-weight: 500;font-size: 1.8rem;line-height: 1.5rem;padding: 0;margin: 0;margin-top: 30px;}
+        }
+        .link-face{
+            margin-top: 20px;
+            font-family: 'prompt';
+            font-weight: 500; 
+            font-size: 1.3rem;
+            color:#bdbdbd;
+            cursor: pointer;
+            &:hover{color:#bdbdbd;}
+        }
+        
+    }
+    .copy-right {
+        margin-top: 30px;
+        p{color:#616161;font-size: 1.2rem;font-family: 'PSL Text Pro';}
     }
 }
 .slick-slide{
     height:auto !important;
+}
+.slick-dots{
+    bottom: -44px;
+    li{
+        margin: 0 23px !important;
+        button:before {
+            background:#e1e1e1 !important;
+            padding: 0  !important;
+            height: 4px  !important;
+            width: 60px  !important;
+            margin-right: 20px  !important;
+            content: inherit  !important;
+            color:$white;
+        }
+    }
+}
+.slick-dots li.slick-active button:before {
+    background: $orange !important;
+    color: $white;
+    opacity: 0.75;
 }

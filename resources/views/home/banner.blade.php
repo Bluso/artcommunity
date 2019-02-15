@@ -5,8 +5,8 @@
                 <img class="img-fluid mx-auto" src="{{asset('images/mockup/banner.png')}}">
             </div>
             <div class="container-fluid position-absolute fixed-bottom">
-                <div class="container">
-                    <div class="col-5 offset-1">
+                <div class="container caption">
+                    <div class="col-6 offset-1">
                         <h1>ดื่มอย่างรับผิดชอบ</h1>
                         <div class="dash-banner"></div>
                         <p>

@@ -1,17 +1,41 @@
 
 %space{margin-top:150px;}
 %space-inner{padding-top:70px;padding-bottom:70px;}
-%txt-header{color: $blackgrey;}
+%txt-header{
+    color: $blackgrey;
+    font-family: 'mitr';
+    font-size: 3.5rem;
+    font-weight: 400;
+}
 .banner-block{
-    h1{color:$white;}
-    p{color:$white;}
+    .caption{margin-bottom: 4%;}
+    h1{
+        color:$white;
+        font-family: 'mitr';
+        font-weight: 500;
+        font-size: 3.8rem;
+    }
+    p{
+        color:$white;
+        font-family: 'mitr';
+        font-weight: 100;
+        font-size: 1.5rem;
+    }
 }
 .main-intro{ 
     @extend %space; 
     a{
         text-decoration: none; cursor: pointer; color: $blackgrey;
-        h2{color: $blackgrey;}
-        p{color: $blackgrey;}
+        h2{
+            color: $blackgrey;
+            font-family: 'mitr';
+            font-weight: 400;
+            font-size: 2rem;
+        }
+        p{
+            color: $blackgrey; 
+            @extend %psl-mainset;
+        }
     }
 }
 .relate-news{
@@ -21,7 +45,12 @@
     h1{
         @extend %txt-header;
     }
-    p{color:#616161;}
+    p{
+        color:#616161;
+        &.intro{
+            @extend %psl-mainset;
+        }
+    }
     article{
         position: absolute;
         bottom: 0;
@@ -42,5 +71,11 @@
     @extend %space-inner;
     h1{
         @extend %txt-header;
+    }
+    a.btn{
+        font-family: 'mitr';
+        font-weight: 200;
+        font-size: 1.2rem;
+        width: 100%;
     }
 }
