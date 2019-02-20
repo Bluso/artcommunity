@@ -20,13 +20,15 @@ class BannerController extends Controller
 
     public function add()
     {
-        return view('backend.banner.add');
+        $page_list = config('page.page_list');
+        return view('backend.banner.add')->withPagelist($page_list);
     }
 
     public function edit($id)
     {
+        $page_list = config('page.page_list');
         $banner = HomeBanner::find($id);
-        return view('backend.banner.edit')->withBanner($banner);
+        return view('backend.banner.edit')->withBanner($banner)->withPagelist($page_list);
     }
 
     public function storeedit(request $request)
@@ -46,8 +48,9 @@ class BannerController extends Controller
             Storage::disk('public')->putFileAs('images/banner',$file, $filename);
             $tbl_banner->image = $filename;
         }
-        
+        $tbl_banner->page_id = $request->page;
         $tbl_banner->title = $request->title;
+        $tbl_banner->description = $request->description;
         $tbl_banner->url = $request->url;
         $tbl_banner->keywords = $request->keywords;
         $tbl_banner->seo = $request->title.','.$request->keywords;
@@ -69,8 +72,10 @@ class BannerController extends Controller
             Storage::disk('public')->putFileAs('images/banner/',$file,$filename);
         }
         $tbl_banner = new HomeBanner;
+        $tbl_banner->page_id = $request->page;
         $tbl_banner->image = $filename;
         $tbl_banner->title = $request->title;
+        $tbl_banner->description = $request->description;
         $tbl_banner->url = $request->url;
         $tbl_banner->keywords = $request->keywords;
         $tbl_banner->seo = $request->title.','.$request->keywords;
