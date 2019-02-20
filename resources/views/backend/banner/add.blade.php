@@ -21,8 +21,20 @@
         {{csrf_field()}}
             <div class="box-body">
                 <div class="form-group">
+                    <label>Page</label>
+                    <select name="page" class="form-control select2" style="width: 100%;">
+                        @foreach($pagelist as $page => $value)
+                            <option value="{{$page}}">{{$value}}</option>
+                        @endforeach
+                    </select>
+                </div>
+                <div class="form-group">
                     <label for="title">Title</label>
                     <input name="title" type="text" class="form-control" id="title" placeholder="Enter title of banner" require>
+                </div>
+                <div class="form-group">
+                    <label for="title">Description</label>
+                    <input name="description" type="text" class="form-control" id="description" placeholder="Enter description of banner">
                 </div>
                 <div class="form-group">
                     <label for="keywords">URL</label>
