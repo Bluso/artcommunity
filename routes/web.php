@@ -12,6 +12,7 @@
 */
 
 Route::get('/', 'HomeController@index');
+Route::get('about', 'AboutController@index');
 
 Auth::routes();
 //Route::middleware(['auth'])->group(function () {
