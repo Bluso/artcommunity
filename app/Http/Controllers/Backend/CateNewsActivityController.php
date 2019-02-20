@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Backend;
 
 use App\CategoriesNewsActivitys;
+use App\NewsActivitys;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Storage;
@@ -122,6 +123,7 @@ class CateNewsActivityController extends Controller
     public function destroy($id)
     {
         CategoriesNewsActivitys::find($id)->delete();
+        NewsActivitys::where('cate_id',$id)->delete();
         return redirect('backend/news/cate');
     }
 
