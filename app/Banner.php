@@ -5,7 +5,7 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class HomeBanner extends Model
+class Banner extends Model
 {
     use SoftDeletes;
     protected $dates = ['deleted_at'];

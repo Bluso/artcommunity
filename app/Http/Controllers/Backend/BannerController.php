@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Backend;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\HomeBanner;
+use App\Banner;
 use Illuminate\Support\Facades\Storage;
 use Image;
 use Carbon\Carbon;
@@ -14,7 +14,7 @@ class BannerController extends Controller
    
     public function index()
     {
-        $banner = HomeBanner::all();
+        $banner = Banner::all();
         return view('backend.banner.index')->withBanner($banner);
     }
 
@@ -27,7 +27,7 @@ class BannerController extends Controller
     public function edit($id)
     {
         $page_list = config('page.page_list');
-        $banner = HomeBanner::find($id);
+        $banner = Banner::find($id);
         return view('backend.banner.edit')->withBanner($banner)->withPagelist($page_list);
     }
 
@@ -38,7 +38,7 @@ class BannerController extends Controller
             'title' => 'required|max:255',
             'image' => 'image|mimes:jpeg,png,jpg|max:2048',
         ]);
-        $tbl_banner = HomeBanner::find($request->id);
+        $tbl_banner = Banner::find($request->id);
 
         if($request->hasfile('image')) 
         { 
@@ -71,7 +71,7 @@ class BannerController extends Controller
             $filename =time().'.'.$extension;
             Storage::disk('public')->putFileAs('images/banner/',$file,$filename);
         }
-        $tbl_banner = new HomeBanner;
+        $tbl_banner = new Banner;
         $tbl_banner->page_id = $request->page;
         $tbl_banner->image = $filename;
         $tbl_banner->title = $request->title;
@@ -85,7 +85,7 @@ class BannerController extends Controller
 
     public function destroy($id)
     {
-        HomeBanner::find($id)->delete();
+        Banner::find($id)->delete();
         return redirect('backend/banner');
     }
 }
