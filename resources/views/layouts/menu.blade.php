@@ -13,7 +13,7 @@
             </ul>
         </div>
         <div class="col-1">
-            <a><img class="img-fluid" src="{{ asset('images/facebook_icon.png') }}"/></a>
+            <a class="d-block"><img class="img-fluid mt-2" src="{{ asset('images/facebook_icon.png') }}"/></a>
         </div>
     </div>
 </nav>
