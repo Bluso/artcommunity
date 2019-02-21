@@ -110,6 +110,11 @@ return [
     'menu' => [
         'MAIN NAVIGATION',
         [
+            'text'        => 'Home',
+            'url'         => 'backend/home',
+            'icon'        => 'desktop',
+        ],
+        [
             'text'        => 'Banner',
             'url'         => 'backend/banner',
             'icon'        => 'image',
