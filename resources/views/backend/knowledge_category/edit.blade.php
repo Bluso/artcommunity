@@ -32,7 +32,9 @@
                     <input name="keywords" type="text" class="form-control" id="keyword" value="{{$category->keywords}}">
                 </div>
                 <div class="form-group">
+                    @if(!empty($category->thumb))
                     <img style="margin-bottom:15px;" src="{{asset('storage/images/cate_knowledge')}}/{{$category->thumb}}" />
+                    @endif
                     <div class="custom-preview" style="width: 300px">
                         <label class="custom-preview-label" for="">Thumb</label>
                         <input class="custom-preview-input" type="file" name="thumb" id="thumb" preview="thumb-preview" require>

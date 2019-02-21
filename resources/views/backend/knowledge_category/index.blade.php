@@ -28,7 +28,7 @@ Categories
                     <thead>
                         <tr role="row">
                             <th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-sort="ascending" style="width: 283px;">Title</th>
-                            <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" style="width: 359px;">Thumb</th>
+                            <th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-sort="ascending" style="width: 283px;">Description</th>
                             <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" style="width: 320px;">Created at</th>
                             <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" style="width: 243px;">Updated at</th>
                             <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" style="width: 176px;">Action</th>
@@ -43,11 +43,9 @@ Categories
                                 <dd>{{ $n->title }}</dd>
                                 <dt>Keywords</dt>
                                 <dd>{{ $n->keywords }}</dd>
-                                <dt>Description</dt>
-                                <dd>{{ $n->description }}</dd>
                             </dl>
                             </td>
-                            <td><img src="{{asset('storage/images/cate_knowledge')}}/{{$n->thumb}}" /></td>
+                            <td>{{ $n->description }}</td>
                             <td>{{ $n->created_at }}</td>
                             <td>{{ $n->updated_at }}</td>
                             <td>
@@ -82,7 +80,7 @@ Categories
                     <tfoot>
                         <tr>
                             <th rowspan="1" colspan="1">Title</th>
-                            <th rowspan="1" colspan="1">Thumb</th>
+                            <th rowspan="1" colspan="1">Description</th>
                             <th rowspan="1" colspan="1">Created at</th>
                             <th rowspan="1" colspan="1">Updated at</th>
                             <th rowspan="1" colspan="1">Action</th>
