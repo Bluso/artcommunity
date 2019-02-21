@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Backend;
 
 use App\KnowledgeResearch;
+use App\CategoriesKnowledge;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Storage;
@@ -28,7 +29,8 @@ class KnowledgeController extends Controller
      */
     public function create()
     {
-        return view('backend.knowledge.add');
+        $cate = CategoriesKnowledge::all();
+        return view('backend.knowledge.add')->withCategory($cate);
     }
 
     /**
@@ -93,8 +95,9 @@ class KnowledgeController extends Controller
      */
     public function edit($id)
     {
+        $cate = CategoriesKnowledge::all();
         $knowledge = KnowledgeResearch::find($id);
-        return view('backend.knowledge.edit')->withKnowledge($knowledge);
+        return view('backend.knowledge.edit')->withKnowledge($knowledge)->withCategory($cate);
     }
 
     /**
