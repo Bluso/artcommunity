@@ -55,6 +55,14 @@ Auth::routes();
             Route::get('edit/{id}', 'Backend\KnowledgeController@edit');
             Route::post('edit/{id}', 'Backend\KnowledgeController@update');
             Route::get('delete/{id}', 'Backend\KnowledgeController@destroy');
+            Route::prefix('cate')->group(function () {
+                Route::get('/', 'Backend\CateKnowledgeController@index');
+                Route::get('add', 'Backend\CateKnowledgeController@create');
+                Route::post('add', 'Backend\CateKnowledgeController@store');
+                Route::get('edit/{id}', 'Backend\CateKnowledgeController@edit');
+                Route::post('edit/{id}', 'Backend\CateKnowledgeController@update');
+                Route::get('delete/{id}', 'Backend\CateKnowledgeController@destroy');
+            });
         });
         Route::prefix('laws')->group(function () {
             Route::post('upload/image', 'Backend\NewsActivityController@upload_image');
