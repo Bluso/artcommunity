@@ -130,8 +130,17 @@ return [
         ],
         [
             'text'        => 'Knowledge',
-            'url'         => 'backend/knowledge',
             'icon'        => 'book',
+            'submenu' => [
+                [
+                    'text' => 'Content',
+                    'url'  => 'backend/knowledge',
+                ],
+                [
+                    'text' => 'Categories',
+                    'url'  => 'backend/knowledge/cate',
+                ],
+            ]
         ],
         [
             'text'        => 'Laws',
