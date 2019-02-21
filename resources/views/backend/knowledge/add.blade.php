@@ -25,6 +25,15 @@
         {{csrf_field()}}
             <div class="box-body">
                 <div class="form-group">
+                    <label for="category">Category</label>
+                    <select class="form-control" name="cate_id" id="category">
+                    <option value="">Select knowledge category</option>
+                    @foreach($category as $c)
+                        <option value="{{$c->id}}">{{$c->title}}</option>
+                    @endforeach
+                    </select>
+                </div>
+                <div class="form-group">
                     <label for="title">Title</label>
                     <input name="title" type="text" class="form-control" id="title" placeholder="Enter title of knowledge" required>
                 </div>

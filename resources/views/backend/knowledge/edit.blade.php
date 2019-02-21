@@ -26,6 +26,17 @@
             
             <div class="box-body">
                 <div class="form-group">
+                    <label for="category">Category</label>
+                    <select class="form-control" name="cate_id" id="category">
+                    <option value="{{$knowledge->cate->id}}">{{$knowledge->cate->title}}</option>
+                    @foreach($category as $c)
+                        @if($knowledge->cate->id != $c->id)
+                        <option value="{{$c->id}}">{{$c->title}}</option>
+                        @endif
+                    @endforeach
+                    </select>
+                </div>
+                <div class="form-group">
                     <label for="title">Title</label>
                     <input name="title" type="text" class="form-control" id="title" value="{{ $knowledge->title }}" required>
                 </div>

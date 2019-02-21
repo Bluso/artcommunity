@@ -21,6 +21,7 @@
     <div class="box-header">
         <h3 class="box-title">kKnowledge</h3>
         <div class="pull-right"><a class="d-block btn btn-info" href="{{url('backend/knowledge/add')}}"><i class="fa fa-plus-square"></i> Add Knowledge</a></div>
+        <div class="pull-right"><a class="d-block btn btn-info" href="{{url('backend/knowledge/cate/add')}}"><i class="fa fa-plus-square"></i> Add Category</a></div>
     </div>
     <!-- /.box-header -->
     <div class="box-body">
@@ -45,6 +46,8 @@
                             </td>
                             <td>
                             <dl>
+                                <dt>Category</dt>
+                                <dd>{{ $n->cate->title }}</dd>
                                 <dt>Title</dt>
                                 <dd>{{ $n->title }}</dd>
                                 <dt>Keywords</dt>
