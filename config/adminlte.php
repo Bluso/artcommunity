@@ -120,6 +120,20 @@ return [
             'icon'        => 'image',
         ],
         [
+            'text'        => 'About',
+            'icon'        => 'quote-right',
+            'submenu' => [
+                [
+                    'text' => 'History',
+                    'url'  => 'backend/about/history',
+                ],
+                [
+                    'text' => 'Member',
+                    'url'  => 'backend/about/member',
+                ],
+            ]
+        ],
+        [
             'text'        => 'News and Activities',
             'icon'        => 'newspaper-o',
             'submenu' => [
