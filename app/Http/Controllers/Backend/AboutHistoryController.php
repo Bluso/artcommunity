@@ -14,9 +14,9 @@ class AboutHistoryController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index( $id = 1)
+    public function index()
     {
-        $history = AboutHistory::find($id);
+        $history = AboutHistory::first();
         return view('backend.about_history.index')->withHistory($history);
     }
     public function update(Request $request, $id)
