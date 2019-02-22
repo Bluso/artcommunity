@@ -31,6 +31,16 @@ Auth::routes();
             Route::post('edit', 'Backend\BannerController@storeedit');
             Route::get('delete/{id}', 'Backend\BannerController@destroy');
         });
+        Route::prefix('about')->group(function () {
+            Route::prefix('member')->group(function () {
+                Route::get('/', 'Backend\AboutMemberController@index');
+                Route::get('add', 'Backend\AboutMemberController@create');
+                Route::post('add', 'Backend\AboutMemberController@store');
+                Route::get('edit/{id}', 'Backend\AboutMemberController@edit');
+                Route::post('edit/{id}', 'Backend\AboutMemberController@update');
+                Route::get('delete/{id}', 'Backend\AboutMemberController@destroy');
+            });
+        });
         Route::prefix('news')->group(function () {
             Route::post('upload/image', 'Backend\NewsActivityController@upload_image');
             Route::get('/', 'Backend\NewsActivityController@index');
