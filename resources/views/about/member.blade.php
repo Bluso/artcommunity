@@ -1,3 +1,4 @@
+@if(count($member) != 0)
 <section class="member py-5">
     <div class="container py-5">
         <div class="row">
@@ -21,3 +22,4 @@
         </div>
     </div>
 </section>
+@endif
