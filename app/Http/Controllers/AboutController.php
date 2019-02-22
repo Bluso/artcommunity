@@ -12,7 +12,7 @@ class AboutController extends Controller
     public function index()
     {
         $member = AboutMember::all();
-        $history = AboutHistory::find(1);
+        $history = AboutHistory::first();
         return view('about.index')->withMember($member)->withHistory($history);
     }
 }
