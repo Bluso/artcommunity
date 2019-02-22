@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Storage;
 use App\KnowledgeResearch;
 use App\NewsActivitys;
 use App\Home;
+use App\Banner;
 
 class HomeController extends Controller
 {
@@ -15,9 +16,11 @@ class HomeController extends Controller
         $knowledge = KnowledgeResearch::latest()->limit(4)->get();
         $news = NewsActivitys::latest()->get();
         $home = Home::all();
+        $banner = Banner::all()->where('page_id','1');
         return view('home.index')
         ->withKnowledge($knowledge)
         ->withNews($news)
-        ->withHome($home);
+        ->withHome($home)
+        ->withBanner($banner);
     }
 }
