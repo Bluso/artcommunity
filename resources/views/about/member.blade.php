@@ -9,21 +9,13 @@
         <div class="row">
             <div class="col-10 offset-1">
                 <div class="row">
+                    @foreach($member as $mem)
                     <div class="col-4">
-                        <img class="rounded-circle img-fluid d-block mx-auto img-thumbnail" src="{{asset('images/mockup/m-03.jpg')}}" />
-                        <p class="text-center mt-3">ปริญ มาลากุล ณ อยุธยา</p>
-                        <p class="text-center">ประธาน มปอ.</p>
+                        <img class="rounded-circle img-fluid d-block mx-auto img-thumbnail" src="{{asset('storage/images/about/member')}}/{{$mem->image}}" />
+                        <p class="text-center mt-3">{{ $mem->name }}</p>
+                        <p class="text-center">{{ $mem->position }}</p>
                     </div>
-                    <div class="col-4">
-                        <img class="rounded-circle img-fluid d-block mx-auto img-thumbnail" src="{{asset('images/mockup/m-03.jpg')}}" />
-                        <p class="text-center mt-3">ปริญ มาลากุล ณ อยุธยา</p>
-                        <p class="text-center">ประธาน มปอ.</p>
-                    </div>
-                    <div class="col-4">
-                        <img class="rounded-circle img-fluid d-block mx-auto img-thumbnail" src="{{asset('images/mockup/m-03.jpg')}}" />
-                        <p class="text-center mt-3">ปริญ มาลากุล ณ อยุธยา</p>
-                        <p class="text-center">ประธาน มปอ.</p>
-                    </div>
+                    @endforeach
                 </div>
             </div>
         </div>
