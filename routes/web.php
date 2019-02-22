@@ -40,6 +40,10 @@ Auth::routes();
                 Route::post('edit/{id}', 'Backend\AboutMemberController@update');
                 Route::get('delete/{id}', 'Backend\AboutMemberController@destroy');
             });
+            Route::prefix('history')->group(function () {
+                Route::get('/', 'Backend\AboutHistoryController@index');
+                Route::post('/{id}', 'Backend\AboutHistoryController@update');
+            });
         });
         Route::prefix('news')->group(function () {
             Route::post('upload/image', 'Backend\NewsActivityController@upload_image');
