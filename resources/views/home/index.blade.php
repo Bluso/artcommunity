@@ -4,6 +4,7 @@
 
 @section('content')
     @include('home.banner')
+    @if(count($home) != 0)
     <section class="main-intro container">
         <div class="row">
             @foreach($home as $h)
@@ -21,6 +22,7 @@
             @endforeach
         </div>
     </section>
+    @endif
     @include('home.relate_news')
     @include('home.relate_knowledge')
 @stop

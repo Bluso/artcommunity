@@ -24,6 +24,7 @@
 }
 .main-intro{ 
     @extend %space; 
+    padding-bottom:150px;
     a{
         text-decoration: none; cursor: pointer; color: $blackgrey;
         h2{
@@ -39,7 +40,6 @@
     }
 }
 .relate-news{
-    @extend %space;
     @extend %space-inner;
     background-color: $lightgrey;
     h1{
