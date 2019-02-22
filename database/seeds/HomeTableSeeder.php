@@ -2,6 +2,7 @@
 use Illuminate\Support\Str;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
+use Carbon\Carbon;
 
 class HomeTableSeeder extends Seeder
 {
@@ -19,6 +20,8 @@ class HomeTableSeeder extends Seeder
             'keywords' => 'เกี่ยวกับเรา',
             'thumb' => 'thumb_01.png',
             'url' => 'about',
+            'created_at' => Carbon::now()->setTimezone('Asia/Bangkok')->format('Y-m-d H:i:s'),
+            'updated_at' => Carbon::now()->setTimezone('Asia/Bangkok')->format('Y-m-d H:i:s'),
         ]);
         DB::table('homes')->insert([
             'title' => 'ภารกิจของ [มปอ]',
@@ -26,6 +29,8 @@ class HomeTableSeeder extends Seeder
             'keywords' => 'ภารกิจ',
             'thumb' => 'thumb_02.png',
             'url' => 'mission',
+            'created_at' => Carbon::now()->setTimezone('Asia/Bangkok')->format('Y-m-d H:i:s'),
+            'updated_at' => Carbon::now()->setTimezone('Asia/Bangkok')->format('Y-m-d H:i:s'),
         ]);
         DB::table('homes')->insert([
             'title' => 'กฏหมายที่เกี่ยวข้อง',
@@ -33,6 +38,8 @@ class HomeTableSeeder extends Seeder
             'keywords' => 'กฏหมายที่เกี่ยวข้อง',
             'thumb' => 'thumb_03.png',
             'url' => 'raw',
+            'created_at' => Carbon::now()->setTimezone('Asia/Bangkok')->format('Y-m-d H:i:s'),
+            'updated_at' => Carbon::now()->setTimezone('Asia/Bangkok')->format('Y-m-d H:i:s'),
         ]);
     }
 }
