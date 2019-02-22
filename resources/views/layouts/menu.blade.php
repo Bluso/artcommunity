@@ -5,11 +5,11 @@
         </div>
         <div class="col-9">
             <ul class="list-unstyled row position-absolute w-100">
-                <li class="mr-4"><a>เกี่ยวกับเรา</a></li>
-                <li class="mr-4"><a>กิจกรรมและข่าวสาร</a></li>
-                <li class="mr-4"><a>กฏหมายที่เกี่ยวข้อง</a></li>
-                <li class="mr-4"><a>บทความงานวิจัย</a></li>
-                <li><a>ติดต่อเรา</a></li>
+                <li class="mr-4"><a href="{{ url('about') }}">เกี่ยวกับเรา</a></li>
+                <li class="mr-4"><a href="{{ url('news') }}">กิจกรรมและข่าวสาร</a></li>
+                <li class="mr-4"><a href="{{ url('law') }}">กฏหมายที่เกี่ยวข้อง</a></li>
+                <li class="mr-4"><a href="{{ url('knowledge') }}">บทความงานวิจัย</a></li>
+                <li><a href="{{ url('contact') }}">ติดต่อเรา</a></li>
             </ul>
         </div>
         <div class="col-1">
