@@ -22,7 +22,7 @@ class CreateContactDatasTable extends Migration
             $table->text('address')->nullable();
             $table->string('telephone')->nullable();
             $table->string('fax')->nullable();
-            $table->string('email')->nullable();
+            $table->string('email',191)->nullable();
             $table->string('url')->nullable();
             $table->timestamps();
         });
