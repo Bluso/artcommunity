@@ -3,8 +3,6 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use App\ContactData;
-
 class AppServiceProvider extends ServiceProvider
 {
     /**
@@ -17,10 +15,8 @@ class AppServiceProvider extends ServiceProvider
         $contact = [];
         try{
             $contact =  \App\ContactData::first();
-        } catch (\Exception $e) {
-            return $e;
-        }
-        view()->share('contactDat',$contact);
+        } catch (\Exception $e) { }
+        view()->share('DataContact',$contact);
     }
 
     /**
