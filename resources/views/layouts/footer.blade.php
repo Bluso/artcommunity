@@ -27,7 +27,7 @@
                 <li class="col-12 pl-0"><a href="#">กฏหมายเกี่ยวกับการโฆษณาเครื่องดื่มแอลกอฮอล์</a></li>
             </ul>
         </div>
-        @if(count($contactDat) != 0)
+        @if(!empty($DataContact))
         <div class="col-4 address">
             <h2>Contact us</h2>
             <div class="dash"></div>
