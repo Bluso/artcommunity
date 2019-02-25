@@ -16,8 +16,8 @@ class AppServiceProvider extends ServiceProvider
     {
         $contact = [];
         try{
-            $contact =  ContactData::first();
-        } catch (Exception $e) {
+            $contact =  \App\ContactData::first();
+        } catch (\Exception $e) {
             return $e;
         }
         view()->share('contactDat',$contact);
