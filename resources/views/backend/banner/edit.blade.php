@@ -16,7 +16,7 @@
             <h3 class="box-title">Add Image Banner to Home Page</h3>
         </div><!-- /.box-header -->
         <!-- form start -->
-        {{ Form::open(array('url' => 'backend/banner/edit', 'method' => 'post','enctype' => 'multipart/form-data')) }}
+        {{ Form::open(array('url' => 'backend/banner/edit', 'method' => 'post','enctype' => 'multipart/form-data','id'=>'form-validate','data-toggle'=>'validator','role'=>'form')) }}
         {{csrf_field()}}
             <div class="box-body">
                 <div class="form-group">
@@ -33,11 +33,13 @@
                 </div>
                 <div class="form-group">
                     <label for="title">Title</label>
-                    <input name="title" type="text" class="form-control" id="title" value="{{$banner->title}}" require>
+                    <input name="title" type="text" class="form-control" id="title" value="{{$banner->title}}"  data-error="กรุณากรอกหัวข้อ" required>
+                    <div class="help-block with-errors"></div>
                 </div>
                 <div class="form-group">
                     <label for="description">Description</label>
-                    <input name="description" type="text" class="form-control" id="description" value="{{$banner->description}}">
+                    <input name="description" type="text" class="form-control" id="description" value="{{$banner->description}}" data-error="กรุณากรอกคำอธิบาย" required>
+                    <div class="help-block with-errors"></div>
                 </div>
                 <div class="form-group">
                     <label for="keywords">URL</label>
@@ -50,7 +52,7 @@
                 <div class="form-group">
                     <img style="margin-bottom:15px;max-width:200px;border: solid thin #ddd;" src="{{asset('storage/images/banner')}}/{{$banner->image}}" />
                     <label for="">Image</label>
-                    <input class="file" type="file" name="image" id="image" data-preview-file-type="text" required>
+                    <input class="file" type="file" name="image" id="image" data-preview-file-type="text">
                     <p class="help-block">Image type of png,jpg and max size is 2MB.</p>
                 </div>
             </div><!-- /.box-body -->
@@ -65,5 +67,15 @@
 @stop
 @section('js')
 @include('backend.layouts.js_fileinput')
+<script src="{{ asset('js/validator.js')}}"></script>
+<script>
+    $('#form-validate').validator().on('submit', function (e) {
+        if (e.isDefaultPrevented()) {
+            // handle the invalid form...
+        } else {
+            // everything looks good!
+        }
+    })
+</script>
 @stop
 

@@ -17,7 +17,7 @@
             <h3 class="box-title">Add Image Banner to Home Page</h3>
         </div><!-- /.box-header -->
         <!-- form start -->
-        {{ Form::open(array('url' => 'backend/banner/add', 'method' => 'post','enctype' => 'multipart/form-data')) }}
+        {{ Form::open(array('url' => 'backend/banner/add','id'=>'form-validate','data-toggle'=>'validator','role'=>'form','method' => 'post','enctype' => 'multipart/form-data')) }}
         {{csrf_field()}}
             <div class="box-body">
                 <div class="form-group">
@@ -30,15 +30,17 @@
                 </div>
                 <div class="form-group">
                     <label for="title">Title</label>
-                    <input name="title" type="text" class="form-control" id="title" placeholder="Enter title of banner" require>
+                    <input name="title" type="text" class="form-control" id="title" placeholder="Enter title of banner" data-error="กรุณากรอกหัวข้อ" required>
+                    <div class="help-block with-errors"></div>
                 </div>
                 <div class="form-group">
                     <label for="title">Description</label>
-                    <input name="description" type="text" class="form-control" id="description" placeholder="Enter description of banner">
+                    <input name="description" type="text" class="form-control" id="description" placeholder="Enter description of banner" data-error="กรุณากรอกคำอธิบาย" required>
+                    <div class="help-block with-errors"></div>
                 </div>
                 <div class="form-group">
                     <label for="keywords">URL</label>
-                    <input name="url" type="text" class="form-control" id="url" placeholder="https://www.google.com">
+                    <input name="url" type="text" class="form-control" id="url" placeholder="https://www.google.com" >
                 </div>
                 <div class="form-group">
                     <label for="keywords">Keywords</label>
@@ -46,7 +48,7 @@
                 </div>
                 <div class="form-group">
                     <label for="">Image</label>
-                    <input class="file" type="file" name="image" id="image" data-preview-file-type="text" required>
+                    <input class="file" type="file" name="image" id="image" data-preview-file-type="text" data-error="กรุณาเพิ่มรูปภาพ" required>
                     <p class="help-block">Image type of png,jpg and max size is 2MB.</p>
                 </div>
             </div><!-- /.box-body -->
@@ -60,4 +62,14 @@
 @stop
 @section('js')
 @include('backend.layouts.js_fileinput')
+<script src="{{ asset('js/validator.js')}}"></script>
+<script>
+    $('#form-validate').validator().on('submit', function (e) {
+        if (e.isDefaultPrevented()) {
+            // handle the invalid form...
+        } else {
+            // everything looks good!
+        }
+    })
+</script>
 @stop
