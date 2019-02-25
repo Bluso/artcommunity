@@ -27,19 +27,21 @@
                 <li class="col-12 pl-0"><a href="#">กฏหมายเกี่ยวกับการโฆษณาเครื่องดื่มแอลกอฮอล์</a></li>
             </ul>
         </div>
+        @if(count($contactDat) != 0)
         <div class="col-4 address">
             <h2>Contact us</h2>
             <div class="dash"></div>
             <div class="row">
                 <div class="col">
-                    <h3>มูลนิธิแก้ไขปัญหาการดื่มแอลกอฮอล์ (มปอ.)</h3>
-                    <p>2170 อาคารกรุงเทพทาวเวอร์ ชั้น 5 ห้อง 501 ถนนเพชรบุรีตัดใหม่ แขวงบางกะปิ เขตห้วยขวาง กรุงเทพฯ 10310</p>
-                    <p class="tel">02-308-0039</p>
-                    <a class="email">info.TFRD@gmail.com</a>
-                    <a class="link-face"><i><img class="img-responsive" src="{{ asset('images/facebook_icon.png') }}" /></i> TFRD</a>
+                    <h3>{{ $contactDat->name_th }}</h3>
+                    <p>{{ $contactDat->address }}</p>
+                    <p class="tel">{{ $contactDat->telephone }}</p>
+                    <a class="email">{{ $contactDat->email }}</a>
+                    <a href="{{ $contactDat->url }}" class="link-face"><i><img class="img-responsive" src="{{ asset('images/facebook_icon.png') }}" /></i> TFRD</a>
                 </div>
             </div>
         </div>
+        @endif
     </div>
     <!--/row-->
     <div class="row copy-right">
