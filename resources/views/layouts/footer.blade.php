@@ -37,7 +37,7 @@
                     <p>{{ $contactDat->address }}</p>
                     <p class="tel">{{ $contactDat->telephone }}</p>
                     <a class="email">{{ $contactDat->email }}</a>
-                    <a href="{{ $contactDat->url }}" class="link-face"><i><img class="img-responsive" src="{{ asset('images/facebook_icon.png') }}" /></i> TFRD</a>
+                    
                 </div>
             </div>
         </div>
