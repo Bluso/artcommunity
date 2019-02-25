@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use App\ContactData;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -13,7 +14,13 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        $contact = [];
+        try{
+            $contact =  ContactData::first();
+        } catch (Exception $e) {
+            return $e;
+        }
+        view()->share('contactDat',$contact);
     }
 
     /**
