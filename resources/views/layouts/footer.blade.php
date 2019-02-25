@@ -36,7 +36,6 @@
                     <p>2170 อาคารกรุงเทพทาวเวอร์ ชั้น 5 ห้อง 501 ถนนเพชรบุรีตัดใหม่ แขวงบางกะปิ เขตห้วยขวาง กรุงเทพฯ 10310</p>
                     <p class="tel">02-308-0039</p>
                     <a class="email">info.TFRD@gmail.com</a>
-                    <a class="link-face"><i><img class="img-responsive" src="{{ asset('images/facebook_icon.png') }}" /></i> TFRD</a>
                 </div>
             </div>
         </div>
