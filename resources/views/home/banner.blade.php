@@ -1,3 +1,4 @@
+@if(count($banner) != 0)
 <section class=" container-fluid">
     <div class="banner-block row h-auto">
     @foreach($banner as $val)
@@ -22,3 +23,4 @@
     </div>
     <!--/banner-block-->
 </section>
+@endif

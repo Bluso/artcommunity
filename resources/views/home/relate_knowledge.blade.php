@@ -1,3 +1,4 @@
+@if(count($knowledge) != 0)
 <section class="container relate_knowledge">
     <div class="row">
         <div class="col-12">
@@ -20,3 +21,4 @@
         </div>
     </div>
 </section>
+@endif

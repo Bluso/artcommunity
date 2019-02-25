@@ -1,3 +1,4 @@
+@if(count($news) != 0)
 <section class="container-fluid relate-news">
     <div class="container">
         <div class="row">
@@ -28,3 +29,4 @@
         </div>
     </div>
 </section>
+@endif
