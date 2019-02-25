@@ -1,4 +1,4 @@
-@if(count($history) != 0)
+@if(!empty($history))
 <section class="history py-5">
     <div class="container py-5">
         <div class="row">
