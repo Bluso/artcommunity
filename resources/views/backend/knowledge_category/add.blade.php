@@ -2,7 +2,7 @@
 
 @section('title', 'TFRD')
 @section('css')
-<link rel="stylesheet" href="{{ asset('css/image_preview.css')}} ">
+@include('backend.layouts.css_fileinput')
 @stop
 @section('content_header')
 <h1 class="pull-left">Categorires of Knowledge</h1>
@@ -16,30 +16,28 @@
             <h3 class="box-title">Add knowledge</h3>
         </div><!-- /.box-header -->
         <!-- form start -->
-        {{ Form::open(array('url' => 'backend/knowledge/cate/add', 'method' => 'post','enctype' => 'multipart/form-data')) }}
+        {{ Form::open(array('url' => 'backend/knowledge/cate/add', 'method' => 'post','enctype' => 'multipart/form-data','id'=>'form-validate','data-toggle'=>'validator','role'=>'form')) }}
         {{csrf_field()}}
             <div class="box-body">
                 <div class="form-group">
                     <label for="title">Title</label>
-                    <input name="title" type="text" class="form-control" id="title" placeholder="Enter title of knowledge" require>
+                    <input name="title" type="text" class="form-control" id="title" placeholder="Enter title of knowledge" data-error="กรุณากรอกชื่อหัวข้อ" required>
+                    <div class="help-block with-errors"></div>
                 </div>
                 <div class="form-group">
                     <label for="title">Description</label>
-                    <input name="description" type="text" class="form-control" id="description" placeholder="Enter title of description" require>
+                    <input name="description" type="text" class="form-control" id="description" placeholder="Enter title of description" data-error="กรุณากรอกคำอธิบาย" required>
+                    <div class="help-block with-errors"></div>
                 </div>
                 <div class="form-group">
                     <label for="keywords">Keywords</label>
                     <input name="keywords" type="text" class="form-control" id="keyword" placeholder="images,banner,tfrd,มปอ,...">
                 </div>
                 <div class="form-group">
-                    <div class="custom-preview" style="width: 300px">
-                        <label class="custom-preview-label" for="">Thumb</label>
-                        <input class="custom-preview-input" type="file" name="thumb" id="thumb" preview="thumb-preview" require>
-                    </div>
+                    <label style="width:100%" for="">Thumb</label>
+                    <input class="file" type="file" name="thumb" id="thumb" data-preview-file-type="text">
                     <p class="help-block">Image type of png,jpg and max size is 2MB.</p>
-                    <div class="preview" id="thumb-preview"></div>
                 </div>
-              
             </div><!-- /.box-body -->
 
             <div class="box-footer">
@@ -50,5 +48,15 @@
 </div>
 @stop
 @section('js')
-<script src="{{ asset('js/image_preview.js') }}"></script>
+@include('backend.layouts.js_fileinput')
+<script src="{{ asset('js/validator.js')}}"></script>
+<script>
+$('#form-validate').validator().on('submit', function (e) {
+    if (e.isDefaultPrevented()) {
+        // handle the invalid form...
+    } else {
+        // everything looks good!
+    }
+});
+</script>
 @stop

@@ -17,16 +17,18 @@
             <h3 class="box-title">Add News</h3>
         </div><!-- /.box-header -->
         <!-- form start -->
-        {{ Form::open(array('url' => 'backend/news/cate/add', 'method' => 'post','enctype' => 'multipart/form-data')) }}
+        {{ Form::open(array('url' => 'backend/news/cate/add', 'method' => 'post','enctype' => 'multipart/form-data','id'=>'form-validate','data-toggle'=>'validator','role'=>'form')) }}
         {{csrf_field()}}
             <div class="box-body">
                 <div class="form-group">
                     <label for="title">Title</label>
-                    <input name="title" type="text" class="form-control" id="title" placeholder="Enter title of news" require>
+                    <input name="title" type="text" class="form-control" id="title" placeholder="Enter title of news" data-error="กรุณากรอกหัวข้อข่าว" required>
+                    <div class="help-block with-errors"></div>
                 </div>
                 <div class="form-group">
                     <label for="title">Description</label>
-                    <input name="description" type="text" class="form-control" id="description" placeholder="Enter title of description" require>
+                    <input name="description" type="text" class="form-control" id="description" placeholder="Enter title of description" data-error="กรุณากรอกคำบรรยาย" required>
+                    <div class="help-block with-errors"></div>
                 </div>
                 <div class="form-group">
                     <label for="keywords">Keywords</label>
@@ -52,6 +54,7 @@
 @stop
 @section('js')
 <script src="{{ asset('vendor/summernote/summernote-bs4.js') }}"></script>
+<script src="{{ asset('js/validator.js')}}"></script>
 <script>
     $("#detail").summernote({
         placeholder: 'Detail...',
@@ -84,6 +87,13 @@
             }
         });
         };
+        $('#form-validate').validator().on('submit', function (e) {
+            if (e.isDefaultPrevented()) {
+                // handle the invalid form...
+            } else {
+                // everything looks good!
+            }
+        })
 
 </script>
 @include('backend.layouts.js_fileinput')

@@ -17,25 +17,28 @@
             <h3 class="box-title">Add News</h3>
         </div><!-- /.box-header -->
         <!-- form start -->
-        {{ Form::open(array('url' => 'backend/news/add', 'method' => 'post','enctype' => 'multipart/form-data')) }}
+        {{ Form::open(array('url' => 'backend/news/add', 'method' => 'post','enctype' => 'multipart/form-data','id'=>'form-validate','data-toggle'=>'validator','role'=>'form')) }}
         {{csrf_field()}}
             <div class="box-body">
                 <div class="form-group">
                     <label for="category">Category</label>
-                    <select class="form-control" name="cate_id" id="category">
-                    <option value="">Select news category</option>
-                    @foreach($category as $c)
-                        <option value="{{$c->id}}">{{$c->title}}</option>
-                    @endforeach
+                    <select class="form-control" name="cate_id" id="category" data-error="กรุณาเลือกหมวดหมู่ของข่าว" required>
+                        <option value="">Select news category</option>
+                        @foreach($category as $c)
+                            <option value="{{$c->id}}">{{$c->title}}</option>
+                        @endforeach
                     </select>
+                    <div class="help-block with-errors"></div>
                 </div>
                 <div class="form-group">
                     <label for="title">Title</label>
-                    <input name="title" type="text" class="form-control" id="title" placeholder="Enter title of news" required>
+                    <input name="title" type="text" class="form-control" id="title" placeholder="Enter title of news" data-error="กรุณากรอกชื่อข่าว" required>
+                    <div class="help-block with-errors"></div>
                 </div>
                 <div class="form-group">
                     <label for="title">Description</label>
-                    <input name="description" type="text" class="form-control" id="description" placeholder="Enter title of description" required>
+                    <input name="description" type="text" class="form-control" id="description" placeholder="Enter title of description" data-error="กรุณากรอกคำอธิบาย" required>
+                    <div class="help-block with-errors"></div>
                 </div>
                 <div class="form-group">
                     <label for="keywords">Keywords</label>
@@ -66,6 +69,7 @@
 @stop
 @section('js')
 <script src="{{ asset('vendor/summernote/summernote-bs4.js') }}"></script>
+<script src="{{ asset('js/validator.js')}}"></script>
 <script>
     $("#detail").summernote({
         placeholder: 'Detail...',
@@ -98,7 +102,13 @@
             }
         });
         };
-
+        $('#form-validate').validator().on('submit', function (e) {
+            if (e.isDefaultPrevented()) {
+                // handle the invalid form...
+            } else {
+                // everything looks good!
+            }
+        });
 </script>
 @include('backend.layouts.js_fileinput')
 @stop

@@ -20,8 +20,8 @@
 <div class="box">
     <div class="box-header">
         <h3 class="box-title">kKnowledge</h3>
-        <div class="pull-right"><a class="d-block btn btn-info" href="{{url('backend/knowledge/add')}}"><i class="fa fa-plus-square"></i> Add Knowledge</a></div>
         <div class="pull-right"><a class="d-block btn btn-info" href="{{url('backend/knowledge/cate/add')}}"><i class="fa fa-plus-square"></i> Add Category</a></div>
+        <div class="pull-right"><a class="d-block btn btn-info" href="{{url('backend/knowledge/add')}}"><i class="fa fa-plus-square"></i> Add Knowledge</a></div>
     </div>
     <!-- /.box-header -->
     <div class="box-body">
