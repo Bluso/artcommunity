@@ -9,7 +9,7 @@
         <div class="row">
             @foreach($home as $h)
             <div class="col-4">
-                <a class="row" href="{{ url($h->url) }}">
+                <a class="row" href="{{ $h->url }}">
                     <div class="col-12">
                         <img class="img-fluid" src="{{asset('storage/images/home/thumb')}}/{{$h->thumb}}" alt="{{ $h->title.' '.$h->keyword }}">
                     </div>
