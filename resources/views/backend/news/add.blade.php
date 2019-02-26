@@ -108,7 +108,7 @@
             } else {
                 // everything looks good!
             }
-        })
+        });
 </script>
 @include('backend.layouts.js_fileinput')
 @stop

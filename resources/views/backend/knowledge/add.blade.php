@@ -17,25 +17,28 @@
             <h3 class="box-title">Add knowledge</h3>
         </div><!-- /.box-header -->
         <!-- form start -->
-        {{ Form::open(array('url' => 'backend/knowledge/add', 'method' => 'post','enctype' => 'multipart/form-data')) }}
+        {{ Form::open(array('url' => 'backend/knowledge/add', 'method' => 'post','enctype' => 'multipart/form-data','id'=>'form-validate','data-toggle'=>'validator','role'=>'form')) }}
         {{csrf_field()}}
             <div class="box-body">
                 <div class="form-group">
                     <label for="category">Category</label>
-                    <select class="form-control" name="cate_id" id="category">
+                    <select class="form-control" name="cate_id" id="category" data-error="กรุณาเลือกหมวดหมู่" required>
                     <option value="">Select knowledge category</option>
                     @foreach($category as $c)
                         <option value="{{$c->id}}">{{$c->title}}</option>
                     @endforeach
                     </select>
+                    <div class="help-block with-errors"></div>
                 </div>
                 <div class="form-group">
                     <label for="title">Title</label>
-                    <input name="title" type="text" class="form-control" id="title" placeholder="Enter title of knowledge" required>
+                    <input name="title" type="text" class="form-control" id="title" placeholder="Enter title of knowledge" data-error="กรุณากรอกหัวข้อ" required>
+                    <div class="help-block with-errors"></div>
                 </div>
                 <div class="form-group">
                     <label for="title">Description</label>
-                    <input name="description" type="text" class="form-control" id="description" placeholder="Enter title of description" required>
+                    <input name="description" type="text" class="form-control" id="description" placeholder="Enter title of description" data-error="กรุณากรอกคำอธิบาย" required>
+                    <div class="help-block with-errors"></div>
                 </div>
                 <div class="form-group">
                     <label for="keywords">Keywords</label>
@@ -43,17 +46,17 @@
                 </div>
                 <div class="form-group">
                     <label for="">PDF Cover</label>
-                    <input class="file" type="file" name="thumb" id="thumb" data-preview-file-type="text" required>
+                    <input class="file" type="file" name="thumb" id="thumb" data-preview-file-type="text"  data-error="กรุณาเลือกภาพหน้าปก" required>
                     <p class="help-block">Image type of png,jpg and max size is 2MB.</p>
                 </div>
                 <div class="form-group">
                     <label for="">Image</label>
-                    <input class="file" type="file" name="image" id="image" data-preview-file-type="text" required>
+                    <input class="file" type="file" name="image" id="image" data-preview-file-type="text">
                     <p class="help-block">Image type of png,jpg and max size is 2MB.</p>
                 </div>
                 <div class="form-group">
                     <label for="">File Pdf</label>
-                    <input class="file" type="file" name="file" id="file" data-preview-file-type="text">
+                    <input class="file" type="file" name="file" id="file" data-preview-file-type="text" data-error="กรุณาเลือกไฟล์ PDF" required>
                     <p class="help-block">File type of pdf.</p>
                 </div>
                 <div class="form-group">
@@ -71,6 +74,8 @@
 @stop
 @section('js')
 <script src="{{ asset('vendor/summernote/summernote-bs4.js') }}"></script>
+<script src="{{ asset('js/validator.js')}}"></script>
+@include('backend.layouts.js_fileinput')
 <script>
     $("#detail").summernote({
         placeholder: 'Detail...',
@@ -102,7 +107,14 @@
                 $(el).summernote('editor.insertImage', results);
             }
         });
-        };
+    };
+    $('#form-validate').validator().on('submit', function (e) {
+        if (e.isDefaultPrevented()) {
+            // handle the invalid form...
+        } else {
+            // everything looks good!
+        }
+    });
 </script>
-@include('backend.layouts.js_fileinput')
+
 @stop
