@@ -25,6 +25,7 @@ Home Page
                         <h2 class="text-center text-dark">{{ $h->title }}</h2>
                         <p class="text-center text-dark">{{ $h->description }}</p>
                         <p class="text-center text-info">URL: {{ $h->url }}</p>
+                        <p class="text-center text-info">keywords: {{ $h->keywords }}</p>
                     </article>
             </div>
             @endforeach
