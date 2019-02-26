@@ -18,15 +18,14 @@ Home Page
             @foreach($home as $h)
             <div class="col-xs-4">
                 <div class="col-xs-12"><a type="button" class="btn btn-warning col-xs-12" href="{{url('backend/home/edit/'.$h->id)}}">Edit</a></div>
-                <a class="row" href="{{ url($h->url) }}">
                     <div class="col-xs-12">
                         <img class="img-responsive text-center center-block" src="{{asset('storage/images/home/thumb')}}/{{$h->thumb}}">
                     </div>
                     <article class="col-xs-12 mt-4">
-                        <h2 class="text-center">{{ $h->title }}</h2>
-                        <p class="text-center">{{ $h->description }}</p>
+                        <h2 class="text-center text-dark">{{ $h->title }}</h2>
+                        <p class="text-center text-dark">{{ $h->description }}</p>
+                        <p class="text-center text-info">URL: {{ $h->url }}</p>
                     </article>
-                </a>
             </div>
             @endforeach
         </div>
