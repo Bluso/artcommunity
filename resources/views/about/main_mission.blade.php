@@ -27,7 +27,7 @@
                 </ul>
             </div>
             <div class="col-12 col-md-6 text-center">
-                <img class="img-responsive" src="{{asset('images/mockup/image-about-02.png')}}" />
+                <img class="img-responsive" src="{{asset('images/about/image-about-02.png')}}" />
             </div>
         </div>
     </div>
