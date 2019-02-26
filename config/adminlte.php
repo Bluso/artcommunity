@@ -163,8 +163,17 @@ return [
         ],
         [
             'text'        => 'Laws',
-            'url'         => 'backend/laws',
             'icon'        => 'legal',
+            'submenu' => [
+                [
+                    'text' => 'Content',
+                    'url'  => 'backend/laws',
+                ],
+                [
+                    'text' => 'Categories',
+                    'url'  => 'backend/laws/cate',
+                ],
+            ]
         ],
         [
             'text'        => 'Contact',
