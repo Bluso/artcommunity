@@ -1,7 +1,7 @@
 <section class="belive py-5">
     <div class="container py-5">
         <div class="row">
-            <div class="col-12 col-md-6"><img class="img-responsive" src="{{asset('images/mockup/image-about-03.png')}}" /></div>
+            <div class="col-12 col-md-6"><img class="img-responsive" src="{{asset('images/about/image-about-03.png')}}" /></div>
             <div class="col-12 col-md-6 mt-5">
                 <h1>มปอ. เชื่อว่า</h1>        
                 <div class="dash"></div>
