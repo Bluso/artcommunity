@@ -19,9 +19,14 @@ Home Page
         {{ Form::open(array('url' => 'backend/home/edit/'.$home->id, 'id'=>'form-validate', 'method' => 'post','enctype' => 'multipart/form-data','data-toggle'=>'validator','role'=>'form' )) }}
         {{csrf_field()}}
         <div class="form-group">
+            @if(!empty($home->thumb))
             <img class="center-block pull-left" style="margin-bottom:15px; margin-top:15px;" src="{{asset('storage/images/home/thumb')}}/{{$home->thumb}}" />
             <label style="width:100%" for="">Thumb</label>
             <input class="file" type="file" name="thumb" id="thumb" data-preview-file-type="text">
+            @else
+            <label style="width:100%" for="">Thumb</label>
+            <input class="file" type="file" name="thumb" id="thumb" data-preview-file-type="text" required>
+            @endif
             <p class="help-block">Image type of png,jpg and max size is 2MB.</p>
         </div>
         <div class="form-group">
@@ -41,7 +46,7 @@ Home Page
         </div>
         <div class="form-group">
             <label for="description">Keyword</label>
-            <input name="keyword" type="text" class="form-control" id="keyword" value="{{ $home->keyword }}">
+            <input name="keyword" type="text" class="form-control" id="keyword" value="{{ $home->keywords }}">
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
         {{ Form::close() }}

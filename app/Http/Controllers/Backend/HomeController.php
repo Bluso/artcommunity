@@ -44,8 +44,9 @@ class HomeController extends Controller
             $tbl_home->thumb = $filename_thumb;
         }
         $tbl_home->title = $request->title;
+        $tbl_home->url = $request->url;
         $tbl_home->description = $request->description;
-        $tbl_home->keywords = $request->keywords;
+        $tbl_home->keywords = $request->keyword;
         $tbl_home->save();
         return redirect('backend/home');
     }
