@@ -17,7 +17,7 @@ Home Page
             <div class="col-xs-12"><h3 class="text-center">All content on home page</h3></div>
             @foreach($home as $h)
             <div class="col-xs-4">
-                <div class="col-xs-12"><a type="button" class="btn btn-warning col-xs-12" href="{{url('backend/home/edit/'.$h->id)}}">Edit</a></div>
+                <div class="col-xs-12" style="margin-bottom:15px;"><a type="button" class="btn btn-warning col-xs-12" href="{{url('backend/home/edit/'.$h->id)}}">Edit</a></div>
                     <div class="col-xs-12">
                         <img class="img-responsive text-center center-block" src="{{asset('storage/images/home/thumb')}}/{{$h->thumb}}">
                     </div>
