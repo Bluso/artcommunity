@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use App\AboutMember;
 use App\AboutHistory;
+use App\Banner;
 
 class AboutController extends Controller
 {
