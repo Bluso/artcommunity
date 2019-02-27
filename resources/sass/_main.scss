@@ -34,6 +34,8 @@ footer{
         font-family: 'prompt';
         font-weight: 200;
         font-size: 1rem;
+        text-decoration: none !important;
+        &:hover{color:$mediumgrey;}
     }
     ul{color:$mediumgrey;}
     .dash{
