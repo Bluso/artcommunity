@@ -69,7 +69,7 @@ class KnowledgeController extends Controller
             $file_pdf = $request->file('file');
             $extension = $file_pdf->getClientOriginalExtension();
             $filename_pdf = time().'.'.$extension;
-            Storage::disk('public')->putFileAs('images/knowledge/pdf',$file, $filename_pdf);
+            Storage::disk('public')->putFileAs('images/knowledge/pdf',$file_pdf, $filename_pdf);
             $knowledge->file = $filename_pdf;
         }
         $knowledge->save();
