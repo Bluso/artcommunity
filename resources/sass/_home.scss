@@ -51,6 +51,12 @@
             @extend %psl-mainset;
         }
     }
+    a.btn {
+        font-family: "mitr";
+        font-weight: 200;
+        font-size: 1.2rem;
+        width: 100%;
+    }
     article{
         position: absolute;
         bottom: -12px;
