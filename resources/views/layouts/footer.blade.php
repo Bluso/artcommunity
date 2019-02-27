@@ -20,11 +20,8 @@
         <div class="col-4">
             <h2>Related laws</h2>
             <div class="dash"></div>
-            <ul class="row">
-                <li class="col-12 pl-0"><a href="#">กฏหมายเกี่ยวกับการขับขี่ยานพาหนะ</a></li>
-                <li class="col-12 pl-0"><a href="#">กฏหมายเกี่ยวกับการบริโภค</a></li>
-                <li class="col-12 pl-0"><a href="#">กฏหมายเกี่ยวกับการจำหน่าย</a></li>
-                <li class="col-12 pl-0"><a href="#">กฏหมายเกี่ยวกับการโฆษณาเครื่องดื่มแอลกอฮอล์</a></li>
+            <ul class="row list-unstyled">
+                <li class="col-12"><a href="#">กฏหมายเกี่ยวข้อง</a></li>
             </ul>
         </div>
         @if(!empty($DataContact))
@@ -33,11 +30,10 @@
             <div class="dash"></div>
             <div class="row">
                 <div class="col">
-                    <h3>{{ $contactDat->name_th }}</h3>
-                    <p>{{ $contactDat->address }}</p>
-                    <p class="tel">{{ $contactDat->telephone }}</p>
-                    <a class="email">{{ $contactDat->email }}</a>
-                    <a href="{{ $contactDat->url }}" class="link-face"><i><img class="img-responsive" src="{{ asset('images/facebook_icon.png') }}" /></i> TFRD</a>
+                    <h3>{{ $DataContact->name_th }}</h3>
+                    <p>{{ $DataContact->address }}</p>
+                    <p class="tel">{{ $DataContact->telephone }}</p>
+                    <a class="email">{{ $DataContact->email }}</a>
                 </div>
             </div>
         </div>
