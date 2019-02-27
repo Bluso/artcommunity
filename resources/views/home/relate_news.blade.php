@@ -10,22 +10,25 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-1"></div>
-            <div class="col-10 mt-4">
+            <div class="col-12 mt-4">
                 <div class="row news-slide">
                     @foreach($news as $val)
-                    <div class="col-12">
+                    <a href="#" class="col-3">
                         <div><img class="img-fluid" src="{{asset('storage/images/news/thumb')}}/{{$val->thumb}}"></div>
                         <article class="pl-3 pb-3">
                             <p>โครงการ</p>
                             <div></div>
                             <p class="des">{{$val->title}}</p>
                         </article>
-                    </div>
+                    </a>
                     @endforeach
                 </div>
             </div>
-            <div class="col-1"></div>
+        </div>
+        <div class="row mt-5">
+            <div class="col-2 offset-5">
+                <a class="text-center btn btn-outline-warning">บทความทั้งหมด</a>
+            </div>
         </div>
     </div>
 </section>

@@ -6,6 +6,7 @@ if($('.banner-block')){
         });
     });
 }
+/*
 if($('.news-slide')){
     $('.news-slide').slick({
         slidesToShow: 3,
@@ -15,3 +16,4 @@ if($('.news-slide')){
         dots: true,
     });
 }
+*/
