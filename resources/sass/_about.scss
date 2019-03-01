@@ -1,87 +1,91 @@
-h1{
-    color: $blackgrey;
-    font-family: 'mitr';
-    font-size: 3.3rem;
-    font-weight: 400;
-}
-p{
-    font-family:'PSL Text Pro'; 
-    font-weight:400;
-    font-size: 2.1rem;
-    line-height: 2.6rem;
-}
-.banner{
+.page-about{
     h2{
-        top:44%;
-        width:100%;
+        color: $blackgrey;
         font-family: 'mitr';
-        font-size: 4.5rem;
+        font-size: 3.3rem;
         font-weight: 400;
-        color:$white;
     }
-}
-.history{
-   .data-block{
-        h1{
-            font-family:'PSL Text Pro'; 
-            font-weight: 700;
-            font-size: 2.2rem;
-            line-height: 2.5rem;
-        }
-        p{
-            font-family:'PSL Text Pro'; 
-            font-weight:400;
-            font-size: 1.8rem;
-            line-height: 2.2rem;
-        }
-   }
-}
-.mission{background-color: #eef2f3;}
-.main_mission{
-    .dash {
-        margin: 40px 0 45px;
-        width: 7%;
+    p{
+        font-family:'PSL Text Pro'; 
+        font-weight:400;
+        font-size: 2.1rem;
+        line-height: 2.6rem;
     }
-    ul{
-        padding-inline-start: 20px;
-        font-size: 1.3rem;
-        color: $orange;
-        li{
+    .banner{
+        h2{
+            top:44%;
+            width:100%;
+            font-family: 'mitr';
+            font-size: 4.5rem;
+            font-weight: 400;
+            color:$white;
+            width:100%;
+            text-align: center;
+        }
+    }
+    .history{
+    .data-block{
+            h2{
+                font-family:'PSL Text Pro'; 
+                font-weight: 700;
+                font-size: 2.2rem;
+                line-height: 2.5rem;
+            }
             p{
-                color:#616161;
-                font-size: 1.6rem;
-                line-height: 1.8rem;
+                font-family:'PSL Text Pro'; 
+                font-weight:400;
+                font-size: 1.8rem;
+                line-height: 2.2rem;
+            }
+    }
+    }
+    .mission{background-color: #eef2f3;}
+    .main_mission{
+        .dash {
+            margin: 40px 0 45px;
+            width: 7%;
+        }
+        ul{
+            padding-inline-start: 20px;
+            font-size: 1.3rem;
+            color: $orange;
+            li{
+                p{
+                    color:#616161;
+                    font-size: 1.6rem;
+                    line-height: 1.8rem;
+                }
             }
         }
     }
-}
-.belive{
-    background-color: #f36f21;
-    .dash{
-        color:$white;
-        border-bottom: solid 7px $white;
-        margin: 40px 0 45px;
-        width: 7%;
+    .belive{
+        background-color: #f36f21;
+        .dash{
+            color:$white;
+            border-bottom: solid 7px $white;
+            margin: 40px 0 45px;
+            width: 7%;
+        }
+        h2{color:$white;}
+        p{
+            font-size: 1.6rem;
+            line-height: 2.2rem;
+            color:$white;
+        }
     }
-    h1{color:$white;}
-    p{
-        font-size: 1.6rem;
-        line-height: 2.2rem;
-        color:$white;
+    .member{
+        p{
+            padding:0;
+            margin: 0;
+            font-size: 1.7rem;
+            line-height: 1.9rem;
+        }
+        img{
+            padding: 0.4rem;
+            background-color: #f8fafc;
+            border: 1px solid #f3f5f6;
+            box-shadow: 2px 4px 7px #9b999947;
+        }
+        
     }
-}
-.member{
-    p{
-        padding:0;
-        margin: 0;
-        font-size: 1.7rem;
-        line-height: 1.9rem;
-    }
-    img{
-        padding: 0.4rem;
-        background-color: #f8fafc;
-        border: 1px solid #f3f5f6;
-        box-shadow: 2px 4px 7px #9b999947;
-    }
-    
 }

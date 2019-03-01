@@ -4,6 +4,7 @@ body{
 }
 
 nav{
+    h3{font-family: 'prompt'; font-weight: 200;color:$blackgrey !important;font-size: 1rem;}
     ul{
         top: calc(50% - 1.3rem);
         li{
@@ -12,6 +13,7 @@ nav{
                 font-weight: 600;
                 color:$blackgrey !important;
                 font-size: 1.3rem;
+                &:hover{text-decoration: none; border-bottom: solid 5px $orange; }
             }
         }
     }

@@ -9,7 +9,7 @@
 }
 .banner-block{
     .caption{margin-bottom: 4%;}
-    h1{
+    h2{
         color:$white;
         font-family: 'mitr';
         font-weight: 500;
@@ -42,7 +42,7 @@
 .relate-news{
     @extend %space-inner;
     background-color: $lightgrey;
-    h1{
+    h2{
         @extend %txt-header;
     }
     p{
@@ -83,7 +83,7 @@
 }
 .relate_knowledge{
     @extend %space-inner;
-    h1{
+    h2{
         @extend %txt-header;
     }
     a.btn{
