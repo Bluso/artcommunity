@@ -22,8 +22,13 @@ Home Page
         <div class="form-group">
             <img class="center-block pull-left" style="margin-bottom:15px; margin-top:15px;" src="{{asset('storage/images/about/history')}}/{{$history->image}}" />
             <label style="width:100%" for="">Image</label>
-            <input class="file" type="file" name="image" id="image" data-preview-file-type="text" required>
+            <input class="file" type="file" name="image" id="image" data-preview-file-type="text">
             <p class="help-block">Image type of png,jpg and max size is 2MB.</p>
+        </div>
+        <div class="form-group">
+            <label for="title">SEO</label>
+            <input name="seo" type="text" class="form-control" id="seo" placeholder="Enter seo of about history" data-error="กรุณากรอกคีย์เวิร์ดสำหรับ seo" value="{!!$history->seo ?? ''!!}" required>
+            <div class="help-block with-errors"></div>
         </div>
         <div class="form-group">
             <label for="title">Detail</label>

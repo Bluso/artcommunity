@@ -9,7 +9,8 @@
         </div>
         <div class="row">
             <div class="col-12 text-center">
-                <img class="img-responsive" src="{{asset('storage/images/about/history')}}/{{$history->image}}" />
+                <p class="text-indend">{{$history->seo}}</p>
+                <img class="img-responsive" src="{{asset('storage/images/about/history')}}/{{$history->image}}" alt="{{$history->seo}}" />
             </div>
             <div class="col-12 mt-5 data-block">
                 {!! $history->detail !!}

@@ -9,6 +9,7 @@
     <div class="row">
         @foreach($knowledge as $val)
             <div class="col-3">
+                <p class="text-indend">{{$val->seo}}</p>
                 <a href="{{asset('storage/images/knowledge/pdf')}}/{{$val->file}}">
                     <img class="img-fluid" src="{{asset('storage/images/knowledge/thumb')}}/{{$val->thumb}}">
                 </a>

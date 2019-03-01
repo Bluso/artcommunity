@@ -14,6 +14,7 @@
                 <div class="row news-slide">
                     @foreach($news as $val)
                     <a href="#" class="col-3">
+                        <p class="text-indend">{{$val->seo}}</p>
                         <div><img class="img-fluid" src="{{asset('storage/images/news/thumb')}}/{{$val->thumb}}"></div>
                         <article class="pl-3 pb-3">
                             <p>โครงการ</p>
