@@ -23,6 +23,7 @@ class AboutHistoryController extends Controller
     {
         $validatedData = $request->validate([
             'detail' => 'required',
+            'seo' => 'required',
             'image' => 'image|mimes:jpeg,png,jpg|max:2048',
         ]);
         $tbl_about = AboutHistory::find($id);
@@ -35,6 +36,7 @@ class AboutHistoryController extends Controller
             $tbl_about->image = $filename_thumb;
         }
         $tbl_about->detail = $request->detail;
+        $tbl_about->seo = $request->seo;
         $tbl_about->save();
         return redirect('backend/about/history');
     }
