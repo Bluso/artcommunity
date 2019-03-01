@@ -3,7 +3,7 @@
     <div class="container py-5">
         <div class="row">
             <div class="col-12">
-                <h1 class="text-center">คณะกรรมการบริหาร</h1>        
+                <h2 class="text-center">คณะกรรมการบริหาร</h2>        
                 <div class="dash"></div>
             </div>
         </div>
