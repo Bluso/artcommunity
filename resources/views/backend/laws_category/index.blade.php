@@ -47,7 +47,13 @@ Categories
                                 <dd>{{ $n->description }}</dd>
                             </dl>
                             </td>
-                            <td><img style="max-width:200px;" src="{{asset('storage/images/cate_laws')}}/{{$n->thumb}}" /></td>
+                            <td>
+                                @if(isset($n->thumb))
+                                <img style="max-width:200px;" src="{{asset('storage/images/cate_laws')}}/{{$n->thumb}}" />
+                                @else
+                                    <p>no thumb</p>
+                                @endif
+                             </td>
                             <td>{{ $n->created_at }}</td>
                             <td>{{ $n->updated_at }}</td>
                             <td>
