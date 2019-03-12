@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Backend;
 
+use App\RelatedLaw;
 use App\CategoriesRelatedLaw;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -120,6 +121,7 @@ class CateLawsController extends Controller
     public function destroy($id)
     {
         CategoriesRelatedLaw::find($id)->delete();
+        RelatedLaw::where('law_cate_id',$id)->delete();
         return redirect('backend/laws/cate');
     }
 
