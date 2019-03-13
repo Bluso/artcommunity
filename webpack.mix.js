@@ -18,3 +18,4 @@ mix.js('resources/js/app.js', 'public/js')
    .options({
        processCssUrls: false
    });
+mix.copy('node_modules/font-awesome/fonts', 'public/fonts/font-awesome', false);
