@@ -4,7 +4,7 @@
 
 @section('content')
 <div class="page-about contaner-fluid">
-    @include('about.banner')
+    @include('banner.index')
     @include('about.history')
     @include('about.mission')
     @include('about.main_mission')

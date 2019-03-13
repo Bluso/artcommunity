@@ -13,6 +13,8 @@
 
 Route::get('/', 'HomeController@index');
 Route::get('about', 'AboutController@index');
+Route::get('news', 'NewsController@index');
+
 
 Auth::routes();
 //Route::middleware(['auth'])->group(function () {
