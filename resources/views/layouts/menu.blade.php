@@ -17,7 +17,7 @@
                 <ul class="list-unstyled w-100">
                     <li class="mr-4 float-left"><a href="{{ url('about') }}">เกี่ยวกับเรา</a></li>
                     <li class="mr-4 float-left"><a href="{{ url('news') }}">กิจกรรมและข่าวสาร</a></li>
-                    <li class="mr-4 float-left"><a href="{{ url('law') }}">กฏหมายที่เกี่ยวข้อง</a></li>
+                    <li class="mr-4 float-left"><a href="{{ url('laws') }}">กฏหมายที่เกี่ยวข้อง</a></li>
                     <li class="mr-4 float-left"><a href="{{ url('knowledge') }}">บทความงานวิจัย</a></li>
                     <li class="float-left"><a href="{{ url('contact') }}">ติดต่อเรา</a></li>
                 </ul>
