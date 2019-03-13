@@ -14,6 +14,7 @@
 Route::get('/', 'HomeController@index');
 Route::get('about', 'AboutController@index');
 Route::get('news', 'NewsController@index');
+Route::get('laws', 'LawsController@index');
 
 
 Auth::routes();
