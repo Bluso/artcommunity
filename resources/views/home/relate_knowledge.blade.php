@@ -20,7 +20,7 @@
     </div>
     <div class="row mt-5">
         <div class="col-2 offset-5">
-            <a class="text-center btn btn-outline-warning">บทความทั้งหมด</a>
+            <a class="text-center btn btn-outline-warning">กิจกรรมทั้งหมด</a>
         </div>
     </div>
 </section>
