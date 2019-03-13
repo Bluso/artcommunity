@@ -1,0 +1,47 @@
+.block-laws{
+    margin-top:100px;
+    margin-bottom: 150px;
+    .law-cate-menu{
+        a{
+            font-family: 'mitr';
+            font-weight: 200;
+            font-size: 1.1rem;
+            line-height: 1.2rem;
+            color:#666;
+            text-decoration: none;
+            cursor: pointer;
+            span{color:#000;font-size: 1.3rem;line-height: 1.8rem;}
+            &.active{
+                background: $orange;
+                font-weight: 400;
+                color:#fff;
+                span{font-weight: 500;color:#fff;}
+            }
+        }
+    }
+    .tab-content{
+        h2{
+            font-family: 'mitr';
+            font-weight: 400;
+            font-size: 2.5rem;
+            line-height: 2.7rem;
+        }
+        h3{
+            button{
+                font-family: 'mitr';
+                color:$orange;
+                font-size: 1.3rem;
+                line-height: 1.8rem;
+                font-weight: 400;
+                text-decoration: none !important;
+            }
+        }
+        .card-body{
+            font-family: 'mitr';
+            font-weight: 200;
+            color:#666;
+            font-size: 1rem;
+            line-height: 1.5rem;
+        }
+    }
+}
