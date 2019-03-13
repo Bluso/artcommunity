@@ -1,0 +1,53 @@
+.page-news{
+    padding-bottom:155px;
+    .block-tab{
+        margin:100px auto 80px auto;
+        a{
+            font-size: 2.3rem;
+            font-family: 'mitr';
+            font-weight: 200;
+            color:#999;
+            cursor: pointer;
+            text-decoration: none;
+            &.active{
+                font-weight: 500;
+                color:$blackgrey;
+                border-bottom:solid 5px $orange;
+            }
+        }
+    }
+    .block-news{
+        .title{
+            font-family: 'mitr';
+            font-weight: 400;
+            color:$blackgrey;
+            font-size: 2rem;
+            font-size: 1.37rem;
+            line-height: 1.4rem;
+        }
+        .description{
+            color:#616161;
+            font-family:'PSL Text Pro'; 
+            font-weight:400;
+            font-size: 1.1rem;
+            line-height: 1.4rem;
+        }
+    }
+    .block-activities{
+        .categories{
+            img{ 
+                border:solid thin #d7d7d7;
+            }
+        }
+    }
+    a.btn-viewmore{
+        border:solid thin $orange;
+        color:$orange !important;
+        font-size: 1.3rem;
+        font-family: 'mitr';
+        font-weight: 400;
+        cursor: pointer;
+        border-radius: 5px;
+        text-align: center;
+    }
+}
