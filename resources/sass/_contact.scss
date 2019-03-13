@@ -1,0 +1,37 @@
+.block-contact{
+    margin-top: 100px;
+    margin-bottom: 130px;
+    h2{
+        font-family: 'mitr';
+        font-weight: 500;
+        font-size: 2.2rem;
+        line-height: 2.6rem;
+        color:$blackgrey;
+    }
+    h3{
+        font-family: 'mitr';
+        font-weight: 400;
+        font-size: 1.8rem;
+        line-height: 2.2rem;
+        color:$blackgrey;
+    }
+    .address{
+        margin-top:40px;
+        margin-bottom: 40px;
+        font-family:'PSL Text Pro'; 
+        font-weight:400;
+        font-size: 2.1rem;
+        line-height: 2.6rem;
+        color:#616161;
+    }
+    .contact-data{
+        a{text-decoration: none;}
+        p{
+            font-family:'PSL Text Pro'; 
+            font-weight:700;
+            font-size: 2.1rem;
+            line-height: 2.6rem;
+            color:$blackgrey;
+        }
+    }
+}
