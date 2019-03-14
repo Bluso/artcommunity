@@ -14,7 +14,8 @@ class HomeController extends Controller
     public function index()
     {
         $knowledge = KnowledgeResearch::latest()->limit(4)->get();
-        $news = NewsActivitys::latest()->take(4)->get();
+        //Query Activity
+        $news = NewsActivitys::latest()->take(4)->where('type','2')->get();
         $home = Home::all();
         $banner = Banner::all()->where('page_id','1');
         return view('home.index')
