@@ -118,3 +118,42 @@ footer{
         text-align: center;
     }
 }
+.activity-block{
+    p{
+        color:#616161;
+        &.intro{
+            @extend %psl-mainset;
+        }
+    }
+    article{
+        position: absolute;
+        bottom: -12px;
+        width: 85%;
+        p{
+            padding: 0;
+            margin: 0;
+            color:$white;
+            font-family: 'mitr';
+            font-weight: 200;
+            font-size: 0.9rem;
+            line-height: 1.7rem;
+            &.des{
+                font-size: 1rem;
+                font-weight: 500;
+            }
+        }
+        div{
+            display: block;
+            border-bottom: solid 2px $orange;
+            width:20%;
+        }
+        img{
+            max-width: 23%;
+            float: right;
+            position: absolute;
+            right: -1%;
+            border-radius: 5px;
+            bottom: 32%;
+        }
+    }
+}

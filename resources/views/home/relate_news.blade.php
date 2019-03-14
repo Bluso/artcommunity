@@ -13,15 +13,16 @@
             <div class="col-12 mt-4">
                 <div class="row news-slide">
                     @foreach($news as $val)
-                    <a href="#" class="col-3">
+                    <a href="#" class="col-3 activity-block">
                         <p class="text-indend">{{$val->title}}</p>
                         <p class="text-indend">{{$val->description}}</p>
                         <p class="text-indend">{{$val->seo}}</p>
-                        <div><img class="img-fluid" src="{{asset('storage/images/news/thumb')}}/{{$val->thumb}}" alt="{{$val->title}}"></div>
+                        <div><img class="img-fluid" src="{{asset('storage/images/news/thumb')}}/{{$val->thumb}}" alt="{{$val->seo}}"></div>
                         <article class="pl-3 pb-3">
                             <p>โครงการ</p>
                             <div></div>
                             <p class="des">{{$val->title}}</p>
+                            <img src="{{asset('storage/images/cate_news')}}/{{$val->cate->thumb}}" alt="{{$val->cate->seo}}">
                         </article>
                     </a>
                     @endforeach
@@ -30,7 +31,7 @@
         </div>
         <div class="row mt-5">
             <div class="col-2 offset-5">
-                <a class="text-center btn btn-outline-warning">บทความทั้งหมด</a>
+                <a class="text-center btn btn-outline-warning">กิจกรรมทั้งหมด</a>
             </div>
         </div>
     </div>
