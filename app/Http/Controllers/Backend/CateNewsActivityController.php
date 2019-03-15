@@ -42,6 +42,7 @@ class CateNewsActivityController extends Controller
     public function store(Request $request)
     {
         $cate = new CategoriesNewsActivitys;
+        $cate->type = $request->type;
         $cate->title = $request->title;
         $cate->description = $request->description;
         $cate->keywords = $request->keywords;
@@ -105,6 +106,7 @@ class CateNewsActivityController extends Controller
             Storage::disk('public')->putFileAs('images/cate_news',$file_thumb, $filename_thumb);
             $tbl_news_cate->thumb = $filename_thumb;
         }
+        $tbl_news_cate->type = $request->type;
         $tbl_news_cate->title = $request->title;
         $tbl_news_cate->description = $request->description;
         $tbl_news_cate->keywords = $request->keywords;
