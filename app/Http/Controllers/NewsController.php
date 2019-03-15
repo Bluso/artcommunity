@@ -16,4 +16,11 @@ class NewsController extends Controller
         $activity = NewsActivitys::latest()->get();
         return view('news.index')->withBanner($banner)->withNews($activity)->withCate($cateactivity);
     }
+
+    public function detail($id)
+    {
+        $news = NewsActivitys::where('id',$id)->get();
+        $activities = NewsActivitys::latest()->take(3)->where('type','2')->get();
+        return view('news_detail.index')->withActivities($activities)->withNews($news);
+    }
 }
