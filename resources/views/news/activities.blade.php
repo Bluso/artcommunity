@@ -12,7 +12,7 @@
         <div class="row">
             @foreach($news as $val)
                 @if($val->type == '2')
-                    <a href="#" class="col-4 activity-block">
+                    <a href="{{url('news/detail')}}/{{$val->id}}" class="col-4 activity-block">
                         <p class="text-indend">{{$val->title}}</p>
                         <p class="text-indend">{{$val->description}}</p>
                         <p class="text-indend">{{$val->seo}}</p>
