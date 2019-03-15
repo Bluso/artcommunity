@@ -22,8 +22,20 @@
             
             <div class="box-body">
                 <div class="form-group">
+                    <label for="category">Type Category</label>
+                    <select class="form-control" name="type" id="type" data-error="กรุณาเลือกประเภทของบทความ" required>
+                        <option value="{{$news->type}}">{{ config('content.type.'.$news->type) }}</option>
+                        @foreach(config('content.type') as $key => $c)
+                            @if($news->type != $key)
+                            <option value="{{$key}}">{{$c}}</option>
+                            @endif
+                        @endforeach
+                    </select>
+                    <div class="help-block with-errors"></div>
+                </div>
+                <div id="activity_category" class="form-group">
                     <label for="category">Category</label>
-                    <select class="form-control" name="cate_id" id="category" data-error="กรุณาเลือกหมวดหมู่ของข่าว" required>
+                    <select class="form-control" name="cate_id" id="category" data-error="กรุณาเลือกหมวดหมู่ของข่าว" >
                         <option value="{{$news->cate->id}}">{{$news->cate->title}}</option>
                         @foreach($category as $c)
                             @if($news->cate->id != $c->id)
@@ -58,6 +70,15 @@
                     <label for="">Image</label>
                     <input class="file" type="file" name="image" id="image" data-preview-file-type="text">
                     <p class="help-block">Image type of png,jpg and max size is 2MB.</p>
+                </div>
+                <div class="form-group">
+                    @if($news->file)
+                        <p>File URL: <a href="{{asset('storage/files/news')}}/{{$news->file}}">{{asset('storage/files/news')}}/{{$news->file}}</a></p>
+                    @else
+                        <p> File URL : - </p>
+                    @endif
+                    <label for="">File</label>
+                    <input class="file" type="file" name="file" id="file" data-preview-file-type="text">
                 </div>
                 <div class="form-group">
                     <label for="title">Detail</label>
@@ -110,11 +131,25 @@
         });
         };
         $('#form-validate').validator().on('submit', function (e) {
-        if (e.isDefaultPrevented()) {
-            // handle the invalid form...
-        } else {
-            // everything looks good!
+            if (e.isDefaultPrevented()) {
+                // handle the invalid form...
+            } else {
+                // everything looks good!
+            }
+        });
+        var now_type = $( "#type" ).val();
+        if(now_type == 1){
+            $('#activity_category').addClass('hidden');
+            $('#category').val("");
         }
-    })
+        $( "#type" ).change(function() {
+           var type = $(this).val();
+           if(type == '2'){
+                $('#activity_category').removeClass('hidden');
+           }else{
+                $('#activity_category').addClass('hidden');
+                $('#category').val("");
+           }
+        });
 </script>
 @stop

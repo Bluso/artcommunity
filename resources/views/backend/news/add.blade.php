@@ -21,8 +21,18 @@
         {{csrf_field()}}
             <div class="box-body">
                 <div class="form-group">
+                    <label for="category">Type Category</label>
+                    <select class="form-control" name="type" id="type" data-error="กรุณาเลือกประเภทของบทความ" required>
+                        <option value="">Select type category</option>
+                        @foreach(config('content.type') as $key => $c)
+                            <option value="{{$key}}">{{$c}}</option>
+                        @endforeach
+                    </select>
+                    <div class="help-block with-errors"></div>
+                </div>
+                <div id="activity_category" class="form-group hidden">
                     <label for="category">Category</label>
-                    <select class="form-control" name="cate_id" id="category" data-error="กรุณาเลือกหมวดหมู่ของข่าว" required>
+                    <select class="form-control" name="cate_id" id="category" data-error="กรุณาเลือกหมวดหมู่ของข่าว">
                         <option value="">Select news category</option>
                         @foreach($category as $c)
                             <option value="{{$c->id}}">{{$c->title}}</option>
@@ -53,6 +63,10 @@
                     <label for="">Image</label>
                     <input class="file" type="file" name="image" id="image" data-preview-file-type="text" required>
                     <p class="help-block">Image type of png,jpg and max size is 2MB.</p>
+                </div>
+                <div class="form-group">
+                    <label for="">File</label>
+                    <input class="file" type="file" name="file" id="file" data-preview-file-type="text">
                 </div>
                 <div class="form-group">
                     <label for="title">Detail</label>
@@ -108,6 +122,16 @@
             } else {
                 // everything looks good!
             }
+        });
+        $( "#type" ).change(function() {
+           var type = $(this).val();
+           if(type == '2'){
+                $('#activity_category').removeClass('hidden');
+           }else{
+                $('#activity_category').addClass('hidden');
+                $('#category').val("");
+           }
+            
         });
 </script>
 @include('backend.layouts.js_fileinput')

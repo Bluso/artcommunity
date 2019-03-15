@@ -33,8 +33,10 @@
                     <thead>
                         <tr role="row">
                             <th class="sorting_desc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-sort="ascending">#</th>
+                            <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" style="width: 283px;">Group Category</th>
                             <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" style="width: 283px;">Title</th>
                             <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" style="width: 359px;">Thumb</th>
+                            <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" style="width: 359px;">File</th>
                             <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" style="width: 320px;">Created at</th>
                             <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" style="width: 243px;">Updated at</th>
                             <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" style="width: 176px;">Action</th>
@@ -46,8 +48,13 @@
                             <td class="sorting_1">
                             {{ $key+1 }}
                             </td>
+                            <td>{{ config('content.type.'.$n->type) }}</td>
                             <td>
                             <dl>
+                                @if($n->cate_id)
+                                <dt>Category</dt>
+                                <dd>{{ $n->cate->title }}</dd>
+                                @endif
                                 <dt>Title</dt>
                                 <dd>{{ $n->title }}</dd>
                                 <dt>Keywords</dt>
@@ -57,6 +64,11 @@
                             </dl>
                             </td>
                             <td><img src="{{asset('storage/images/news/thumb')}}/{{$n->thumb}}" /></td>
+                            @if($n->file)
+                            <td><a href="{{asset('storage/files/news')}}/{{$n->file}}" target="_blank">{{asset('storage/files/news')}}/{{$n->file}}</a></td>
+                            @else
+                            <td></td>
+                            @endif
                             <td>{{ $n->created_at }}</td>
                             <td>{{ $n->updated_at }}</td>
                             <td>
@@ -90,8 +102,11 @@
                     </tbody>
                     <tfoot>
                         <tr>
+                            <th rowspan="1" colspan="1">#</th>
+                            <th rowspan="1" colspan="1">Group Category</th>
                             <th rowspan="1" colspan="1">Title</th>
                             <th rowspan="1" colspan="1">Thumb</th>
+                            <th rowspan="1" colspan="1">File</th>
                             <th rowspan="1" colspan="1">Created at</th>
                             <th rowspan="1" colspan="1">Updated at</th>
                             <th rowspan="1" colspan="1">Action</th>
