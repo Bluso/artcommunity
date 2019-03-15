@@ -1,5 +1,17 @@
 .page-news{
     padding-bottom:155px;
+    .activity-block {
+        a{text-decoration: none;}
+        article {
+            p {
+                font-size: 1.3rem; 
+                &.des{
+                    font-size: 1.5rem;
+                    line-height: 2.5rem;
+                }
+            }
+        }
+    }
     .block-tab{
         margin:100px auto 80px auto;
         a{
@@ -17,6 +29,7 @@
         }
     }
     .block-news{
+        a{text-decoration: none;}
         .title{
             font-family: 'mitr';
             font-weight: 400;
@@ -108,17 +121,6 @@
                 font-family: 'mitr';
                 font-weight: 400;
                 font-size: 2rem;
-            }
-            .activity-block {
-                article {
-                    p {
-                        font-size: 1.3rem; 
-                        &.des{
-                            font-size: 1.5rem;
-                            line-height: 2.5rem;
-                        }
-                    }
-                }
             }
         }
     }
