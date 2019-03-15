@@ -4,7 +4,7 @@
             @foreach($cate as $val)
                 @if($val->type == '2')
                     <div class="col-3 mb-4">
-                        <a><img class="img-fluid" src="{{asset('storage/images/cate_news')}}/{{$val->thumb}}" alt="{{$val->seo}}" /></a>
+                        <a class="d-block border"><img class="img-fluid" src="{{asset('storage/images/cate_news')}}/{{$val->thumb}}" alt="{{$val->seo}}" /></a>
                     </div>
                 @endif
             @endforeach
