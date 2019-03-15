@@ -8,7 +8,7 @@
                     <h2>กฏหมายที่เกี่ยวข้องกับ{{ $cate->title }}</h2>
                     <div class="dash float-left my-2"></div>
                     <div class="float-left row w-100">
-                        <div class="accordion" id="LawsCol">
+                        <div class="accordion" id="LawsCol-{{ $cate->id }}">
                             @foreach($lawscontent as $law)
                             @if($cate->id == $law->law_cate_id)
                             <div class="panel-group">
@@ -20,7 +20,7 @@
                                     </h3>
                                 </div>
 
-                                <div id="Law-{{ $law->id }}-collapse" class="collapse show" aria-labelledby="Law-{{ $law->id }}" data-parent="#LawsCol">
+                                <div id="Law-{{ $law->id }}-collapse" class="collapse show" aria-labelledby="Law-{{ $law->id }}" data-parent="#LawsCol-{{ $law->law_cate_id }}">
                                     <div class="pt-0 card-body">
                                         {!! $law->detail !!}
                                     </div>
