@@ -31,7 +31,7 @@
         </div>
         <div class="row mt-5">
             <div class="col-2 offset-5">
-                <a class="text-center btn btn-outline-warning">กิจกรรมทั้งหมด</a>
+                <a href="{{ url('law') }}"  class="text-center btn btn-outline-warning">กิจกรรมทั้งหมด</a>
             </div>
         </div>
     </div>
