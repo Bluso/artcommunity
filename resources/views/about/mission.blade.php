@@ -1,4 +1,4 @@
-<section class="mission">
+<section id="mission" class="mission">
     <div class="container pb-5">
         <div class="row position-relative py-5">
             <div class="col-10 offset-1">
