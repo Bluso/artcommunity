@@ -4,6 +4,7 @@ body{
 }
 
 nav{
+    h3{font-family: 'prompt'; font-weight: 200;color:$blackgrey !important;font-size: 1rem;}
     ul{
         top: calc(50% - 1.3rem);
         li{
@@ -12,6 +13,7 @@ nav{
                 font-weight: 600;
                 color:$blackgrey !important;
                 font-size: 1.3rem;
+                &:hover{text-decoration: none; border-bottom: solid 5px $orange; }
             }
         }
     }
@@ -34,6 +36,8 @@ footer{
         font-family: 'prompt';
         font-weight: 200;
         font-size: 1rem;
+        text-decoration: none !important;
+        &:hover{color:$mediumgrey;}
     }
     ul{color:$mediumgrey;}
     .dash{
@@ -77,6 +81,7 @@ footer{
         p{color:#616161;font-size: 1.2rem;font-family: 'PSL Text Pro';}
     }
 }
+.text-indend{text-indent: -99999px;height: 0px;}
 .slick-slide{
     height:auto !important;
 }
@@ -99,4 +104,55 @@ footer{
     background: $orange !important;
     color: $white;
     opacity: 0.75;
+}
+
+.others-banner{
+    h2{
+        top:44%;
+        width:100% !important;
+        font-family: 'mitr' !important;
+        font-size: 4.5rem !important;
+        font-weight: 400 !important;
+        color:$white !important;
+        text-align: center;
+    }
+}
+.activity-block{
+    p{
+        color:#616161;
+        &.intro{
+            @extend %psl-mainset;
+        }
+    }
+    article{
+        position: absolute;
+        bottom: -12px;
+        width: 85%;
+        p{
+            padding: 0;
+            margin: 0;
+            color:$white;
+            font-family: 'mitr';
+            font-weight: 200;
+            font-size: 0.9rem;
+            line-height: 1.7rem;
+            &.des{
+                font-size: 1rem;
+                font-weight: 500;
+            }
+        }
+        div{
+            display: block;
+            border-bottom: solid 2px $orange;
+            width:20%;
+        }
+        img{
+            max-width: 23%;
+            float: right;
+            position: absolute;
+            right: -1%;
+            border-radius: 5px;
+            bottom: 32%;
+        }
+    }
 }
