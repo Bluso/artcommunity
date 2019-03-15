@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="csrf-token" content="{!! csrf_token() !!}">
         <title>[ มปอ ] - @yield('title')</title>
-        <link href="{{ asset('css/app.css') }}?v={{ today()->format('Ymd') }}-1" rel="stylesheet">
+        <link href="{{ asset('css/app.css') }}" rel="stylesheet">
         @stack('style')
         <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -24,7 +24,7 @@
         <footer>
             @include('layouts.footer')
         </footer>
-        <script src="{{ asset('js/app.js') }}?v={{ today()->format('Ymd') }}-1" type="text/javascript" charset="utf-8" async defer></script>
+        <script src="{{ asset('js/app.js') }}" type="text/javascript" charset="utf-8" async defer></script>
         @stack('js')
     </body>
 </html>
