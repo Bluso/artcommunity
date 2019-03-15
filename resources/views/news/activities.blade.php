@@ -12,11 +12,11 @@
         <div class="row">
             @foreach($news as $val)
                 @if($val->type == '2')
-                    <a href="#" class="col-3 activity-block">
+                    <a href="#" class="col-4 activity-block">
                         <p class="text-indend">{{$val->title}}</p>
                         <p class="text-indend">{{$val->description}}</p>
                         <p class="text-indend">{{$val->seo}}</p>
-                        <div><img class="img-fluid" src="{{asset('storage/images/news/thumb')}}/{{$val->thumb}}" alt="{{$val->seo}}"></div>
+                        <div><img class="img-fluid w-100" src="{{asset('storage/images/news/thumb')}}/{{$val->thumb}}" alt="{{$val->seo}}"></div>
                         <article class="pl-3 pb-3">
                             <p>โครงการ</p>
                             <div></div>

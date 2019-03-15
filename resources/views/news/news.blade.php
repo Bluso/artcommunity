@@ -4,7 +4,7 @@
             @foreach($news as $val)
                 @if($val->type == '1')
                 <div class="col-3 mb-4">
-                    <img class="img-fluid" src="{{asset('storage/images/news/thumb')}}/{{$val->thumb}}" alt="{{$val->seo}}" />
+                    <img class="img-fluid w-100" src="{{asset('storage/images/news/thumb')}}/{{$val->thumb}}" alt="{{$val->seo}}" />
                     <p class="title mt-4">{{$val->title}}</p>
                     <p class="description">
                         {{$val->description}}
