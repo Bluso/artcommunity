@@ -39,6 +39,8 @@ Categories
                         <tr role="row" class="odd">
                             <td class="sorting_1">
                             <dl>
+                                <dt>Type</dt>
+                                <dd>{{ config('content.type.'.$n->type) }}</dd>
                                 <dt>Title</dt>
                                 <dd>{{ $n->title }}</dd>
                                 <dt>Keywords</dt>

@@ -21,6 +21,16 @@
         {{csrf_field()}}
             <div class="box-body">
                 <div class="form-group">
+                    <label for="category">Type Category</label>
+                    <select class="form-control" name="type" id="type" data-error="กรุณาเลือกประเภทของบทความ" required>
+                        <option value="">Select type category</option>
+                        @foreach(config('content.type') as $key => $c)
+                            <option value="{{$key}}">{{$c}}</option>
+                        @endforeach
+                    </select>
+                    <div class="help-block with-errors"></div>
+                </div>
+                <div class="form-group">
                     <label for="title">Title</label>
                     <input name="title" type="text" class="form-control" id="title" placeholder="Enter title of news" data-error="กรุณากรอกหัวข้อข่าว" required>
                     <div class="help-block with-errors"></div>
