@@ -7,10 +7,10 @@ if($('.block-news').length > 0){
         newviewmore.hide();
     }
     activity.hide();
-    activity.slice(0, 1).show();
+    activity.slice(0, 9).show();
     newviewmore.on('click', function (e) {
         e.preventDefault();
-        $(".block-news>div:hidden").slice(0, 1).slideDown();
+        $(".block-news>div:hidden").slice(0, 4).slideDown();
         if ($(".block-news>div:hidden").length == 0) {
             newviewmore.hide();
         }
@@ -26,10 +26,10 @@ if($('#activities .activity-block').length > 0){
         acviewmore.hide();
     }
     $(activity).hide();
-    $(activity).slice(0, 1).show();
+    $(activity).slice(0, 9).show();
     acviewmore.on('click', function (e) {
         e.preventDefault();
-        $("#activities .activity-block:hidden").slice(0, 1).slideDown();
+        $("#activities .activity-block:hidden").slice(0, 3).slideDown();
         console.log('$("#activities .activity-block:hidden").length',$("#activities .activity-block:hidden").length);
         if ($("#activities .activity-block:hidden").length == 0) {
             acviewmore.hide();
