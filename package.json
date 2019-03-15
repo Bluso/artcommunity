@@ -25,6 +25,8 @@
     },
     "dependencies": {
         "bootstrap-fileinput": "^4.5.2",
+        "bootstrap-validator": "^0.11.9",
+        "font-awesome": "^4.7.0",
         "image-preview-js": "^1.0.1",
         "slick-carousel": "^1.8.1"
     }
