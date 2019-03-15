@@ -44,6 +44,9 @@ $lightgrey:#fafafa;
 .btn.btn-outline-warning{
     border-color:$orange !important;
     color: $orange !important;
+    font-family: "mitr";
+    font-weight: 200;
+    font-size: 1.2rem;
     &:hover{
         background-color: $orange !important;
         color: $white !important;
