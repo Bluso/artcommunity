@@ -13,6 +13,7 @@ require('slick-carousel');
 require('./home');
 require('./knowledge');
 require('./news');
+require('./laws');
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
