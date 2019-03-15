@@ -3,7 +3,7 @@ if($('.block-news').length > 0){
     var countnews = activity.length;
     var newviewmore = $("#news .btn-viewmore");
     console.log(countnews);
-    if(countnews <= 1){
+    if(countnews <= 9){
         newviewmore.hide();
     }
     activity.hide();
@@ -22,7 +22,7 @@ if($('#activities .activity-block').length > 0){
     var acviewmore = $("#activities .btn-viewmore");
     var count = activity.length;
     console.log(count);
-    if(count <= 1){
+    if(count <= 9){
         acviewmore.hide();
     }
     $(activity).hide();
