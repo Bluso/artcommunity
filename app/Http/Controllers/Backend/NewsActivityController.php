@@ -42,6 +42,7 @@ class NewsActivityController extends Controller
     {
         $news = new NewsActivitys;
         $news->cate_id = $request->cate_id;
+        $news->type = $request->type;
         $news->title = $request->title;
         $news->description = $request->description;
         $news->keywords = $request->keywords;
@@ -102,6 +103,7 @@ class NewsActivityController extends Controller
     {
         $validatedData = $request->validate([
             'title' => 'required|max:255',
+            'type' => 'required',
             'description' => 'required|max:255',
             'image' => 'image|mimes:jpeg,png,jpg|max:2048',
         ]);
@@ -123,7 +125,15 @@ class NewsActivityController extends Controller
             Storage::disk('public')->putFileAs('images/news',$file, $filename);
             $tbl_news->image = $filename;
         }
-        
+        if($request->hasfile('file')) 
+        { 
+            $file_attach = $request->file('file');
+            $extension_attach = $file_attach->getClientOriginalExtension();
+            $filename_attach =time().'.'.$extension_attach;
+            Storage::disk('public')->putFileAs('files/news',$file_attach, $filename_attach);
+            $tbl_news->file = $filename_attach;
+        }
+        $tbl_news->type = $request->type;
         $tbl_news->title = $request->title;
         $tbl_news->description = $request->description;
         $tbl_news->cate_id = $request->cate_id;
