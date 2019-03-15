@@ -1,13 +1,10 @@
-if($('.banner-block')){
-    $(document).ready(function(){
-        $('.banner-block').slick({
-            arrows:false,
-
-        });
+if($('.banner-block').length > 0){
+    $('.banner-block').slick({
+        arrows:false,
     });
 }
 /*
-if($('.news-slide')){
+if($('.news-slide').length > 0){
     $('.news-slide').slick({
         slidesToShow: 3,
         slidesToScroll: 1,
