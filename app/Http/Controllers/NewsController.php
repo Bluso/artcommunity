@@ -19,7 +19,6 @@ class NewsController extends Controller
 
     public function detail($id)
     {
-        $id=3;
         $news = NewsActivitys::where('id',$id)->get();
         $activities = NewsActivitys::latest()->take(3)->where('type','2')->get();
         return view('news_detail.index')->withActivities($activities)->withNews($news);
