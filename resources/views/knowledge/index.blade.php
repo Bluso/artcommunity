@@ -6,5 +6,6 @@
 <div class="page-knowledge contaner-fluid">
     @include('banner.index')
     @include('knowledge.content')
+    @include('knowledge.viewmore')
 </div>
 @stop
