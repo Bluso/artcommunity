@@ -30,6 +30,12 @@
                     </select>
                     <div class="help-block with-errors"></div>
                 </div>
+                @if($category->count() == 0)
+                <div id="addcate" class="form-group">
+                    <p class="addcate text-danger">ตอนนี้ยังไม่มีหมวดหมู่ คลิก "+ Add New Category" เพื่อสร้าง Category</p>
+                    <a href="/backend/laws/cate/add" id="addcatebtn" class="addcate btn btn-primary" data-disable="true">+ Add New Category</a>
+                </div>
+                @endif
                 <div class="form-group">
                     <label for="title">Title</label>
                     <input name="title" type="text" class="form-control" id="title" placeholder="Enter title of laws" required>
