@@ -136,11 +136,16 @@ class NewsActivityController extends Controller
         $tbl_news->type = $request->type;
         $tbl_news->title = $request->title;
         $tbl_news->description = $request->description;
-        $tbl_news->cate_id = $request->cate_id;
+        if ($tbl_news->type == 1) {
+            $tbl_news->cate_id = null;
+        } else {
+            $tbl_news->cate_id = $request->cate_id;
+        }
         $tbl_news->keywords = $request->keywords;
         $tbl_news->detail = $request->detail;
         $tbl_news->seo = $request->title.','.$request->keywords.','.$request->description;
         $tbl_news->save();
+
         return redirect('backend/news');
     }
 
