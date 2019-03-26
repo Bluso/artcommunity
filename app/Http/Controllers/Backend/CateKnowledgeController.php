@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Backend;
 
 use App\CategoriesKnowledge;
+use App\KnowledgeResearch;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Storage;
@@ -117,6 +118,7 @@ class CateKnowledgeController extends Controller
     public function destroy($id)
     {
         CategoriesKnowledge::find($id)->delete();
+        KnowledgeResearch::where('cate_id', $id)->delete();
         return redirect('backend/knowledge/cate');
     }
 }

@@ -43,6 +43,7 @@ class KnowledgeController extends Controller
     {
         
         $knowledge = new KnowledgeResearch;
+        $knowledge->cate_id = $request->cate_id;
         $knowledge->title = $request->title;
         $knowledge->description = $request->description;
         $knowledge->keywords = $request->keywords;
