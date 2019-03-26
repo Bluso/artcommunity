@@ -40,6 +40,12 @@
                     </select>
                     <div class="help-block with-errors"></div>
                 </div>
+                @if($category->count() == 0)
+                <div id="addcate" class="form-group hidden">
+                    <p class="addcate text-danger">ตอนนี้ยังไม่มีหมวดหมู่ของข่าว คลิก "+ Add New Category" เพื่อสร้าง Category</p>
+                    <a href="/backend/news/cate/add" id="addcatebtn" class="addcate btn btn-primary" data-disable="true">+ Add New Category</a>
+                </div>
+                @endif
                 <div class="form-group">
                     <label for="title">Title</label>
                     <input name="title" type="text" class="form-control" id="title" placeholder="Enter title of news" data-error="กรุณากรอกชื่อข่าว" required>
@@ -123,15 +129,22 @@
                 // everything looks good!
             }
         });
+        var now_type = $( "#type" ).val();
+        if(now_type == 2){
+            $('#addcate').removeClass('hidden');
+        }
         $( "#type" ).change(function() {
            var type = $(this).val();
            if(type == '2'){
                 $('#activity_category').removeClass('hidden');
+                $('#addcate').removeClass('hidden');
+                $('#category').prop('required',true);
            }else{
                 $('#activity_category').addClass('hidden');
+                $('#addcate').addClass('hidden');
                 $('#category').val("");
+                $('#category').prop('required',false);
            }
-            
         });
 </script>
 @include('backend.layouts.js_fileinput')
