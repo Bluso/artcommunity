@@ -13,7 +13,7 @@
     <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
     <li><a href="#">Knowledge</a></li>
 </ol>
-   
+
 @stop
 
 @section('content')
@@ -47,7 +47,7 @@
                             <td>
                             <dl>
                                 <dt>Category</dt>
-                                <dd>{{ $n->cate->title }}</dd>
+                                <dd>{{ $n->cate->title ?? '' }}</dd>
                                 <dt>Title</dt>
                                 <dd>{{ $n->title }}</dd>
                                 <dt>Keywords</dt>
