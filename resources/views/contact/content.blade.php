@@ -1,19 +1,19 @@
 <div class="container block-contact">
     <div class="row">
        <div class="col-8 offset-2">
-           @if($contact->name_th)
+           @if(!empty($contact->name_th))
            <h2 class="text-center">{{ $contact->name_th }}</h2>
            @endif
-           @if($contact->name_en)
+           @if(!empty($contact->name_en))
            <h3 class="text-center">{{ $contact->name_en }}</h3>
            @endif
-           @if($contact->address)
+           @if(!empty($contact->address))
            <p class="address text-center p-4 bg-light">
            {{ $contact->address }}
            </p>
            @endif
            <div class="row contact-data">
-                @if($contact->telephone)
+                @if(!empty($contact->telephone))
                <div class="col text-center">
                     <a href="">
                         <img class="mx-auto img-fluid" src="{{ asset('images/contact/icon-tel.png') }}" />
@@ -21,7 +21,7 @@
                     </a>
                </div>
                @endif
-               @if($contact->fax)
+               @if(!empty($contact->fax))
                <div class="col text-center">
                     <a href="">
                         <img class="mx-auto img-fluid" src="{{ asset('images/contact/icon-fax.png') }}" />
@@ -29,7 +29,7 @@
                     </a>
                </div>
                @endif
-               @if($contact->email)
+               @if(!empty($contact->email))
                <div class="col text-center">
                     <a href="">
                         <img class="mx-auto img-fluid" src="{{ asset('images/contact/icon-letter.png') }}" />
