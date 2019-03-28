@@ -21,7 +21,7 @@
                         <article class="pl-3 pb-3">
                             <p>โครงการ</p>
                             <div></div>
-                            <p class="des">{{$val->title}}</p>
+                            <p class="des pr-5">{{$val->title}}</p>
                             <img src="{{asset('storage/images/cate_news')}}/{{$val->cate->thumb}}" alt="{{$val->cate->seo}}">
                         </article>
                     </a>
