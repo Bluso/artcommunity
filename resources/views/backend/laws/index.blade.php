@@ -48,6 +48,8 @@ Laws
                             </td>
                             <td>
                             <dl>
+                                <dt>Category</dt>
+                                <dd>{{ $n->cate->title }}</dd>
                                 <dt>Title</dt>
                                 <dd>{{ $n->title }}</dd>
                                 <dt>Keywords</dt>
