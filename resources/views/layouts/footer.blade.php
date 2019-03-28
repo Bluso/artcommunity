@@ -4,24 +4,24 @@
             <h2>About us</h2>
             <div class="dash"></div>
             <ul class="row list-unstyled">
-                <li class="col-12"><a href="#">ความเป็นมา</a></li>
-                <li class="col-12"><a href="#">ภารกิจของ มปอ.</a></li>
-                <li class="col-12"><a href="#">คณะกรรมการ</a></li>
+                <li class="col-12"><a href="/about#history">ความเป็นมา</a></li>
+                <li class="col-12"><a href="/about#mission">ภารกิจของ มปอ.</a></li>
+                <li class="col-12"><a href="/about#member">คณะกรรมการ</a></li>
             </ul>
         </div>
         <div class="col-2">
             <h2>News&Activity</h2>
             <div class="dash"></div>
             <ul class="row list-unstyled">
-                <li class="col-12"><a href="#">ข่าวกิจกรรม มปอ.</a></li>
-                <li class="col-12"><a href="#">โครงการ มปอ.</a></li>
+                <li class="col-12"><a href="/news">ข่าวกิจกรรม มปอ.</a></li>
+                <li class="col-12"><a href="/news">โครงการ มปอ.</a></li>
             </ul>
         </div>
         <div class="col-4">
             <h2>Related laws</h2>
             <div class="dash"></div>
             <ul class="row list-unstyled">
-                <li class="col-12"><a href="#">กฏหมายเกี่ยวข้อง</a></li>
+                <li class="col-12"><a href="/laws">กฏหมายเกี่ยวข้อง</a></li>
             </ul>
         </div>
         @if(!empty($DataContact))
