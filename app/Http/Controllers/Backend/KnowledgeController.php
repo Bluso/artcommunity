@@ -142,6 +142,7 @@ class KnowledgeController extends Controller
             $tbl_knowledge->file = $filename;
         }
         
+        $tbl_knowledge->cate_id = $request->cate_id;
         $tbl_knowledge->title = $request->title;
         $tbl_knowledge->description = $request->description;
         $tbl_knowledge->keywords = $request->keywords;
