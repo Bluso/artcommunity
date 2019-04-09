@@ -15,7 +15,7 @@
            <div class="row contact-data">
                 @if(!empty($contact->telephone))
                <div class="col text-center">
-                    <a href="">
+                    <a href="tel:{{$contact->telephone66}}">
                         <img class="mx-auto img-fluid" src="{{ asset('images/contact/icon-tel.png') }}" />
                         <p class="mt-4 text-center">{{$contact->telephone}}</p>
                     </a>
@@ -23,7 +23,7 @@
                @endif
                @if(!empty($contact->fax))
                <div class="col text-center">
-                    <a href="">
+                    <a href="tel:{{$contact->fax66}}">
                         <img class="mx-auto img-fluid" src="{{ asset('images/contact/icon-fax.png') }}" />
                         <p class="mt-4 text-center">{{$contact->fax}}</p>
                     </a>
@@ -31,7 +31,7 @@
                @endif
                @if(!empty($contact->email))
                <div class="col text-center">
-                    <a href="">
+                    <a href="mailto:{{$contact->email}}">
                         <img class="mx-auto img-fluid" src="{{ asset('images/contact/icon-letter.png') }}" />
                         <p class="mt-4 text-center">{{$contact->email}}</p>
                     </a>
