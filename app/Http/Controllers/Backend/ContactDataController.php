@@ -54,6 +54,14 @@ class ContactDataController extends Controller
         return redirect('backend/contact');
     }
 
+    public function changFormatTelFax($n)
+    {
+        $n = preg_replace('/^0|\s+/', '', $n);
+        $n = '+66'.$n;
+
+        return $n;
+    }
+
     /**
      * Display the specified resource.
      *
