@@ -22,7 +22,7 @@
                     <li class="float-left"><a href="{{ url('contact') }}">ติดต่อเรา</a></li>
                 </ul>
             </div>
-            <div class="col-1">
+            <div class="col-1 d-none">
                 <a class="d-block"><img class="img-fluid" src="{{ asset('images/facebook_icon.png') }}" alt="มูลนิธิแก้ไขปัญหาการดื่มแอลกอฮอล์ (มปอ.)" /></a>
             </div>
         </div>
