@@ -30,9 +30,17 @@
     }
     .mission{background-color: #eef2f3;}
     .main_mission{
+        background-color: #f36f21;
+        h2{color: #fff;}
+        p{
+            font-size: 1.6rem;
+            line-height: 2.2rem;
+            color:#fff;
+        }
         .dash {
             margin: 40px 0 45px;
             width: 7%;
+            border-bottom: solid 7px #fff;
         }
         ul{
             padding-inline-start: 20px;
@@ -48,18 +56,13 @@
         }
     }
     .belive{
-        background-color: #f36f21;
         .dash{
-            color:$white;
-            border-bottom: solid 7px $white;
             margin: 40px 0 45px;
             width: 7%;
         }
-        h2{color:$white;}
         p{
             font-size: 1.6rem;
             line-height: 2.2rem;
-            color:$white;
         }
     }
     .member{
