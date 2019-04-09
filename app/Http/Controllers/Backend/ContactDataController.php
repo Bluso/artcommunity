@@ -48,9 +48,17 @@ class ContactDataController extends Controller
         $contact->fax = $request->fax;
         $contact->email = $request->email;
         $contact->url = $request->url;
-        $contact->save();
-    
 
+        $tel = $this->changFormatTelFax($request->telephone);
+        $contact->telephone66 = $tel;
+
+        if(!empty($request->fax)){
+            $fax = $this->changFormatTelFax($request->fax);
+            $contact->fax66 = $fax;
+        }
+
+        $contact->save();
+        
         return redirect('backend/contact');
     }
 
