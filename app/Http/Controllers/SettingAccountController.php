@@ -1,0 +1,160 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
+use App\user;
+use redirect;
+use Storage;
+
+class SettingAccountController extends Controller
+{
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
+    {
+        $user = user::all();
+        return view('settingaccount')->with('users', $user);
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        //
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return \Illuminate\Http\Response
+     */
+    public function store(Request $request)
+    {
+
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+        //
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($id)
+    {
+        //
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request)
+    {
+      $regex = '//^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/';
+      $this->validate($request, [
+        'username' => [
+          'required', 'max:20', 'min:6',
+          Rule::unique('users')->ignore($request->input('user_id')),
+        ],
+        'email'=> [
+          'required', 'email',
+          Rule::unique('users')->ignore($request->input('user_id')),
+        ],
+        'display_name' => [
+          'required', 'max:20', 'min:6',
+          Rule::unique('users')->ignore($request->input('user_id')),
+        ],
+        'bio_link' => [
+          'regex:' . $regex,
+        ],
+      ]);
+
+       if ($request->has('imageUpload-edit')) {
+           //Get filename with the extension
+           $filenamewithExt = $request->file('imageUpload-edit')->getClientOriginalName();
+           //Get just filename
+           $filename = pathinfo($filenamewithExt,PATHINFO_FILENAME);
+           //Get just ext
+           $extension = $request->file('imageUpload-edit')->guessClientExtension();
+           //FileName to store
+           $fileNameToStore = time().'.'.$extension;
+           //Upload Image
+           $path = $request->file('imageUpload-edit')->storeAs('public/upload',$fileNameToStore);
+            // Storage::disk('public')->put($path);
+        } else {
+          $fileNameToStore = $request->input('avatar');
+        }
+        // return $fileNameToStore;
+        $user = user::find($request->input('user_id'));
+        $user->username = $request->input('username');
+        $user->email = $request->input('email');
+        $user->display_name = $request->input('display_name');
+        $user->bio = $request->get('bio');
+        $user->bio_link = $request->input('bio_link');
+        $user->avatar = $fileNameToStore;
+        $user->save();
+
+        return back()->with('message', 'Updated Success !');
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($id)
+    {
+        //
+    }
+
+    public function updateimage(Request $request)
+    {
+      if ($request->has('imageUpload')) {
+          // Get filename with the extension
+          $filenamewithExt = $request->file('imageUpload')->getClientOriginalName();
+          //Get just filename
+          $filename = pathinfo($filenamewithExt,PATHINFO_FILENAME);
+          //Get just ext
+          $extension = $request->file('imageUpload')->guessClientExtension();
+          //FileName to store
+          $fileNameToStore = time().'.'.$extension;
+          //Upload Image
+          $path = $request->file('imageUpload')->storeAs('public/upload',$fileNameToStore);
+           // Storage::disk('public')->put($path);
+       } else {
+         $fileNameToStore = $request->input('avatar');
+       }
+
+       $user = user::find($request->input('user_id'));
+       $user->avatar = $fileNameToStore;
+       $user->save();
+
+       return back();
+    }
+
+
+}
