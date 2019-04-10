@@ -86,6 +86,22 @@ Auth::routes();
                 Route::get('delete/{id}', 'Backend\CateKnowledgeController@destroy');
             });
         });
+        Route::prefix('youtube')->group(function () {
+            Route::get('/', 'Backend\YoutubeController@index');
+            Route::get('add', 'Backend\YoutubeController@create');
+            Route::post('add', 'Backend\YoutubeController@store');
+            Route::get('edit/{id}', 'Backend\YoutubeController@edit');
+            Route::post('edit/{id}', 'Backend\YoutubeController@update');
+            Route::get('delete/{id}', 'Backend\YoutubeController@destroy');
+            Route::prefix('cate')->group(function () {
+                Route::get('/', 'Backend\CateYoutubeController@index');
+                Route::get('add', 'Backend\CateYoutubeController@create');
+                Route::post('add', 'Backend\CateYoutubeController@store');
+                Route::get('edit/{id}', 'Backend\CateYoutubeController@edit');
+                Route::post('edit/{id}', 'Backend\CateYoutubeController@update');
+                Route::get('delete/{id}', 'Backend\CateYoutubeController@destroy');
+            });
+        });
         Route::prefix('laws')->group(function () {
             Route::post('upload/image', 'Backend\NewsActivityController@upload_image');
             Route::get('/', 'Backend\LawsController@index');

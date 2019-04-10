@@ -1,6 +1,9 @@
 
  <div class="container content">
     <div class="row">
+        <div class="col-12">
+            <h2 class="mb-5 text-center">เอกสารงานวิจัย</h2>
+        </div>
         @foreach($knowledge as $val)
             <div class="col-3 knowledge_content mb-5">
                 <p class="text-indend position-absolute">{{$val->title}}</p>

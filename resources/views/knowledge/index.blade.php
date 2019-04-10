@@ -7,5 +7,7 @@
     @include('banner.index')
     @include('knowledge.content')
     @include('knowledge.viewmore')
+    @include('knowledge.youtube')
+    
 </div>
 @stop

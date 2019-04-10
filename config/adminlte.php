@@ -162,6 +162,20 @@ return [
             ]
         ],
         [
+            'text'        => 'Knowledge Youtube',
+            'icon'        => 'book',
+            'submenu' => [
+                [
+                    'text' => 'Content',
+                    'url'  => 'backend/youtube',
+                ],
+                [
+                    'text' => 'Categories',
+                    'url'  => 'backend/youtube/cate',
+                ],
+            ]
+        ],
+        [
             'text'        => 'Laws',
             'icon'        => 'legal',
             'submenu' => [
