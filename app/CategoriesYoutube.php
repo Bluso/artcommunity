@@ -9,4 +9,8 @@ class CategoriesYoutube extends Model
 {
     use SoftDeletes;
     protected $dates = ['deleted_at'];
+    public function youtube()
+    {
+        return $this->hasOne('App\Youtube', 'cate_id', 'id');
+    }
 }
