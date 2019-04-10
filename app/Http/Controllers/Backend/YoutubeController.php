@@ -44,9 +44,9 @@ class YoutubeController extends Controller
         $knowledge = new Youtube;
         $knowledge->cate_id = $request->cate_id;
         $knowledge->title = $request->title;
-        $knowledge->youtube = $request->url;
+        $knowledge->youtube = $request->urlstrim;
         $knowledge->keywords = $request->keywords;
-        $knowledge->seo = $request->keywords.','.$request->title.','.$request->url; 
+        $knowledge->seo = $request->keywords.','.$request->title.','.$request->url;
         $knowledge->save();
         return redirect('backend/youtube');
     }
