@@ -85,44 +85,17 @@ class YoutubeController extends Controller
     public function update(Request $request, $id)
     {
         $validatedData = $request->validate([
-            'title' => 'required|max:255',
-            'description' => 'required|max:255',
-            'image' => 'image|mimes:jpeg,png,jpg|max:2048',
+            'title' => 'required|max:255'
         ]);
-        $tbl_knowledge = Youtube::find($id);
-        
-        if($request->hasfile('thumb')) 
-        { 
-            $file_thumb = $request->file('thumb');
-            $extension_thumb = $file_thumb->getClientOriginalExtension();
-            $filename_thumb =time().'.'.$extension_thumb;
-            Storage::disk('public')->putFileAs('images/knowledge/thumb',$file_thumb, $filename_thumb);
-            $tbl_knowledge->thumb = $filename_thumb;
-        }
-        if($request->hasfile('image')) 
-        { 
-            $file = $request->file('image');
-            $extension = $file->getClientOriginalExtension();
-            $filename =time().'.'.$extension;
-            Storage::disk('public')->putFileAs('images/knowledge',$file, $filename);
-            $tbl_knowledge->image = $filename;
-        }
-        if($request->hasfile('file')) 
-        { 
-            $file = $request->file('file');
-            $extension = $file->getClientOriginalExtension();
-            $filename =time().'.'.$extension;
-            Storage::disk('public')->putFileAs('images/knowledge/pdf',$file, $filename);
-            $tbl_knowledge->file = $filename;
-        }
-        
-        $tbl_knowledge->cate_id = $request->cate_id;
-        $tbl_knowledge->title = $request->title;
-        $tbl_knowledge->description = $request->description;
-        $tbl_knowledge->keywords = $request->keywords;
-        $tbl_knowledge->detail = $request->detail;
-        $tbl_knowledge->seo = $request->keywords.','.$request->title.','.$request->description; 
-        $tbl_knowledge->save();
+        $youtube = Youtube::find($id);
+
+        $youtube->cate_id = $request->cate_id;
+        $youtube->title = $request->title;
+        $youtube->youtube = $request->urlstrim;
+        $youtube->keywords = $request->keywords;
+        $youtube->seo = $request->keywords.','.$request->title.','.$request->youtube;
+        $youtube->save();
+
         return redirect('backend/youtube');
     }
 
