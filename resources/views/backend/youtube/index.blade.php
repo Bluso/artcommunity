@@ -29,7 +29,7 @@
                     <thead>
                         <tr role="row">
                             <th class="sorting_desc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-sort="ascending">#</th>
-                            <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" style="width: 283px;">Group Category</th>
+                            <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" style="width: 283px;">Category</th>
                             <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" style="width: 283px;">Title</th>
                             <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" style="width: 359px;">Thumb</th>
                             <th class="sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" style="width: 320px;">Created at</th>
@@ -43,13 +43,9 @@
                             <td class="sorting_1">
                             {{ $key+1 }}
                             </td>
-                            <td>{{ config('content.type.'.$n->type) }}</td>
+                            <td>{{ $n->cate->title }}</td>
                             <td>
                             <dl>
-                                @if($n->cate_id)
-                                <dt>Category</dt>
-                                <dd>{{ $n->cate->title }}</dd>
-                                @endif
                                 <dt>Title</dt>
                                 <dd>{{ $n->title }}</dd>
                                 <dt>Keywords</dt>
