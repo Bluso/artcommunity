@@ -54,10 +54,9 @@
                 <div class="form-group">
                     <label for="title">Youtube URL</label>
                     <input name="url" type="text" class="form-control" id="url" value="https://www.youtube.com/watch?{{ $youtube->youtube }}" placeholder="Enter URL of Youtube" data-error="กรุณากรอก Youtube URL" required>
-                    <input name="urlstrim" id="urlstrim" type="hidden" value="">
+                    <input name="urlstrim" id="urlstrim" type="hidden" value="{{ $youtube->youtube }}">
                     <div class="help-block with-errors"></div>
                 </div>
-                <iframe width="420" height="345" src="https://www.youtube.com/embed/{{ $youtube->youtube }}"></iframe>
                 <div class="form-group">
                     <label for="keywords">Keywords</label>
                     <input name="keywords" type="text" class="form-control" id="keyword" value="{{ $youtube->keywords }}">
