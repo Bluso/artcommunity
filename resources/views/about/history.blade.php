@@ -1,5 +1,4 @@
 @if(!empty($history))
-<section class="history py-5">
 <section id="history" class="history py-5">
     <div class="container py-5">
         <div class="row">
