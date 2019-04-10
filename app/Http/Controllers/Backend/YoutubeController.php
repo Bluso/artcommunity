@@ -71,8 +71,8 @@ class YoutubeController extends Controller
     public function edit($id)
     {
         $cate = CategoriesYoutube::all();
-        $knowledge = Youtube::find($id);
-        return view('backend.youtube.edit')->withYoutube($knowledge)->withCategory($cate);
+        $youtube = Youtube::find($id);
+        return view('backend.youtube.edit')->withYoutube($youtube)->withCategory($cate);
     }
 
     /**
