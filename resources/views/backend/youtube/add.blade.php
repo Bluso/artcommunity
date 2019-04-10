@@ -22,7 +22,7 @@
             <div class="box-body">
                 <div class="form-group">
                     <label for="category">Category</label>
-                    <select class="form-control" name="cate_id" id="category" data-error="กรุณาเลือกหมวดหมู่ของข่าว">
+                    <select class="form-control" name="cate_id" id="category" data-error="กรุณาเลือกหมวดหมู่ของ Youtube">
                         <option value="">Select youtube category</option>
                         @foreach($category as $c)
                             <option value="{{$c->id}}">{{$c->title}}</option>
@@ -38,12 +38,13 @@
                 @endif
                 <div class="form-group">
                     <label for="title">Title</label>
-                    <input name="title" type="text" class="form-control" id="title" placeholder="Enter title of news" data-error="กรุณากรอกชื่อข่าว" required>
+                    <input name="title" type="text" class="form-control" id="title" placeholder="Enter title of Youtube" data-error="กรุณากรอกชื่อ Youtube" required>
                     <div class="help-block with-errors"></div>
                 </div>
                 <div class="form-group">
                     <label for="title">Youtube URL</label>
-                    <input name="url" type="text" class="form-control" id="url" placeholder="Enter title of description" data-error="กรุณากรอกคำอธิบาย" required>
+                    <input name="url" type="text" class="form-control" id="url" placeholder="Enter URL of Youtube" data-error="กรุณากรอก Youtube URL" required>
+                    <input name="urlstrim" id="urlstrim" type="hidden" value="">
                     <div class="help-block with-errors"></div>
                 </div>
                 <div class="form-group">
@@ -74,6 +75,20 @@
                 // handle the invalid form...
             } else {
                 // everything looks good!
+            }
+        });
+
+        $('#url').on('change', function(){
+            var newval = '',
+                $this = $(this);
+                $url = $(this).val();
+                $urlstrim = $('#urlstrim').val($url);
+            if (newval = $this.val().match(/(\?|&)v=([^&#]+)/)) {
+                $urlstrim.val(newval.pop());
+            } else if (newval = $this.val().match(/(\.be\/)+([^\/]+)/)) {
+                $urlstrim.val(newval.pop());
+            } else if (newval = $this.val().match(/(\embed\/)+([^\/]+)/)) {
+                $urlstrim.val(newval.pop().replace('?rel=0',''));
             }
         });
 </script>
