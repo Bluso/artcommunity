@@ -4,27 +4,29 @@
             <div class="col-12">
                 <h2 class="my-5 text-center">กรณีศึกษา "รู้เท่าทันแอลกอฮอล์"</h2>
             </div>
-            <div class="col-4 mb-4" data-toggle="modal" data-target="#youtubeModal">
-                <img class="img-fluid" src="https://img.youtube.com/vi/X_GoyOCzK9Y/maxresdefault.jpg" />
-                <p class="text-center">Best Relaxing Piano Studio Ghibli Complete Collection</p>
+            @foreach($youtube as $val)
+            <div class="col-4 mb-4" data-toggle="modal" data-target="#youtubeModal{{$val->id}}">
+                <img class="img-fluid" src="https://img.youtube.com/vi/{{$val->youtube}}/maxresdefault.jpg" />
+                <p class="text-center">{{$val->title}}</p>
             </div>
-            <div class="modal fade" id="youtubeModal" tabindex="-1" role="dialog" aria-labelledby="youtubeModalLabel" aria-hidden="true">
+            <div class="modal fade" id="youtubeModal{{$val->id}}" tabindex="-1" role="dialog" aria-labelledby="youtubeModalLabel" aria-hidden="true">
                 <div class="modal-dialog modal-lg" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="youtubeModalLabel">Best Relaxing Piano Studio Ghibli Complete Collection</h5>
+                            <h5 class="modal-title" id="youtubeModalLabel">{{$val->title}}</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
                         <div class="modal-body">
                             <div class="embed-responsive embed-responsive-16by9">
-                                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/X_GoyOCzK9Y?rel=0" allowfullscreen></iframe>
+                                <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/{{$val->youtube}}" allowfullscreen></iframe>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+            @endforeach
         </div>
     </div>
 </section>
