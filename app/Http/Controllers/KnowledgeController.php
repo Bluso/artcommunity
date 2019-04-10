@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Storage;
 use App\Banner;
 use App\KnowledgeResearch;
 use App\Youtube;
+use App\CategoriesYoutube;
 
 class KnowledgeController extends Controller
 {
@@ -14,6 +15,7 @@ class KnowledgeController extends Controller
         $banner = Banner::all()->where('page_id','5');
         $knowledge = KnowledgeResearch::latest()->get();
         $youtube = Youtube::all();
-        return view('knowledge.index')->withBanner($banner)->withKnowledge($knowledge)->withYoutube($youtube);
+        $cateyoutube = CategoriesYoutube::all();
+        return view('knowledge.index')->withBanner($banner)->withKnowledge($knowledge)->withYoutube($youtube)->withCateyoutube($cateyoutube);
     }
 }
