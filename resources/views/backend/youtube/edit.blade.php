@@ -21,21 +21,9 @@
         {{csrf_field()}}
 
             <div class="box-body">
-                <div class="form-group">
-                    <label for="category">Type Category</label>
-                    <select class="form-control" name="type" id="type" data-error="กรุณาเลือกประเภทของบทความ">
-                        <option value="{{$youtube->type}}">{{ config('content.type.'.$youtube->type) }}</option>
-                        @foreach(config('content.type') as $key => $c)
-                            @if($youtube->type != $key)
-                            <option value="{{$key}}">{{$c}}</option>
-                            @endif
-                        @endforeach
-                    </select>
-                    <div class="help-block with-errors"></div>
-                </div>
-                <div id="activity_category" class="form-group">
+                <div id="youtube_category" class="form-group">
                     <label for="category">Category</label>
-                    <select class="form-control" name="cate_id" id="category" data-error="กรุณาเลือกหมวดหมู่ของข่าว" required>
+                    <select class="form-control" name="cate_id" id="category" data-error="กรุณาเลือกหมวดหมู่ของ Youtube" required>
                         @if($youtube->cate_id)
                               <option value="{{$youtube->cate->id}}">{{$youtube->cate->title}}</option>
                             @foreach($category as $c)
@@ -60,14 +48,16 @@
                 @endif
                 <div class="form-group">
                     <label for="title">Title</label>
-                    <input name="title" type="text" class="form-control" id="title" value="{{ $youtube->title }}" data-error="กรุณากรอกชื่อข่าว" required>
+                    <input name="title" type="text" class="form-control" id="title" value="{{ $youtube->title }}" data-error="กรุณากรอกชื่อ Youtube" required>
                     <div class="help-block with-errors"></div>
                 </div>
                 <div class="form-group">
-                    <label for="title">Description</label>
-                    <input name="description" type="text" class="form-control" id="description" value="{{ $youtube->description }}" data-error="กรุณากรอกคำอธิบาย" required>
+                    <label for="title">Youtube URL</label>
+                    <input name="url" type="text" class="form-control" id="url" value="https://www.youtube.com/watch?{{ $youtube->youtube }}" placeholder="Enter URL of Youtube" data-error="กรุณากรอก Youtube URL" required>
+                    <input name="urlstrim" id="urlstrim" type="hidden" value="">
                     <div class="help-block with-errors"></div>
                 </div>
+                <iframe width="420" height="345" src="https://www.youtube.com/embed/{{ $youtube->youtube }}"></iframe>
                 <div class="form-group">
                     <label for="keywords">Keywords</label>
                     <input name="keywords" type="text" class="form-control" id="keyword" value="{{ $youtube->keywords }}">
@@ -99,23 +89,7 @@
                 'X-CSRF-TOKEN': $('input[name="_token"]').attr('value')
             }
         });
-        function sendFile(file, el) {
-        var form_data = new FormData();
-        form_data.append('file', file);
-        var CSRF_TOKEN = $('input[name="_token"]').attr('value');
 
-        $.ajax({
-            type: 'post',
-            url: "{{url('backend/youtube/upload/image')}}",
-            data: form_data,
-            cache: false,
-            contentType: false,
-            processData: false,
-            success: function(results) {
-                $(el).summernote('editor.insertImage', results);
-            }
-        });
-        };
         $('#form-validate').validator().on('submit', function (e) {
             if (e.isDefaultPrevented()) {
                 // handle the invalid form...
@@ -123,24 +97,19 @@
                 // everything looks good!
             }
         });
-        var now_type = $( "#type" ).val();
-        if(now_type == 1){
-            $('#activity_category').addClass('hidden');
-            $('#category').val("");
-        } else {
-            $('#addcate').removeClass('hidden');
-        }
-        $( "#type" ).change(function() {
-           var type = $(this).val();
-           if(type == '2'){
-                $('#activity_category').removeClass('hidden');
-                $('#addcate').removeClass('hidden');
-                $('#category').prop('required',true);
-           }else{
-                $('#activity_category').addClass('hidden');
-                $('#addcate').addClass('hidden');
-                $('#category').prop('required',false);
-           }
+
+        $('#url').on('change', function(){
+            var newval = '',
+                $this = $(this);
+                $url = $(this).val();
+                $urlstrim = $('#urlstrim').val($url);
+            if (newval = $this.val().match(/(\?|&)v=([^&#]+)/)) {
+                $urlstrim.val(newval.pop());
+            } else if (newval = $this.val().match(/(\.be\/)+([^\/]+)/)) {
+                $urlstrim.val(newval.pop());
+            } else if (newval = $this.val().match(/(\embed\/)+([^\/]+)/)) {
+                $urlstrim.val(newval.pop().replace('?rel=0',''));
+            }
         });
 </script>
 @stop
