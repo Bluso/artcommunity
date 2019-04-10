@@ -1,5 +1,6 @@
+@if($cateyoutube->count() > 0)
 @foreach($cateyoutube as $cate)
-@if($cate->count() > 0 && !empty($cate->youtube))
+@if(!empty($cate->youtube))
 <section class="content-youtube pb-5 bg-light">
     <div class="container">
         <div class="row">
@@ -36,3 +37,4 @@
 </section>
 @endif
 @endforeach
+@endif
