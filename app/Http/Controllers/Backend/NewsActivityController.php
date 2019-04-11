@@ -168,4 +168,12 @@ class NewsActivityController extends Controller
         Storage::disk('public')->putFileAs('news/detail', $file , $file_name);
         echo url('/storage/news/detail/'.$file_name);
     }
+
+    public function delete_file(Request $request)
+    {
+        $news = NewsActivitys::find($request->input('id'));
+        $news->file = null;
+        $news->save();
+        return $news;
+    }
 }
