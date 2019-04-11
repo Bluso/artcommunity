@@ -58,6 +58,7 @@ Auth::routes();
             Route::get('edit/{id}', 'Backend\NewsActivityController@edit');
             Route::post('edit/{id}', 'Backend\NewsActivityController@update');
             Route::get('delete/{id}', 'Backend\NewsActivityController@destroy');
+            Route::post('delete/file', 'Backend\NewsActivityController@delete_file');
             Route::prefix('cate')->group(function () {
                 Route::post('upload/image', 'Backend\CateNewsActivityController@upload_image');
                 Route::get('/', 'Backend\CateNewsActivityController@index');
