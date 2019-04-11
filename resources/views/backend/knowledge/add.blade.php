@@ -38,12 +38,14 @@
                 @endif
                 <div class="form-group">
                     <label for="title">Title</label>
-                    <input name="title" type="text" class="form-control" id="title" placeholder="Enter title of knowledge" data-error="กรุณากรอกหัวข้อ" required>
+                    <input name="title" type="text" class="form-control" id="title" placeholder="Enter title of knowledge" data-error="กรุณากรอกหัวข้อ" maxlength="255" required>
+                    <p class="help-block">Maximum character is 255</p>
                     <div class="help-block with-errors"></div>
                 </div>
                 <div class="form-group">
                     <label for="title">Description</label>
-                    <input name="description" type="text" class="form-control" id="description" placeholder="Enter title of description" data-error="กรุณากรอกคำอธิบาย" required>
+                    <input name="description" type="text" class="form-control" id="description" placeholder="Enter title of description" data-error="กรุณากรอกคำอธิบาย" maxlength="255" required>
+                    <p class="help-block">Maximum character is 255</p>
                     <div class="help-block with-errors"></div>
                 </div>
                 <div class="form-group">

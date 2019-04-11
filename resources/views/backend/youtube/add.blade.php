@@ -38,13 +38,15 @@
                 @endif
                 <div class="form-group">
                     <label for="title">Title</label>
-                    <input name="title" type="text" class="form-control" id="title" placeholder="Enter title of Youtube" data-error="กรุณากรอกชื่อ Youtube" required>
+                    <input name="title" type="text" class="form-control" id="title" placeholder="Enter title of Youtube" data-error="กรุณากรอกชื่อ Youtube" maxlength="255" required>
+                    <p class="help-block">Maximum character is 255</p>
                     <div class="help-block with-errors"></div>
                 </div>
                 <div class="form-group">
                     <label for="title">Youtube URL</label>
-                    <input name="url" type="text" class="form-control" id="url" placeholder="Enter URL of Youtube" data-error="กรุณากรอก Youtube URL" required>
+                    <input name="url" type="text" class="form-control" id="url" placeholder="Enter URL of Youtube" data-error="กรุณากรอก Youtube URL" maxlength="255" required>
                     <input name="urlstrim" id="urlstrim" type="hidden" value="">
+                    <p class="help-block">Maximum character is 255</p>
                     <div class="help-block with-errors"></div>
                 </div>
                 <div class="form-group">

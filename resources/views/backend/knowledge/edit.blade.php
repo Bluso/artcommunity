@@ -35,12 +35,14 @@
                 </div>
                 <div class="form-group">
                     <label for="title">Title</label>
-                    <input name="title" type="text" class="form-control" id="title" value="{{ $knowledge->title }}" data-error="กรุณากรอกหัวข้อ" required>
+                    <input name="title" type="text" class="form-control" id="title" value="{{ $knowledge->title }}" data-error="กรุณากรอกหัวข้อ" maxlength="255" required>
+                    <p class="help-block">Maximum character is 255</p>
                     <div class="help-block with-errors"></div>
                 </div>
                 <div class="form-group">
                     <label for="title">Description</label>
-                    <input name="description" type="text" class="form-control" id="description" value="{{ $knowledge->description }}" data-error="กรุณากรอกคำอธิบาย" required>
+                    <input name="description" type="text" class="form-control" id="description" value="{{ $knowledge->description }}" data-error="กรุณากรอกคำอธิบาย" maxlength="255" required>
+                    <p class="help-block">Maximum character is 255</p>
                     <div class="help-block with-errors"></div>
                 </div>
                 <div class="form-group">

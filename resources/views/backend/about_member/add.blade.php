@@ -22,12 +22,14 @@
             <div class="box-body">
                 <div class="form-group">
                     <label for="title">Name</label>
-                    <input name="name" type="text" class="form-control" id="name" placeholder="Enter name of member" data-error="กรุณากรอกชื่อผู้บริหาร" required>
+                    <input name="name" type="text" class="form-control" id="name" placeholder="Enter name of member" data-error="กรุณากรอกชื่อผู้บริหาร" maxlength="255" required>
+                    <p class="help-block">Maximum character is 255</p>
                     <div class="help-block with-errors"></div>
                 </div>
                 <div class="form-group">
                     <label for="title">Position</label>
-                    <input name="position" type="text" class="form-control" id="position" placeholder="Enter position of member" data-error="กรุณากรอกตำแหน่งผู้บริหาร" required>
+                    <input name="position" type="text" class="form-control" id="position" placeholder="Enter position of member" data-error="กรุณากรอกตำแหน่งผู้บริหาร" maxlength="255" required>
+                    <p class="help-block">Maximum character is 255</p>
                     <div class="help-block with-errors"></div>
                 </div>
                 <div class="form-group">

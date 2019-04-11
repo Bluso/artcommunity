@@ -31,17 +31,20 @@ Home Page
         </div>
         <div class="form-group">
             <label for="title">URL</label>
-            <input name="url" type="text" class="form-control" id="url" value="{{ $home->url }}" data-error="กรุณากรอกหน้าที่ต้องการให้ link ไป" required >
+            <input name="url" type="text" class="form-control" id="url" value="{{ $home->url }}" data-error="กรุณากรอกหน้าที่ต้องการให้ link ไป" maxlength="255" required >
+            <p class="help-block">Maximum character is 255</p>
             <div class="help-block with-errors"></div>
         </div>
         <div class="form-group">
             <label for="title">Title</label>
-            <input name="title" type="text" class="form-control" id="title" value="{{ $home->title }}" data-error="กรุณากรอกหัวข้อหลัก" required>
+            <input name="title" type="text" class="form-control" id="title" value="{{ $home->title }}" data-error="กรุณากรอกหัวข้อหลัก" maxlength="255" required>
+            <p class="help-block">Maximum character is 255</p>
             <div class="help-block with-errors"></div>
         </div>
         <div class="form-group">
             <label for="description">Description</label>
-            <input name="description" type="text" class="form-control" id="description" value="{{ $home->description }}" data-error="กรุณากรอกคำอธิบายของหัวข้อหลัก"  required>
+            <input name="description" type="text" class="form-control" id="description" value="{{ $home->description }}" data-error="กรุณากรอกคำอธิบายของหัวข้อหลัก" maxlength="255"  required>
+            <p class="help-block">Maximum character is 255</p>
             <div class="help-block with-errors"></div>
         </div>
         <div class="form-group">

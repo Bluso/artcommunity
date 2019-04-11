@@ -32,12 +32,14 @@
                 </div>
                 <div class="form-group">
                     <label for="title">Title</label>
-                    <input name="title" type="text" class="form-control" id="title" placeholder="Enter title of news" data-error="กรุณากรอกหัวข้อข่าว" required>
+                    <input name="title" type="text" class="form-control" id="title" placeholder="Enter title of news" data-error="กรุณากรอกหัวข้อข่าว" maxlength="255" required>
+                    <p class="help-block">Maximum character is 255</p>
                     <div class="help-block with-errors"></div>
                 </div>
                 <div class="form-group">
                     <label for="title">Description</label>
-                    <input name="description" type="text" class="form-control" id="description" placeholder="Enter title of description" data-error="กรุณากรอกคำบรรยาย" required>
+                    <input name="description" type="text" class="form-control" id="description" placeholder="Enter title of description" data-error="กรุณากรอกคำบรรยาย" maxlength="255" required>
+                    <p class="help-block">Maximum character is 255</p>
                     <div class="help-block with-errors"></div>
                 </div>
                 <div class="form-group">

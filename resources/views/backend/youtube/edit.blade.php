@@ -48,13 +48,15 @@
                 @endif
                 <div class="form-group">
                     <label for="title">Title</label>
-                    <input name="title" type="text" class="form-control" id="title" value="{{ $youtube->title }}" data-error="กรุณากรอกชื่อ Youtube" required>
+                    <input name="title" type="text" class="form-control" id="title" value="{{ $youtube->title }}" data-error="กรุณากรอกชื่อ Youtube" maxlength="255" required>
+                    <p class="help-block">Maximum character is 255</p>
                     <div class="help-block with-errors"></div>
                 </div>
                 <div class="form-group">
                     <label for="title">Youtube URL</label>
-                    <input name="url" type="text" class="form-control" id="url" value="https://www.youtube.com/watch?{{ $youtube->youtube }}" placeholder="Enter URL of Youtube" data-error="กรุณากรอก Youtube URL" required>
+                    <input name="url" type="text" class="form-control" id="url" value="https://www.youtube.com/watch?{{ $youtube->youtube }}" maxlength="255" placeholder="Enter URL of Youtube" data-error="กรุณากรอก Youtube URL" required>
                     <input name="urlstrim" id="urlstrim" type="hidden" value="{{ $youtube->youtube }}">
+                    <p class="help-block">Maximum character is 255</p>
                     <div class="help-block with-errors"></div>
                 </div>
                 <div class="form-group">

@@ -21,11 +21,13 @@
             <div class="box-body">
                 <div class="form-group">
                     <label for="name">Name</label>
-                    <input name="name" type="text" class="form-control" id="name" value="{{$member->name}}" data-error="กรุณากรอกชื่อผู้บริหาร" required>
+                    <input name="name" type="text" class="form-control" id="name" value="{{$member->name}}" data-error="กรุณากรอกชื่อผู้บริหาร"  maxlength="255" required>
+                    <p class="help-block">Maximum character is 255</p>
                 </div>
                 <div class="form-group">
                     <label for="position">Position</label>
-                    <input name="position" type="text" class="form-control" id="position" value="{{$member->position}}" data-error="กรุณากรอกตำแหน่งผู้บริหาร" required>
+                    <input name="position" type="text" class="form-control" id="position" value="{{$member->position}}" data-error="กรุณากรอกตำแหน่งผู้บริหาร"  maxlength="255" required>
+                    <p class="help-block">Maximum character is 255</p>
                 </div>
                 <div class="form-group">
                     <img style="margin-bottom:15px;max-width:200px;border: solid thin #ddd;" src="{{asset('storage/images/about/member')}}/{{$member->image}}" />

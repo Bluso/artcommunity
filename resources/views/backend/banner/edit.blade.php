@@ -33,17 +33,20 @@
                 </div>
                 <div class="form-group">
                     <label for="title">Title</label>
-                    <input name="title" type="text" class="form-control" id="title" value="{{$banner->title}}"  data-error="กรุณากรอกหัวข้อ" required>
+                    <input name="title" type="text" class="form-control" id="title" value="{{$banner->title}}"  data-error="กรุณากรอกหัวข้อ" maxlength="255" required>
+                    <p class="help-block">Maximum character is 255</p>
                     <div class="help-block with-errors"></div>
                 </div>
                 <div class="form-group">
                     <label for="description">Description</label>
-                    <input name="description" type="text" class="form-control" id="description" value="{{$banner->description}}" data-error="กรุณากรอกคำอธิบาย" required>
+                    <input name="description" type="text" class="form-control" id="description" value="{{$banner->description}}" data-error="กรุณากรอกคำอธิบาย" maxlength="255" required>
                     <div class="help-block with-errors"></div>
+                    <p class="help-block">Maximum character is 255</p>
                 </div>
                 <div class="form-group">
                     <label for="keywords">URL</label>
-                    <input name="url" type="text" class="form-control" id="url" value="{{$banner->url}}">
+                    <input name="url" type="text" class="form-control" id="url" value="{{$banner->url}}" maxlength="255">
+                    <p class="help-block">Maximum character is 255</p>
                 </div>
                 <div class="form-group">
                     <label for="keywords">Keywords</label>
