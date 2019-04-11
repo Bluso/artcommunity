@@ -19,7 +19,7 @@
         <!-- form start -->
         {{ Form::open(array('url' => 'backend/news/edit/'.$news->id, 'method' => 'post','enctype' => 'multipart/form-data','id'=>'form-validate','data-toggle'=>'validator','role'=>'form')) }}
         {{csrf_field()}}
-
+            <input type="hidden" id="newsid" name="newsid" value="{{$news->id}}">
             <div class="box-body">
                 <div class="form-group">
                     <label for="category">Type Category</label>
@@ -88,9 +88,9 @@
                 </div>
                 <div class="form-group">
                     @if($news->file)
-                        <p>File URL: <a href="{{asset('storage/files/news')}}/{{$news->file}}">{{asset('storage/files/news')}}/{{$news->file}}</a></p>
+                        <p id="has_URL">File URL: <button type="button" class="delete-file btn btn-danger" style="margin: 0 .5%">Delete File</button><a id="file_url" href="{{asset('storage/files/news')}}/{{$news->file}}" style="margin: 0 .5%;">{{asset('storage/files/news')}}/{{$news->file}}</a></p>
                     @else
-                        <p> File URL : - </p>
+                        <p id="no_URL"> File URL : - </p>
                     @endif
                     <label for="">File</label>
                     <input class="file" type="file" name="file" id="file" data-preview-file-type="text">
@@ -170,6 +170,21 @@
                 $('#addcate').addClass('hidden');
                 $('#category').prop('required',false);
            }
+        });
+
+        $(".delete-file").click(function() {
+            var newsid = $('#newsid').val();
+            $.ajax({
+                method: 'post',
+                url: "{{url('backend/news/delete/file')}}",
+                data: {
+                    'id' : newsid
+                },
+                success: function(result){
+                    $('#has_URL').hide();
+                    $('#no_URL').hide();
+                }
+            });
         });
 </script>
 @stop
