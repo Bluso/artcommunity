@@ -65,7 +65,7 @@
                 <div class="form-group">
                     <label style="width:100%" for="">Thumb</label>
                     <input class="file" type="file" name="thumb" id="thumb" data-preview-file-type="text" required>
-                    <p class="help-block">Image type of png,jpg and max size is 2MB.</p>
+                    <p class="help-block">Image type of png,jpg and max size is 2MB. * Dimensions: 260*260 px</p>
                 </div>
                 <div class="form-group">
                     <label for="">Image</label>

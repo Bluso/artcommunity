@@ -63,7 +63,7 @@
                                 <dd>{{ $n->description }}</dd>
                             </dl>
                             </td>
-                            <td><img src="{{asset('storage/images/news/thumb')}}/{{$n->thumb}}" /></td>
+                            <td><img src="{{asset('storage/images/news/thumb')}}/{{$n->thumb}}" style="max-width: 260px" /></td>
                             @if($n->file)
                             <td><a href="{{asset('storage/files/news')}}/{{$n->file}}" target="_blank">{{asset('storage/files/news')}}/{{$n->file}}</a></td>
                             @else
