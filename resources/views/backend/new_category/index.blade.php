@@ -49,7 +49,7 @@ Categories
                                 <dd>{{ $n->description }}</dd>
                             </dl>
                             </td>
-                            <td><img src="{{asset('storage/images/cate_news')}}/{{$n->thumb}}" /></td>
+                            <td><img src="{{asset('storage/images/cate_news')}}/{{$n->thumb}}"  style="max-width: 260px" /></td>
                             <td>{{ $n->created_at }}</td>
                             <td>{{ $n->updated_at }}</td>
                             <td>
