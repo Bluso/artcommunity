@@ -20,7 +20,7 @@ Route::get('laws', 'LawsController@index');
 Route::get('contact', 'ContactController@index');
 
 Auth::routes();
-//Route::middleware(['auth'])->group(function () {
+Route::middleware(['auth'])->group(function () {
     Route::prefix('backend')->group(function () {
         Route::get('/', 'Backend\HomeController@index');
         Route::prefix('home')->group(function () {
@@ -123,7 +123,7 @@ Auth::routes();
         });
         Route::prefix('contact')->group(function () {
             Route::get('/', 'Backend\ContactDataController@index');
-            Route::post('save', 'Backend\ContactDataController@store'); 
+            Route::post('save', 'Backend\ContactDataController@store');
         });
     });
-//});
+});
