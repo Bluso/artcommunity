@@ -31,8 +31,8 @@
                 <div class="col">
                     <h3>{{ $DataContact->name_th }}</h3>
                     <p>{{ $DataContact->address }}</p>
-                    <p class="tel">{{ $DataContact->telephone }}</p>
-                    <a class="email">{{ $DataContact->email }}</a>
+                    <a href="tel:{{$DataContact->fax66}}"><p class="tel">{{ $DataContact->telephone }}</p></a>
+                    <a class="email" href="mailto:{{$DataContact->email}}">{{ $DataContact->email }}</a>
                 </div>
             </div>
         </div>
