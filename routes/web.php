@@ -27,6 +27,7 @@ Route::middleware(['auth'])->group(function () {
             Route::get('/', 'Backend\HomeController@index');
             Route::get('edit/{id}', 'Backend\HomeController@edit');
             Route::post('edit/{id}', 'Backend\HomeController@update');
+            Route::post('logo/save', 'Backend\HomeController@store');
         });
         Route::prefix('banner')->group(function () {
             Route::get('/', 'Backend\BannerController@index');
