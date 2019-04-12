@@ -1,11 +1,15 @@
 <nav class="container">
     <div class="row my-2">
         <div class="col-12">
-            <h1 class="text-indend">มปอ ( มูลนิธิแก้ไขปัญหาการดื่มแอลกอฮอล์ ) Thai Foundation For Responsible Drinking [TFRD]</h1>
-            <a class="float-left" href="{{url('/')}}"><img class="img-fluid" src="{{ asset('images/logo_mop.png') }}" alt="มูลนิธิแก้ไขปัญหาการดื่มแอลกอฮอล์ (มปอ.) Thai Foundation For Responsible Drinking [TFRD]"/></a>
+            <h1 class="text-indend">{{$logo->title_th}} {{$logo->title_en}}</h1>
+            <a class="float-left" href="{{url('/')}}"><img class="img-fluid" src="{{asset('storage/images/home/logo')}}/{{$logo->logo}}" alt="{{$logo->title_th}} {{$logo->title_en}}"/></a>
             <div class="float-left mx-3">
-                <h2 class="my-1"><img class="img-fluid" src="{{ asset('images/text-tfrd.png') }}" alt="มูลนิธิแก้ไขปัญหาการดื่มแอลกอฮอล์ (มปอ.) Thai Foundation For Responsible Drinking [TFRD]"/></h2>
-                <h3>Thai Foundation For Responsible Drinking [TFRD]</h3>
+                @if(!empty($logo->img_title_th))
+                    <h2 class="my-1"><img class="img-fluid" src="{{asset('storage/images/home/image_title')}}/{{$logo->img_title_th}}" alt="{{$logo->title_th}} {{$logo->title_en}}"/></h2>
+                @else
+                    <h3 class="title_th">{{$logo->title_th}}</h3>
+                @endif
+                <h3>{{$logo->title_en}}</h3>
             </div>
         </div>
     </div>
