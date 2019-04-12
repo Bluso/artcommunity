@@ -19,7 +19,7 @@ Home Page
             <div class="col-xs-4">
                 <div class="col-xs-12" style="margin-bottom:15px;"><a type="button" class="btn btn-warning col-xs-12" href="{{url('backend/home/edit/'.$h->id)}}">Edit</a></div>
                     <div class="col-xs-12">
-                        <img class="img-responsive text-center center-block" src="{{asset('storage/images/home/thumb')}}/{{$h->thumb}}">
+                        <img class="img-fluid text-center center-block" src="{{asset('storage/images/home/thumb')}}/{{$h->thumb}}">
                     </div>
                     <article class="col-xs-12 mt-4">
                         <h2 class="text-center text-dark">{{ $h->title }}</h2>

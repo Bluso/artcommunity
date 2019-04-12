@@ -52,7 +52,7 @@
                                 <dd>{{ $n->keywords }}</dd>
                             </dl>
                             </td>
-                            <td><img class="img-responsive" src="https://img.youtube.com/vi/{{$n->youtube}}/maxresdefault.jpg" /></td>
+                            <td><img class="img-fluid" src="https://img.youtube.com/vi/{{$n->youtube}}/maxresdefault.jpg" /></td>
                             <td>{{ $n->created_at }}</td>
                             <td>{{ $n->updated_at }}</td>
                             <td>
