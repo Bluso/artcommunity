@@ -1,7 +1,9 @@
 @extends('adminlte::page')
 
 @section('title', 'TFRD')
-
+@section('css')
+    @include('backend.layouts.css_fileinput')
+@stop
 @section('content_header')
 <h1>
 Home Page
