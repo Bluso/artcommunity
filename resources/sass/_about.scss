@@ -28,7 +28,37 @@
             }
     }
     }
-    .mission{background-color: #eef2f3;}
+    .mission{
+      background-color: #eef2f3;
+      @include media-breakpoint-up(sm) {
+        h2 {
+            margin-top: 0!important;
+        }
+        .text-center {
+            font-size: 1.3rem;
+            line-height: 1.5rem;
+            margin-bottom: 0;
+        }
+      }
+      @include media-breakpoint-up(md) {
+          h2 {
+              margin-top: 5%!important;
+          }
+          .text-center {
+              font-size: 1.7rem;
+              line-height: 1.8rem;
+          }
+      }
+      @include media-breakpoint-up(lg) {
+            h2 {
+                font-size: 3.3rem;
+            }
+            .text-center {
+                font-size: 2.1rem;
+                line-height: 2.6rem;
+            }
+      }
+    }
     .main_mission{
         background-color: #f36f21;
         h2{color: #fff;}
