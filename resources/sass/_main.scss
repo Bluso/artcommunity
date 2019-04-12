@@ -4,7 +4,7 @@ body{
 }
 
 nav{
-    h3{font-family: 'prompt'; font-weight: 200;color:$blackgrey !important;font-size: 1rem;}
+    h3{font-family: 'prompt'; font-weight: 200;color:$blackgrey !important;font-size: 1rem;&.title_th{font-weight: 600}}
     ul{
         top: calc(50% - 1.3rem);
         li{
@@ -54,8 +54,8 @@ footer{
                 font-family: 'prompt';
                 font-weight: 200;
                 color: $orange;
-                font-size: 1.1rem; 
-                text-decoration: none; 
+                font-size: 1.1rem;
+                text-decoration: none;
                 cursor: pointer;
                 &:hover{color: $orange;}
             }
@@ -68,13 +68,13 @@ footer{
         .link-face{
             margin-top: 20px;
             font-family: 'prompt';
-            font-weight: 500; 
+            font-weight: 500;
             font-size: 1.3rem;
             color:#bdbdbd;
             cursor: pointer;
             &:hover{color:#bdbdbd;}
         }
-        
+
     }
     .copy-right {
         margin-top: 30px;
