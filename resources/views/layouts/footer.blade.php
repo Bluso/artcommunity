@@ -6,7 +6,6 @@
             <ul class="row list-unstyled">
                 <li class="col-12"><a href="/about#history">ความเป็นมา</a></li>
                 <li class="col-12"><a href="/about#mission">ภารกิจของ มปอ.</a></li>
-                <li class="col-12"><a href="/about#member">คณะกรรมการ</a></li>
             </ul>
         </div>
         <div class="col-2">
