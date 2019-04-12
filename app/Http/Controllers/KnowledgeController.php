@@ -7,6 +7,7 @@ use App\Banner;
 use App\KnowledgeResearch;
 use App\Youtube;
 use App\CategoriesYoutube;
+use App\Logo;
 
 class KnowledgeController extends Controller
 {
@@ -16,6 +17,7 @@ class KnowledgeController extends Controller
         $knowledge = KnowledgeResearch::latest()->get();
         $youtube = Youtube::all();
         $cateyoutube = CategoriesYoutube::all();
-        return view('knowledge.index')->withBanner($banner)->withKnowledge($knowledge)->withYoutube($youtube)->withCateyoutube($cateyoutube);
+        $logo = Logo::first();
+        return view('knowledge.index')->withBanner($banner)->withKnowledge($knowledge)->withYoutube($youtube)->withCateyoutube($cateyoutube)->withLogo($logo);
     }
 }

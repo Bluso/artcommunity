@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Storage;
 use App\Banner;
 use App\NewsActivitys;
 use App\CategoriesNewsActivitys;
+use App\Logo;
 
 class NewsController extends Controller
 {
@@ -14,7 +15,8 @@ class NewsController extends Controller
         $banner = Banner::all()->where('page_id','3');
         $cateactivity = CategoriesNewsActivitys::latest()->get();
         $activity = NewsActivitys::latest()->get();
-        return view('news.index')->withBanner($banner)->withNews($activity)->withCate($cateactivity);
+        $logo = Logo::first();
+        return view('news.index')->withBanner($banner)->withNews($activity)->withCate($cateactivity)->withLogo($logo);
     }
 
     public function detail($id)
