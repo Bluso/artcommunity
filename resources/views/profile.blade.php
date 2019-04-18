@@ -32,16 +32,23 @@
             @endif
             <div class="card topic-card">
               <div class="card-body">
-                <h5>░ &nbspPost</h5>
+                <h5>Post</h5>
               </div>
             </div>
             <div class="card default-card">
               <div class="card-body pt-0">
-                @foreach($posts as $post)
-                  @if($post->user_id == $user->id)
-                    @include('postcontent')
-                  @endif
-                @endforeach
+                @if($posts_count > 0)
+                  @foreach($posts as $post)
+                    @if($post->user_id == $user->id)
+                      @include('postcontent')
+                    @endif
+                  @endforeach
+                @else
+                  <div class="no-content text-center font-weight-bold text-muted my-5">
+                    <h5>No any post now.</h5>
+                    <h1>Let's post your first work!</h1>
+                  </div>
+                @endif
               </div>
             </div>
           </div>
@@ -90,7 +97,7 @@
                   <label for="Bio-link">Link</label>
                 </div>
                 <div class="col-9">
-                  <input type="text" class="form-control" name="bio-link" id="bio-link" /></input>
+                  <input type="text" class="form-control" name="bio-link" id="bio-link" val=""/></input>
                   <p class="mt-2 ex-bio">Example: https://example.com, www.example.com</p>
                 </div>
               </div>
