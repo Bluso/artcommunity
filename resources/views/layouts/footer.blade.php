@@ -17,7 +17,7 @@
             </ul>
         </div>
         <div class="col-4">
-            <h2>Related laws</h2>
+            <h2>Related LAWS</h2>
             <div class="dash"></div>
             <ul class="row list-unstyled">
                 <li class="col-12"><a href="/laws">กฏหมายเกี่ยวข้อง</a></li>
