@@ -118,33 +118,38 @@ class ProfileController extends Controller
     {
         $follow_user = follow::where('owner_id',$request->owner_id)->where('following_id',$request->following_id);
         $count_follow = $follow_user->count();
-        $owner = user::find($request->input('owner_id'));
-        $following = user::find($request->input('following_id'));
-        if ($count_follow > 0) {
-          $followtoggle = $follow_user->first();
-          if ($followtoggle->is_follow==0) {
-            $followtoggle->is_follow = 1;
-            $owner->save();
-            $following->save();
-          }
-          else {
-            $followtoggle->is_follow = 0;
-            $owner->save();
-            $following->save();
-          }
-          $followtoggle->save();
+        if ($count_follow == 0) {
+            $follow = new follow;
+            $follow->owner_id = $request->owner_id;
+            $follow->following_id = $request->following_id;
+            $follow->is_follow = 1;
+            $follow->save();
+
+            $following_count = follow::where('following_id', $request->following_id)->where('is_follow', 1)->count();
+            $owner_following_count = follow::where('owner_id', $request->owner_id)->where('is_follow', 1)->count();
+            return array($follow->is_follow, $following_count, $owner_following_count);
         } else {
-          $follow = new follow;
-          $follow->owner_id = $request->input('owner_id');
-          $follow->following_id = $request->input('following_id');
-          $follow->is_follow = 1;
-          $follow->save();
+            $owner = user::find($request->input('owner_id'));
+            $following = user::find($request->input('following_id'));
+            $followtoggle = $follow_user->first();
+            if ($followtoggle->is_follow==0) {
+              $followtoggle->is_follow = 1;
+              $owner->save();
+              $following->save();
+            }
+            else {
+              $followtoggle->is_follow = 0;
+              $owner->save();
+              $following->save();
+            }
+            $followtoggle->save();
+            $following_count = follow::where('following_id', $following->id)->where('is_follow', 1)->count();
+            $owner_following_count = follow::where('owner_id', $owner->id)->where('is_follow', 1)->count();
+
+            return array($followtoggle->is_follow, $following_count, $owner_following_count);
         }
 
-        $following_count = follow::where('following_id', $following->id)->where('is_follow', 1)->count();
-        $owner_following_count = follow::where('owner_id', $owner->id)->where('is_follow', 1)->count();
 
-        return array($followtoggle->is_follow, $following_count, $owner_following_count);
     }
 
     public function follower($username)
