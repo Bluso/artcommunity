@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Auth;
 use App\user;
 use App\postcontent;
 use App\collection;
@@ -33,6 +34,7 @@ class ProfileController extends Controller
         $user_following_count = follow::where('owner_id',$user_id->id)->where('is_follow',1)->count();
         $followers = follow::where('following_id',$user_id->id)->where('is_follow',1)->get();
         $is_follow = follow::where('following_id',$user_id->id)->first(['is_follow']);
+        $posts_count = postcontent::where('user_id', Auth::user()->id)->count();
 
         return view('profile')->with(array('users' => $users, 'collections' => $collections,
                                 'posts' => $posts, 'username' => $username, 'comments' => $comments,
@@ -40,7 +42,7 @@ class ProfileController extends Controller
                                 'user_like_comments' => $user_like_comments,
                                 'total_fav' => $total_fav, 'user_following_count' => $user_following_count,
                                 'user_follower_count' => $user_follower_count, 'followers' => $followers,
-                                'is_follow' => $is_follow));
+                                'is_follow' => $is_follow, 'posts_count' => $posts_count));
     }
 
     /**
