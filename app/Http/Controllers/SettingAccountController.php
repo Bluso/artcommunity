@@ -73,23 +73,48 @@ class SettingAccountController extends Controller
      */
     public function update(Request $request)
     {
-      $regex = '//^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/';
+      // $regex = '/^(https?:\/\/)?([da-z\.-]+)\.([a-z]{2,6})(\/(\w|-)*)*\/?$/gi';
+      // $this->validate($request, [
+      //   'username' => [
+      //     'required', 'max:20', 'min:6',
+      //     Rule::unique('users')->ignore($request->input('user_id')),
+      //   ],
+      //   'email'=> [
+      //     'required', 'email',
+      //     Rule::unique('users')->ignore($request->input('user_id')),
+      //   ],
+      //   'display_name' => [
+      //     'required', 'max:20', 'min:6',
+      //     Rule::unique('users')->ignore($request->input('user_id')),
+      //   ],
+      //   'bio_link' => [
+      //     'regex:' . $regex,
+      //   ],
+      // ]);
+
+      $regex =  '/^(https?:\\/\\/)?'. // protocol
+                '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|'. // domain name
+                '((\\d{1,3}\\.){3}\\d{1,3}))'. // OR ip (v4) address
+                '(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*'. // port and path
+                '(\\?[;&a-z\\d%_.~+=-]*)?'. // query string
+                '(\\#[-a-z\\d_]*)?$/';
+
       $this->validate($request, [
         'username' => [
-          'required', 'max:20', 'min:6',
-          Rule::unique('users')->ignore($request->input('user_id')),
+            'required', 'max:20', 'min:6',
+            Rule::unique('users')->ignore($request->input('user_id')),
         ],
         'email'=> [
-          'required', 'email',
-          Rule::unique('users')->ignore($request->input('user_id')),
+            'required', 'email',
+            Rule::unique('users')->ignore($request->input('user_id')),
         ],
         'display_name' => [
-          'required', 'max:20', 'min:6',
-          Rule::unique('users')->ignore($request->input('user_id')),
+            'required', 'max:20', 'min:6',
+            Rule::unique('users')->ignore($request->input('user_id')),
         ],
         'bio_link' => [
-          'regex:' . $regex,
-        ],
+            'regex:' . $regex,
+          ],
       ]);
 
        if ($request->has('imageUpload-edit')) {
@@ -107,16 +132,17 @@ class SettingAccountController extends Controller
         } else {
           $fileNameToStore = $request->input('avatar');
         }
-        // return $fileNameToStore;
-        $user = user::find($request->input('user_id'));
-        $user->username = $request->input('username');
-        $user->email = $request->input('email');
-        $user->display_name = $request->input('display_name');
-        $user->bio = $request->get('bio');
-        $user->bio_link = $request->input('bio_link');
+      //   // return $fileNameToStore;
+        $user = user::find($request->user_id);
+        $user->username = $request->username;
+        $user->email = $request->email;
+        $user->display_name = $request->display_name;
+        $user->bio = $request->bio;
+        $user->bio_link = $request->bio_link;
         $user->avatar = $fileNameToStore;
         $user->save();
 
+        // return $user;
         return back()->with('message', 'Updated Success !');
     }
 
