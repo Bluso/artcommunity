@@ -1,5 +1,5 @@
 @if(count($banner) != 0)
-<section class="banner others-banner container-fluid margin-content">
+<section class="banner others-banner container-fluid">
     <div class="banner-block row h-auto">
     @foreach($banner as $val)
         <div class="col-12 h-auto position-relative p-0 m-0">
