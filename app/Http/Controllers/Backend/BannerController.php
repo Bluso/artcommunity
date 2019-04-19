@@ -48,6 +48,14 @@ class BannerController extends Controller
             Storage::disk('public')->putFileAs('images/banner',$file, $filename);
             $tbl_banner->image = $filename;
         }
+        if($request->hasfile('image_mobile')) 
+        { 
+            $file_m = $request->file('image_mobile');
+            $extension_m = $file_m->getClientOriginalExtension();
+            $filename_mobile =time().'_m.'.$extension_m;
+            Storage::disk('public')->putFileAs('images/banner',$file_m, $filename_mobile);
+            $tbl_banner->image_mobile = $filename_mobile;
+        }
         $tbl_banner->page_id = $request->page;
         $tbl_banner->title = $request->title;
         $tbl_banner->description = $request->description;
@@ -71,9 +79,17 @@ class BannerController extends Controller
             $filename =time().'.'.$extension;
             Storage::disk('public')->putFileAs('images/banner/',$file,$filename);
         }
+        if($request->hasfile('image_mobile')) 
+        { 
+            $file_m = $request->file('image_mobile');
+            $extension_m = $file_m->getClientOriginalExtension();
+            $filename_mobile =time().'_m.'.$extension_m;
+            Storage::disk('public')->putFileAs('images/banner/',$file_m,$filename_mobile);
+        }
         $tbl_banner = new Banner;
         $tbl_banner->page_id = $request->page;
         $tbl_banner->image = $filename;
+        $tbl_banner->image_mobile = $filename_mobile;
         $tbl_banner->title = $request->title;
         $tbl_banner->description = $request->description;
         $tbl_banner->url = $request->url;
