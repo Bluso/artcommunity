@@ -7,6 +7,9 @@
         font-size: 2.2rem;
         line-height: 2.6rem;
         color:$blackgrey;
+        @include media-breakpoint-up(xs){
+          font-size: 1.6rem;
+        }
     }
     h3{
         font-family: 'mitr';
@@ -14,11 +17,14 @@
         font-size: 1.8rem;
         line-height: 2.2rem;
         color:$blackgrey;
+        @include media-breakpoint-up(xs){
+          font-size: 1.2rem;
+        }
     }
     .address{
         margin-top:40px;
         margin-bottom: 40px;
-        font-family:'PSL Text Pro'; 
+        font-family:'PSL Text Pro';
         font-weight:400;
         font-size: 2.1rem;
         line-height: 2.6rem;
@@ -27,7 +33,7 @@
     .contact-data{
         a{text-decoration: none;}
         p{
-            font-family:'PSL Text Pro'; 
+            font-family:'PSL Text Pro';
             font-weight:700;
             font-size: 2.1rem;
             line-height: 2.6rem;
