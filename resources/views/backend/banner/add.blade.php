@@ -54,6 +54,11 @@
                     <input class="file" type="file" name="image" id="image" data-preview-file-type="text" data-error="กรุณาเพิ่มรูปภาพ" required>
                     <p class="help-block">Image type of png,jpg and max size is 2MB.</p>
                 </div>
+                <div class="form-group">
+                    <label for="">Image Mobile</label>
+                    <input class="file" type="file" name="image_mobile" id="image_mobile" data-preview-file-type="text" data-error="กรุณาเพิ่มรูปภาพ" required>
+                    <p class="help-block">Image type of png,jpg and max size is 2MB.</p>
+                </div>
             </div><!-- /.box-body -->
 
             <div class="box-footer">
