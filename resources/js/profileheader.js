@@ -15,12 +15,12 @@ if($('#profileheader-page').length > 0){
       method: 'post',
       data: {
          'owner_id' : owner_id,
-         'following_id' : following_id
+         'following_id' : following_id,
       },
       success: function(result){
           // location.reload();
           // alert(result);
-          console.log(result);
+          alert(result);
           // console.log(result[1]);
           if (result[0] == 1) {
             $('#follow-btn').text('Unfollow');

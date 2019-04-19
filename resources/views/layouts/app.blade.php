@@ -21,9 +21,9 @@
     @else
     <nav class="navbar navbar-expand-md navbar-expand-sm">
       <figure class="container m-auto row">
-          <div class="col-xl-6 col-lg-5 col-md-2 col-1">
+          <div class="col-xl-6 col-lg-5 col-md-2 col-1 pl-0">
             <ul class="m-0">
-              <li><a href="/home" class="nav-active logo">LOGO</a></li>
+              <li><a href="/home" class="nav-active logo"><img src="{{asset('images/icons/stamp.png')}}" />&nbsp Community</a></li>
             </ul>
           </div>
           <div class="col-xl-6 col-lg-7 col-md-10 col-11">

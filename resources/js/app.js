@@ -23,3 +23,4 @@ require('./totalfav');
 require('./followingcollection');
 require('./follow');
 require('./createnewpostmodal');
+require('./rand_follow');

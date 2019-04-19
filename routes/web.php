@@ -15,6 +15,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/startfollow', 'StartfollowController@index')->middleware('auth');
+
 Route::post('/collection/insert', 'CollectionController@insert');
 Route::post('/collection/update', 'CollectionController@update');
 Route::get('/collection/delete', 'CollectionController@destroy');

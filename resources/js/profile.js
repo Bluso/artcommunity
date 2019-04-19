@@ -40,10 +40,11 @@ if($('#page-profile').length > 0){
             $('.alert').removeClass('hidden');
             setTimeout(function(){
               $('.link').fadeOut(200, function(){
-                $('.link').text(result).fadeIn().delay(500);
-                $('#editBioModal').modal('hide');
+                  $('.link').text(result).fadeIn().delay(500);
+                  $('#editBioModal').modal('hide');
               });
             }, 200);
+            $('#bio-link').val(result);
           }
         });
       } else {

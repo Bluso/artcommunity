@@ -9,6 +9,7 @@ use App\collection;
 use App\comment;
 use App\UserLikePost;
 use App\UserLikeComment;
+use App\follow;
 
 class HomeController extends Controller
 {
@@ -35,10 +36,11 @@ class HomeController extends Controller
         $comments = comment::all();
         $user_like_posts = UserLikePost::all();
         $user_like_comments = UserLikeComment::all();
-
+        $follows = follow::all();
         return view('home')->with(array('users' => $users, 'collections' => $collections,
                                         'posts' => $posts, 'comments' => $comments,
                                         'user_like_posts' => $user_like_posts,
-                                        'user_like_comments' => $user_like_comments));
+                                        'user_like_comments' => $user_like_comments,
+                                        'follows' => $follows));
     }
 }

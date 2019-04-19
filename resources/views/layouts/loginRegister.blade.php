@@ -6,7 +6,7 @@
     <title></title>
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
   </head>
-  <body id = 'page-login-register'>
+  <body id = "page-login-register">
     <a href="#" class="btn btn-danger m-5">Login</a>
     <div class="container">
       <div class="card">
