@@ -53,9 +53,19 @@
                     <input name="keywords" type="text" class="form-control" id="keyword"  value="{{$banner->keywords}}" placeholder="images,banner,tfrd,มปอ,...">
                 </div>
                 <div class="form-group">
+                @if(!empty($banner->image))
                     <img style="margin-bottom:15px;max-width:200px;border: solid thin #ddd;" src="{{asset('storage/images/banner')}}/{{$banner->image}}" />
+                @endif
                     <label for="">Image</label>
                     <input class="file" type="file" name="image" id="image" data-preview-file-type="text">
+                    <p class="help-block">Image type of png,jpg and max size is 2MB.</p>
+                </div>
+                <div class="form-group">
+                @if(!empty($banner->image_mobile))
+                    <img style="margin-bottom:15px;max-width:200px;border: solid thin #ddd;" src="{{asset('storage/images/banner')}}/{{$banner->image_mobile}}" />
+                @endif
+                    <label for="">Image Mobile</label>
+                    <input class="file" type="file" name="image_mobile" id="image_mobile" data-preview-file-type="text">
                     <p class="help-block">Image type of png,jpg and max size is 2MB.</p>
                 </div>
             </div><!-- /.box-body -->
