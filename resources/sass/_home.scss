@@ -6,6 +6,9 @@
     font-family: 'mitr';
     font-size: 3.5rem;
     font-weight: 400;
+    @include media-breakpoint-down(sm){
+      font-size: 2.4rem;
+    }
 }
 .banner-block{
     .caption{margin-bottom: 4%;}
@@ -22,8 +25,8 @@
         font-size: 1.5rem;
     }
 }
-.main-intro{ 
-    @extend %space; 
+.main-intro{
+    @extend %space;
     padding-bottom:150px;
     a{
         text-decoration: none; cursor: pointer; color: $blackgrey;
@@ -34,7 +37,7 @@
             font-size: 2rem;
         }
         p{
-            color: $blackgrey; 
+            color: $blackgrey;
             @extend %psl-mainset;
         }
     }
