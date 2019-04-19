@@ -19,6 +19,7 @@
         <div class="row">
             <div class="col-11">
                 <ul class="list-unstyled w-100">
+                    <li class="mr-4 float-left"><a href="{{ url('/') }}">หน้าแรก</a></li>
                     <li class="mr-4 float-left"><a href="{{ url('about') }}">เกี่ยวกับเรา</a></li>
                     <li class="mr-4 float-left"><a href="{{ url('news') }}">กิจกรรมและข่าวสาร</a></li>
                     <li class="mr-4 float-left"><a href="{{ url('laws') }}">กฏหมายที่เกี่ยวข้อง</a></li>
