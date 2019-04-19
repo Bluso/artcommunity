@@ -6,9 +6,18 @@
             <p class="text-indend position-absolute">{{ $val->title.' '.$val->seo }}</p>
             <h2 class="position-absolute text-center banner-font">{{ $val->title }}</h2>
             <div class="container-fluid mx-auto p-0 m-0">
-              <div class="dark-overlay">
+              <div class="dark-overlay d-none d-md-block">
                 <img class="img-fluid mx-auto p-0 m-0 w-100" src="{{asset('storage/images/banner')}}/{{$val->image}}" title="{{ $val->title }}" alt="{{ $val->seo }}">
               </div>
+              @if(!empty($val->image_mobile))
+              <div class="dark-overlay d-md-none">
+                <img class="img-fluid mx-auto p-0 m-0 w-100" src="{{asset('storage/images/banner')}}/{{$val->image_mobile}}" title="{{ $val->title }}" alt="{{ $val->seo }}">
+              </div>
+              @else
+              <div class="dark-overlay d-md-none">
+                <img class="img-fluid mx-auto p-0 m-0 w-100" src="{{asset('storage/images/banner')}}/{{$val->image}}" title="{{ $val->title }}" alt="{{ $val->seo }}">
+              </div>
+              @endif
             </div>
         </div>
         <!--/slide-->
