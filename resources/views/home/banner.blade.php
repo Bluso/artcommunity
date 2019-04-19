@@ -11,8 +11,8 @@
             </div>
             <div class="container-fluid position-absolute fixed-bottom">
                 <div class="container caption">
-                    <div class="col-10 offset-1">
-                        <h2 class="banner-font-sm">{{ $val->title }}</h2>
+                    <div class="col-12 col-lg-10 offset-lg-1 offset-0">
+                        <h2 class="h2-font">{{ $val->title }}</h2>
                         <div class="dash-banner d-none"></div>
                         <p class="d-none">
                             {{ $val->description }}
