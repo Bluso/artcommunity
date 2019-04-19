@@ -1,4 +1,4 @@
-<div class="container block-contact">
+<div class="container block-contact margin-content">
     <div class="row">
        <div class="col-8 offset-2">
            @if(!empty($contact->name_th))
