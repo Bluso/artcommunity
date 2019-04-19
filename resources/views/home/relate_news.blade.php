@@ -3,7 +3,7 @@
     <div class="container">
         <div class="row">
             <div class="col-10 offset-1">
-                <h2 class="text-center">กิจกรรมและโครงการ</h2>
+                <h2 class="text-center h2-font">กิจกรรมและโครงการ</h2>
                 <div class="dash"></div>
                 <p class="intro text-center">มูลนิธิแก้ไขปัญหาการดื่มแอลกอฮอล์ ได้จัดกิจกรรม โครงการฝึกอบรมต่างๆ เพื่อลดผลกระทบอันเนื่องมาจากการดื่ม
                 เครื่องดื่มแอลกอฮอล์ ที่สอดคล้องและสนับสนุนเป้าหมายขององค์การอนามัยโลกในการลดการบริโภคเครื่องดื่มแอลกอฮอล์ในทางที่ผิด</p>
@@ -13,16 +13,16 @@
             <div class="col-12 mt-4">
                 <div class="row news-slide">
                     @foreach($news as $val)
-                    <a href="{{url('news/detail')}}/{{$val->id}}" class="col-12 col-sm-6 col-lg-3 mb-3 activity-block">
+                    <a href="{{url('news/detail')}}/{{$val->id}}" class="col-12 col-sm-6 col-lg-3 mb-3 activity-block category-{{$val->cate->id}}">
                         <p class="text-indend">{{$val->title}}</p>
                         <p class="text-indend">{{$val->description}}</p>
                         <p class="text-indend">{{$val->seo}}</p>
                         <div><img class="img-fluid" src="{{asset('storage/images/news/thumb')}}/{{$val->thumb}}" alt="{{$val->seo}}"></div>
                         <article class="pl-3 pb-3">
-                            <p>โครงการ</p>
+                            <p style="font-size: 1.3rem;">โครงการ</p>
                             <div></div>
                             <p class="des pr-5">{{$val->title}}</p>
-                            <img src="{{asset('storage/images/cate_news')}}/{{$val->cate->thumb}}" alt="{{$val->cate->seo}}">
+                            <img class="cate-po" src="{{asset('storage/images/cate_news')}}/{{$val->cate->thumb}}" alt="{{$val->cate->seo}}">
                         </article>
                     </a>
                     @endforeach

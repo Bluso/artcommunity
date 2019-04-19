@@ -1,4 +1,4 @@
-<div class="container block-laws mt-lg-5 pt-lg-5 mt-sm-5">
+<div class="container block-laws mt-lg-5 pt-lg-5 mt-sm-5 margin-content">
     <div class="row">
         @include('laws.law_menu')
         <div class="col-12 col-lg-9 mt-lg-0 mt-5">
