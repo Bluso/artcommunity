@@ -4,6 +4,21 @@
   }
   .banner-font {
       font-size: 4.5rem!important;
+      position: absolute;
+      top: 44%!important;
+  }
+}
+@include media-breakpoint-down(lg) {
+  .banner-font {
+      font-size: 4.5rem!important;
+      position: absolute;
+      top: 37%!important;
+  }
+  .align-center {
+      text-align: center!important;
+  }
+  .margin-content {
+      margin-top: 10%!important;
   }
 }
 @include media-breakpoint-down(sm) {
@@ -12,12 +27,17 @@
   }
   .banner-font {
       font-size: 3.1rem!important;
+      position: absolute;
+      top: 37%!important;
   }
   .align-center {
       text-align: center!important;
   }
   .margin-content {
       margin-top: 10%!important;
+  }
+  .margin-content-news {
+      margin: 10% 0!important;
   }
   .cate-po {
       right: 3%!important;
@@ -29,5 +49,7 @@
   }
   .banner-font {
       font-size: 2.7rem!important;
+      position: absolute;
+      top: 30%!important;
   }
 }
