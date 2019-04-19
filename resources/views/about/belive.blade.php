@@ -1,7 +1,7 @@
 <section class="belive py-5">
     <div class="container py-5">
         <div class="row">
-            <div class="col-12 col-md-6">
+            <div class="col-12 col-lg-6 text-center">
                 <p class="text-indend">มูลนิธิแก้ไขปัญหาการดื่มแอลกอฮอล์ (มปอ.) คือความร่วมมือของทุกภาคส่วนเช่น </p>
                 <ul class="list-unstyled text-indend">
                     <li><p>ร้านค้าปลีก</p></li>
@@ -10,9 +10,9 @@
                     <li><p>อุตสาหกรรมเครื่องดื่มแอลกอฮอล์จากภาคเอกชน</p></li>
                     <li><p>NGO</p></li>
                 </ul>
-                <img class="img-fluid" src="{{asset('images/about/image-about-03.png')}}" alt="มูลนิธิแก้ไขปัญหาการดื่มแอลกอฮอล์ (มปอ.) คือความร่วมมือ ร้านค้าปลีก ชุมชนต่าง ภาครัฐ อุตสาหกรรมเครื่องดื่มแอลกอฮอล์จากภาคเอกชน NGO" />
+                <img class="img-fluid center-block" src="{{asset('images/about/image-about-03.png')}}" alt="มูลนิธิแก้ไขปัญหาการดื่มแอลกอฮอล์ (มปอ.) คือความร่วมมือ ร้านค้าปลีก ชุมชนต่าง ภาครัฐ อุตสาหกรรมเครื่องดื่มแอลกอฮอล์จากภาคเอกชน NGO" />
             </div>
-            <div class="col-12 col-md-6 mt-5">
+            <div class="col-12 col-lg-6 mt-5">
                 <h2>มปอ. เชื่อว่า</h2>
                 <div class="dash"></div>
                 <p>ปัจจัยสำคัญที่จะนำไปสู่ความสำเร็จในการแก้ไขปัญหาที่สืบเนื่องจาก

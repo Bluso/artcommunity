@@ -1,9 +1,11 @@
 <section id="mainmission"  class="main_mission py-5">
     <div class="container py-5">
         <div class="row">
-            <div class="col-12 col-md-6 mt-5">
-                <h2>ภารกิจหลักของ มปอ.</h2>
-                <div class="dash"></div>
+            <div class="col-12 col-lg-6 mt-5">
+                <h2 class="d-none d-sm-block">ภารกิจหลักของ มปอ.</h2>
+                <h2 class="d-sm-none text-center">ภารกิจหลักของ มปอ.</h2>
+                <div class="dash d-none d-sm-block"></div>
+                <div class="dash d-sm-none mx-auto"></div>
                 <p>
                     มูลนิธิแก้ไขปัญหาการดื่มแอลกอฮอล์ (มปอ.) มุ่งมั่นลดปัญหาการบริโภค
                     เครื่องดื่มแอลกอฮอล์อย่างเป็นอันตรายประกอบด้วย การเมาแล้วขับ การดื่มก่อนวัยอันควร และการดื่มเกินพอดี ซึ่งเป็นต้นเหตุแห่งปัญหาด้าน
@@ -15,7 +17,7 @@
                     อย่างเป็นอันตรายลงไม่น้อยกว่าร้อยละ 10 ภายในปี พ.ศ. 2568 
                 </p>
             </div>
-            <div class="col-12 col-md-6 text-center">
+            <div class="col-12 col-lg-6 text-center">
                 <ul class="text-indend list-unstyled">
                     <li><p>สร้างค่านิยมการดื่มแอลกอฮอล์อย่างพอดี</p></li>
                     <li><p>ยับยั้งพฤติกรรมการดื่มก่อนวัยอันควรของเยาวชน</p></li>
