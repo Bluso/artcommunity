@@ -1,6 +1,6 @@
-<div class="container block-contact margin-content">
+<div class="container block-contact margin-content mt-md-5">
     <div class="row">
-       <div class="col-md-8 offset-md-2">
+       <div class="col-lg-8 col-12 offset-lg-2 offset-0">
            @if(!empty($contact->name_th))
            <h2 class="text-center">{{ $contact->name_th }}</h2>
            @endif
