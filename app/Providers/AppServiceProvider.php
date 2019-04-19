@@ -13,10 +13,18 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         $contact = [];
+        $logo = [];
         try{
             $contact =  \App\ContactData::first();
         } catch (\Exception $e) { }
-        view()->share('DataContact',$contact);
+
+        try {
+            $logo = \App\Logo::first();
+       }  catch (\Exception $e) {
+
+       }
+
+        view()->share(array('DataContact'=> $contact, 'logo' => $logo));
     }
 
     /**
