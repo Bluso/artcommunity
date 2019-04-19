@@ -3,7 +3,7 @@
         <div class="row categories">
             @foreach($cate as $val)
                 @if($val->type == '2')
-                    <div class="col-3 mb-4">
+                    <div class="col-12 col-sm-6 col-lg-3 mb-4">
                         <a class="d-block border" data-cateid="{{$val->id}}"><img class="img-fluid" src="{{asset('storage/images/cate_news')}}/{{$val->thumb}}" alt="{{$val->seo}}" /></a>
                     </div>
                 @endif
@@ -12,7 +12,7 @@
         <div class="row">
             @foreach($news as $val)
                 @if($val->type == '2')
-                    <a href="{{url('news/detail')}}/{{$val->id}}" class="col-4 activity-block category-{{$val->cate->id}}">
+                    <a href="{{url('news/detail')}}/{{$val->id}}" class="col-12 col-sm-6 col-lg-4 activity-block category-{{$val->cate->id}}">
                         <p class="text-indend">{{$val->title}}</p>
                         <p class="text-indend">{{$val->description}}</p>
                         <p class="text-indend">{{$val->seo}}</p>

@@ -8,7 +8,7 @@
     </div>
     <div class="row">
         @foreach($knowledge as $val)
-            <div class="col-3 knowledge_content">
+            <div class="col-12 col-sm-6 col-lg-3 mb-3 knowledge_content">
                 <p class="text-indend position-absolute">{{$val->title}}</p>
                 <p class="text-indend position-absolute">{{$val->description}}</p>
                 <p class="text-indend position-absolute">{{$val->seo}}</p>
@@ -19,7 +19,7 @@
         @endforeach
     </div>
     <div class="row mt-5">
-        <div class="col-2 offset-5">
+        <div class="col-12 col-sm-6 col-lg-2 m-auto">
             <a href="{{ url('knowledge') }}" class="text-center btn btn-outline-warning">บทความทั้งหมด</a>
         </div>
     </div>

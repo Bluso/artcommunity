@@ -1,12 +1,16 @@
-<div class="container block-laws">
+<div class="container block-laws mt-lg-5 pt-lg-5 mt-sm-5">
     <div class="row">
         @include('laws.law_menu')
-        <div class="col-9">
+        <div class="col-12 col-lg-9 mt-lg-0 mt-5">
             <div class="tab-content" id="v-pills-tabContent">
             @foreach($catelaws as $cate)
                 <div class="tab-pane fade show active" id="cate-pills-{{ $cate->id }}" role="tabpanel" aria-labelledby="cate-pills-{{ $cate->id }}-tab">
                     <h2>กฏหมายที่เกี่ยวข้องกับ{{ $cate->title }}</h2>
-                    <div class="dash float-left my-2"></div>
+                    <div class="row">
+                        <div class="col-12">
+                          <div class="dash float-left my-2"></div>
+                        </div>
+                    </div>
                     <div class="float-left row w-100">
                         <div class="accordion" id="LawsCol-{{ $cate->id }}">
                             @foreach($lawscontent as $law)

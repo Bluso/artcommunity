@@ -9,7 +9,7 @@
                 </div>
                 @foreach($youtube as $val)
                   @if($val->cate_id == $cate->id)
-                  <div class="col-4 mb-4" data-toggle="modal" data-target="#youtubeModal{{$val->id}}">
+                  <div class="col-12 col-sm-6 col-lg-4 mb-4" data-toggle="modal" data-target="#youtubeModal{{$val->id}}">
                       <img class="img-fluid" src="https://img.youtube.com/vi/{{$val->youtube}}/maxresdefault.jpg" />
                       <p class="text-center mt-3">{{$val->title}}</p>
                   </div>

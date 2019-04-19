@@ -1,4 +1,4 @@
-<div class="col-3 law-cate-menu">
+<div class="col-12 col-lg-3 law-cate-menu">
     <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
     @foreach($catelaws as $val)
         <a class="border p-3" id="cate-pills-{{$val->id}}-tab" data-toggle="pill" href="#cate-pills-{{$val->id}}" role="tab" aria-controls="cate-pills-{{$val->id}}" aria-selected="true">

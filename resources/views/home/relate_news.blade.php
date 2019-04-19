@@ -13,7 +13,7 @@
             <div class="col-12 mt-4">
                 <div class="row news-slide">
                     @foreach($news as $val)
-                    <a href="{{url('news/detail')}}/{{$val->id}}" class="col-3 activity-block">
+                    <a href="{{url('news/detail')}}/{{$val->id}}" class="col-12 col-sm-6 col-lg-3 mb-3 activity-block">
                         <p class="text-indend">{{$val->title}}</p>
                         <p class="text-indend">{{$val->description}}</p>
                         <p class="text-indend">{{$val->seo}}</p>
@@ -30,7 +30,7 @@
             </div>
         </div>
         <div class="row mt-5">
-            <div class="col-2 offset-5">
+            <div class="col-12 col-sm-6 col-lg-2 m-auto">
                 <a href="{{ url('news') }}"  class="text-center btn btn-outline-warning">กิจกรรมทั้งหมด</a>
             </div>
         </div>
