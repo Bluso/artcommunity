@@ -5,9 +5,15 @@
         <div class="col-12 h-auto p-0 m-0">
             <div class="container-fluid mx-auto p-0 m-0">
                 <p class="text-indend position-absolute">{{$val->seo}}</p>
-                <div class="dark-overlay">
-                    <img class="img-fluid mx-auto w-100 p-0 m-0" src="{{asset('storage/images/banner')}}/{{$val->image}}" title="{{ $val->title }}" alt="{{ $val->seo }}">
-                </div>
+            @if(!empty($val->image_mobile))
+              <div class="dark-overlay d-md-none">
+                <img class="img-fluid mx-auto p-0 m-0 w-100" src="{{asset('storage/images/banner')}}/{{$val->image_mobile}}" title="{{ $val->title }}" alt="{{ $val->seo }}">
+              </div>
+            @else
+              <div class="dark-overlay">
+                <img class="img-fluid mx-auto w-100 p-0 m-0" src="{{asset('storage/images/banner')}}/{{$val->image}}" title="{{ $val->title }}" alt="{{ $val->seo }}">
+              </div>
+            @endif
             </div>
             <div class="container-fluid position-absolute fixed-bottom">
                 <div class="container caption">
