@@ -5,7 +5,7 @@
 @section('content')
     @include('home.banner')
     @if(count($home) != 0)
-    <section class="main-intro container margin-content">
+    <section id="page-name" data-page="home" class="main-intro container margin-content">
         <div class="row">
             @foreach($home as $h)
             <div class="col-sm-12 col-lg-4">

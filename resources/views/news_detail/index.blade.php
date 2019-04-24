@@ -3,7 +3,7 @@
 @section('title', 'Activities')
 
 @section('content')
-<div class="page-news news-detail container">
+<div id="page-name" class="page-news news-detail container">
     @include('news_detail.breadcrumb')
     @foreach($news as $val)
         @if($val->type == '2')

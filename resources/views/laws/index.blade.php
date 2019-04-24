@@ -3,7 +3,7 @@
 @section('title', 'Activities')
 
 @section('content')
-<div class="page-laws contaner-fluid">
+<div id="page-name" data-page="laws" class="page-laws contaner-fluid">
     @include('banner.index')
     @if(count($lawscontent) > 0)
         @include('laws.content')

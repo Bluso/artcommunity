@@ -3,7 +3,7 @@
 @section('title', 'Home')
 
 @section('content')
-<div class="page-about contaner-fluid">
+<div id="page-name" data-page="about" class="page-about contaner-fluid">
     @include('banner.index')
     @include('about.history')
     @include('about.mission')
