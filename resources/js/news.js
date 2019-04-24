@@ -3,11 +3,11 @@ if($('.block-news').length > 0){
     var activity = $(".block-news>div");
     var countnews = activity.length;
     var newviewmore = $("#news .btn-viewmore");
-    if(countnews <= 9){
+    if(countnews <= 8){
         newviewmore.hide();
     }
     activity.hide();
-    activity.slice(0, 9).show();
+    activity.slice(0, 8).show();
     newviewmore.on('click', function (e) {
         e.preventDefault();
         $(".block-news>div:hidden").slice(0, 4).slideDown();
