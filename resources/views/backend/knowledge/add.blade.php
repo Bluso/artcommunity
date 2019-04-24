@@ -2,7 +2,7 @@
 
 @section('title', 'TFRD')
 @section('css')
-<link rel="stylesheet" href="{{ asset('vendor/summernote/summernote-bs4.css') }}">
+<link rel="stylesheet" href="{{ asset('vendor/summernote/summernote.css') }}">
 @include('backend.layouts.css_fileinput')
 @stop
 @section('content_header')
@@ -33,7 +33,7 @@
                 @if($category->count() == 0)
                 <div id="addcate" class="form-group">
                     <p class="addcate text-danger">ตอนนี้ยังไม่มีหมวดหมู่ คลิก "+ Add New Category" เพื่อสร้าง Category</p>
-                    <a href="/backend/knowledge/cate/add" id="addcatebtn" class="addcate btn btn-primary" data-disable="true">+ Add New Category</a>
+                    <a href="{{url('/backend/knowledge/cate/add')}}" id="addcatebtn" class="addcate btn btn-primary" data-disable="true">+ Add New Category</a>
                 </div>
                 @endif
                 <div class="form-group">
@@ -81,11 +81,22 @@
 </div>
 @stop
 @section('js')
-<script src="{{ asset('vendor/summernote/summernote-bs4.js') }}"></script>
+<script src="{{ asset('vendor/summernote/summernote.js') }}"></script>
 <script src="{{ asset('js/validator.js')}}"></script>
 @include('backend.layouts.js_fileinput')
 <script>
     $("#detail").summernote({
+        fontSizes: ['8', '9', '10', '11', '12', '14', '18','150'],
+        toolbar: [
+          ['style', ['bold', 'italic', 'underline', 'clear']],
+          ['font', ['strikethrough', 'superscript', 'subscript']],
+          ['fontsize', ['fontsize']],
+          ['color', ['color']],
+          ['para', ['ul', 'ol', 'paragraph']],
+          ['height', ['height']],
+          ['Insert', ['picture', 'link', 'video', 'table','hr']],
+          ['Misc', ['fullscreen', 'codeview', 'undo', 'redo','help']],
+        ],
         placeholder: 'Detail...',
                 height: 500,
                 callbacks: {
