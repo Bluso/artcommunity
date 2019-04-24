@@ -2,7 +2,6 @@
 
 @section('title', 'TFRD')
 @section('css')
-<link rel="stylesheet" href="{{ asset('vendor/summernote/summernote-bs4.css') }}">
 @include('backend.layouts.css_fileinput')
 @stop
 @section('content_header')
@@ -43,7 +42,7 @@
                 @if($category->count() == 0)
                 <div id="addcate" class="form-group hidden">
                     <p class="addcate text-danger">ตอนนี้ยังไม่มีหมวดหมู่ของข่าว คลิก "+ Add New Category" เพื่อสร้าง Category</p>
-                    <a href="/backend/youtube/cate/add" id="addcatebtn" class="addcate btn btn-primary" data-disable="true">+ Add New Category</a>
+                    <a href="{{url('/backend/youtube/cate/add')}}" id="addcatebtn" class="addcate btn btn-primary" data-disable="true">+ Add New Category</a>
                 </div>
                 @endif
                 <div class="form-group">
@@ -73,32 +72,8 @@
 @stop
 @section('js')
 @include('backend.layouts.js_fileinput')
-<script src="{{ asset('vendor/summernote/summernote-bs4.js') }}"></script>
 <script src="{{ asset('js/validator.js')}}"></script>
 <script>
-    $("#detail").summernote({
-        placeholder: 'Detail...',
-                height: 500,
-                callbacks: {
-                onImageUpload : function(files, editor, welEditable) {
-                    sendFile(files[0], this);
-                }
-            }
-        });
-        $.ajaxSetup({
-            headers: {
-                'X-CSRF-TOKEN': $('input[name="_token"]').attr('value')
-            }
-        });
-
-        $('#form-validate').validator().on('submit', function (e) {
-            if (e.isDefaultPrevented()) {
-                // handle the invalid form...
-            } else {
-                // everything looks good!
-            }
-        });
-
         $('#url').on('change', function(){
             var newval = '',
                 $this = $(this);

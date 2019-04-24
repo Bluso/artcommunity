@@ -2,7 +2,7 @@
 
 @section('title', 'TFRD')
 @section('css')
-<link rel="stylesheet" href="{{ asset('vendor/summernote/summernote-bs4.css') }}">
+<link rel="stylesheet" href="{{ asset('vendor/summernote/summernote.css') }}">
 @include('backend.layouts.css_fileinput')
 @stop
 @section('content_header')
@@ -59,10 +59,21 @@
 @stop
 @section('js')
 @include('backend.layouts.js_fileinput')
-<script src="{{ asset('vendor/summernote/summernote-bs4.js') }}"></script>
+<script src="{{ asset('vendor/summernote/summernote.js') }}"></script>
 <script src="{{ asset('js/validator.js')}}"></script>
 <script>
     $("#detail").summernote({
+        fontSizes: ['8', '9', '10', '11', '12', '14', '18','150'],
+        toolbar: [
+          ['style', ['bold', 'italic', 'underline', 'clear']],
+          ['font', ['strikethrough', 'superscript', 'subscript']],
+          ['fontsize', ['fontsize']],
+          ['color', ['color']],
+          ['para', ['ul', 'ol', 'paragraph']],
+          ['height', ['height']],
+          ['Insert', ['picture', 'link', 'video', 'table','hr']],
+          ['Misc', ['fullscreen', 'codeview', 'undo', 'redo','help']],
+        ],
         placeholder: 'Detail...',
                 height: 500,
                 callbacks: {
