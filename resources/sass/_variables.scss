@@ -26,10 +26,10 @@ $lightgrey:#fafafa;
 .bg-grey{background: #f1f1f1;}
 
 %psl-mainset{
-    font-family:'PSL Text Pro'; 
-    font-weight:400;
-    font-size: 1.5rem;
-    line-height: 1.7rem;
+    font-family:'PSL Text Pro' !important;
+    font-weight:400 !important;
+    font-size: 1.5rem !important;
+    line-height: 1.7rem !important;
 }
 .dash{
     border-bottom: solid 7px $orange;

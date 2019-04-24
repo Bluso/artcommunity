@@ -116,6 +116,10 @@
             p{
                 @extend %psl-mainset;
                 margin:0;
+                span{
+                    @extend %psl-mainset;
+                    margin:0;
+                }
             }
         }
         .relate-news{
