@@ -22,7 +22,7 @@
     <!-- /.box-header -->
     <div class="box-body">
         <div class="row">
-            <div class="col-sm-12">
+            <div class="col-sm-12 hidden-sm hidden-xs">
                 <table id="banner-table" class="table table-bordered table-striped dataTable" role="grid" aria-describedby="example1_info">
                     <thead>
                         <tr role="row">
@@ -87,6 +87,65 @@
                     </tfoot>
                 </table>
             </div>
+            <div class="col-sm-12 visible-sm visible-xs">
+                <table id="banner-m-table" class="table table-bordered table-striped dataTable" role="grid" aria-describedby="example1_info">
+                    <thead>
+                        <tr role="row">
+                            <th class="sorting_asc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-sort="ascending" style="width: 283px;">Information</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach($member as $mem)
+                        <tr role="row" class="odd">
+                            <td class="sorting_1">
+                              <dl>
+                                  <dt>Name</dt>
+                                  <dd>{{ $mem->name }}</dd>
+                                  <dt>Position</dt>
+                                  <dd>{{ $mem->position }}</dd>
+                                  <dt>Image</dt>
+                                  <dd><img style="width:200px;" src="{{asset('storage/about/member')}}/{{$mem->image}}" /></dd>
+                                  <dt>Created at</dt>
+                                  <dd>{{ $n->created_at }}</dd>
+                                  <dt>Updated at</dt>
+                                  <dd>{{ $n->updated_at }}</dd>
+                                  <dt>Action</dt>
+                                  <a type="button" class="btn btn-warning" href="{{url('backend/about/member/edit/'.$mem->id)}}" >Edit</a>
+                                  <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-m-delete-{{$mem->id}}">
+                                      Delete
+                                  </button>
+                                  <div class="modal modal-danger fade" id="modal-m-delete-{{$mem->id}}" style="display: none;">
+                                      <div class="modal-dialog">
+                                          <div class="modal-content">
+                                          <div class="modal-header">
+                                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                              <span aria-hidden="true">×</span></button>
+                                              <h4 class="modal-title">Delete Category News</h4>
+                                          </div>
+                                          <div class="modal-body">
+                                              <p>ต้องการลบรูปนี้ใช่หรือไม่ ?</p>
+                                          </div>
+                                          <div class="modal-footer">
+                                              <button type="button" class="btn btn-outline pull-left" data-dismiss="modal">Close</button>
+                                              <a type="button" class="btn btn-outline" href="{{url('backend/banner/delete/'.$n->id)}}">Confirm</a>
+                                          </div>
+                                          </div>
+                                          <!-- /.modal-content -->
+                                      </div>
+                                      <!-- /.modal-dialog -->
+                                  </div>
+                              </dl>
+                            </td>
+                        </tr>
+                        @endforeach
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th rowspan="1" colspan="1">Information</th>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
         </div>
     </div>
     <!-- /.box-body -->
@@ -95,7 +154,7 @@
 @section('js')
 <script>
   $(function () {
-    $('#banner-table').DataTable({
+    $('#banner-table, #banner-m-table').DataTable({
       "paging": true,
       "lengthChange": true,
       "searching": true,
