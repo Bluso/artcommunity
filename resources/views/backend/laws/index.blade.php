@@ -14,7 +14,7 @@ Laws
     <li><a href="#">Laws</a></li>
     <li class="active">Laws</li>
 </ol>
-   
+
 @stop
 
 @section('content')
@@ -23,12 +23,12 @@ Laws
         <h3 class="box-title">Laws</h3>
         <div class="pull-right"><a class="d-block btn btn-info" href="{{url('backend/laws/cate/add')}}"><i class="fa fa-plus-square"></i> Add Category</a></div>
         <div class="pull-right"><a class="d-block btn btn-info" href="{{url('backend/laws/add')}}"><i class="fa fa-plus-square"></i> Add Laws</a></div>
-    
+
     </div>
     <!-- /.box-header -->
     <div class="box-body">
         <div class="row">
-            <div class="col-sm-12">
+            <div class="col-sm-12 hidden-sm hidden-xs">
                 <table id="laws-table" class="table table-bordered table-striped dataTable" role="grid" aria-describedby="example1_info">
                     <thead>
                         <tr role="row">
@@ -107,6 +107,77 @@ Laws
                     </tfoot>
                 </table>
             </div>
+            <div class="col-sm-12 visible-sm visible-xs">
+                <table id="laws-m-table" class="table table-bordered table-striped dataTable" role="grid" aria-describedby="example1_info">
+                    <thead>
+                        <tr role="row">
+                            <th class="sorting_desc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-sort="ascending">Information</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach($laws as $key => $n)
+                        <tr role="row" class="odd">
+                            <td>
+                            <dl class="sorting_1">
+                                <dt>#</dt>
+                                <dd>{{ $key+1 }}</dd>
+                                <dt>Category</dt>
+                                <dd>{{ $n->cate->title }}</dd>
+                                <dt>Title</dt>
+                                <dd>{{ $n->title }}</dd>
+                                <dt>Keywords</dt>
+                                <dd>{{ $n->keywords }}</dd>
+                                <dt>Description</dt>
+                                <dd>{{ $n->description }}</dd>
+                                <dt>Thumb</dt>
+                                <dd>
+                                  @if(isset($n->thumb))
+                                      <img style="max-width:200px;" src="{{asset('storage/images/laws/thumb')}}/{{$n->thumb}}" />
+                                  @else
+                                      <p>no thumb</p>
+                                  @endif
+                                </dd>
+                                <dt>Created at</dt>
+                                <dd>{{ $n->created_at }}</dd>
+                                <dt>Updated at</dt>
+                                <dd>{{ $n->updated_at }}</dd>
+                                <dt>Action</dt>
+                                <a type="button" class="btn btn-warning" href="{{url('backend/laws/edit/'.$n->id)}}" >Edit</a>
+                                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-m-delete-{{$n->id}}">
+                                    Delete
+                                </button>
+                                <div class="modal modal-danger fade" id="modal-m-delete-{{$n->id}}" style="display: none;">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">×</span></button>
+                                            <h4 class="modal-title">Delete laws</h4>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p>ต้องการลบข่าวนี้ใช่หรือไม่ ?</p>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-outline pull-left" data-dismiss="modal">Close</button>
+                                            <a type="button" class="btn btn-outline" href="{{url('backend/laws/delete/'.$n->id)}}">Confirm</a>
+                                        </div>
+                                        </div>
+                                        <!-- /.modal-content -->
+                                    </div>
+                                    <!-- /.modal-dialog -->
+                                </div>
+                            </dl>
+                            </td>
+                        </tr>
+                        @endforeach
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th rowspan="1" colspan="1">Information</th>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
         </div>
     </div>
     <!-- /.box-body -->
@@ -116,7 +187,7 @@ Laws
 @section('js')
 <script>
   $(function () {
-    $('#laws-table').DataTable({
+    $('#laws-table, #laws-m-table').DataTable({
       "order": [[ 0, 'desc' ]],
       "paging": true,
       "lengthChange": true,
