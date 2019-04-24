@@ -120,6 +120,10 @@
                     @extend %psl-mainset;
                     margin:0;
                 }
+                img, .img-responsive{
+                    width: 100% !important;
+                    margin: 0 auto;
+                }
             }
         }
         .relate-news{
