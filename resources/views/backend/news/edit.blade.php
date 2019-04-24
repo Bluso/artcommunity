@@ -35,7 +35,7 @@
                 </div>
                 <div id="activity_category" class="form-group">
                     <label for="category">Category</label>
-                    <select class="form-control" name="cate_id" id="category" data-error="กรุณาเลือกหมวดหมู่ของข่าว" required>
+                    <select class="form-control" name="cate_id" id="category" data-error="กรุณาเลือกหมวดหมู่ของข่าว">
                         @if($news->cate_id)
                               <option value="{{$news->cate->id}}">{{$news->cate->title}}</option>
                             @foreach($category as $c)
