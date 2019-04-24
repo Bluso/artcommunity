@@ -26,7 +26,7 @@
     <!-- /.box-header -->
     <div class="box-body">
         <div class="row">
-            <div class="col-sm-12">
+            <div class="col-sm-12 hidden-md hidden-sm hidden-xs">
                 <table id="knowledge-table" class="table table-bordered table-striped dataTable" role="grid" aria-describedby="example1_info">
                     <thead>
                         <tr role="row">
@@ -101,6 +101,73 @@
                     </tfoot>
                 </table>
             </div>
+            <div class="col-sm-12 visible-md visible-sm visible-xs">
+                <table id="knowledge-m-table" class="table table-bordered table-striped dataTable" role="grid" aria-describedby="example1_info">
+                    <thead>
+                        <tr role="row">
+                            <th class="sorting_desc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-sort="ascending">Information</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach($knowledge as $key => $n)
+                        <tr role="row" class="odd">
+                            <td>
+                            <dl class="sorting_1">
+                                <dt>#</dt>
+                                <dd>{{ $key+1 }}</dd>
+                                <dt>Category</dt>
+                                <dd>{{ $n->cate->title ?? '' }}</dd>
+                                <dt>Title</dt>
+                                <dd>{{ $n->title }}</dd>
+                                <dt>Keywords</dt>
+                                <dd>{{ $n->keywords }}</dd>
+                                <dt>Description</dt>
+                                <dd>{{ $n->description }}</dd>
+                                <dt>Pdf URL</dt>
+                                <dd><a href="{{asset('storage/images/knowledge/pdf')}}/{{$n->file}}">{{asset('storage/images/knowledge/pdf')}}/{{$n->file}}</a></dd>
+                                <dt>Thumb</dt>
+                                <dd><img style="max-width:100%; width:200px;" src="{{asset('storage/images/knowledge/thumb')}}/{{$n->thumb}}" /></dd>
+                                <dt>Created at</dt>
+                                <dd>{{ $n->created_at }}</dd>
+                                <dt>Updated at</dt>
+                                <dd>{{ $n->updated_at }}</dd>
+                                <dt>Action</dt>
+                                <a type="button" class="btn btn-warning" href="{{url('backend/knowledge/edit/'.$n->id)}}" >Edit</a>
+                                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-m-delete-{{$n->id}}">
+                                    Delete
+                                </button>
+                                <div class="modal modal-danger fade" id="modal-m-delete-{{$n->id}}" style="display: none;">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                        <div class="modal-header">
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">×</span></button>
+                                            <h4 class="modal-title">Delete knowledge</h4>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p>ต้องการลบข่าวนี้ใช่หรือไม่ ?</p>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-outline pull-left" data-dismiss="modal">Close</button>
+                                            <a type="button" class="btn btn-outline" href="{{url('backend/knowledge/delete/'.$n->id)}}">Confirm</a>
+                                        </div>
+                                        </div>
+                                        <!-- /.modal-content -->
+                                    </div>
+                                    <!-- /.modal-dialog -->
+                                </div>
+                            </dl>
+                            </td>
+                        </tr>
+                        @endforeach
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th rowspan="1" colspan="1">Information</th>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
         </div>
     </div>
     <!-- /.box-body -->
@@ -110,7 +177,7 @@
 @section('js')
 <script>
   $(function () {
-    $('#knowledge-table').DataTable({
+    $('#knowledge-table, #knowledge-m-table').DataTable({
       "order": [[ 0, 'desc' ]],
       "paging": true,
       "lengthChange": true,
